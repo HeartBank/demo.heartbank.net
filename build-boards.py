@@ -1,0 +1,387 @@
+#!/usr/bin/env python3
+"""Generate the ledger.heartbank.net artboards, canvas.json and the board stylesheet.
+
+One source for both languages and both themes, so the artboards cannot drift from each other. The spec is private
+(HeartBank/ledger.heartbank.net SPEC §8.1); this public repo holds drawings only, with made-up entries.
+Khmer below is OURS and marked as a placeholder on every board until a native reader approves it.
+
+    python3 build-boards.py && python3 -m http.server 8333 &  python3 measure.py && python3 build-boards.py && python3 build-index.py && python3 build-wall.py
+"""
+import hashlib, io, json, os, re, sys
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from brand import EMBLEM, tok  # the vendored brand layer: the emblem and the neutrals are READ, never typed here
+
+APP_HOST = "ledger.heartbank.net"
+LEDGER_LINK = "explorer.333.eco/ledger"
+
+T = {
+    "en": {
+        "lang": "en", "share": "Share", "ph": "",
+        "h1": "A private record of your thanks.",
+        "para": ("When you thank someone on a HeartBank® app, this service keeps an encrypted note that it happened. We timestamp "
+                 "a fingerprint of that note to a public ledger, so it can't be changed later without showing. The note itself stays "
+                 "private and yours: you can open it here and download it. What you wrote, and any amount or time, stays in the app you "
+                 "used. Nothing is paid here."),
+        "cta": "See my record",
+        "cta_note": "You'll log in with HeartBank®, using a passkey: the face or fingerprint you already use to open your phone.",
+        "pub": "Check the public ledger yourself",
+        "visits": "Visits to this page are counted without cookies.",
+        "who1": "Founded by Thon Ly", "who2": "Miss Aquarius℠ is the CEO",
+        "disc": ("HeartBank® is a planetary data bank of gratitude. It is not a chartered bank or financial institution; it does not "
+                 "provide banking services, hold deposits, or extend credit. Nothing is paid here: this service keeps a record of thanks "
+                 "and moves no money. Financial services are not provided by HeartBank."),
+        "you_h": "Your record",
+        "you_sub": "Each line is one entry, exactly as it was kept. Each entry shows your side only. Every time this page is opened, the opening is logged, and what it shows is not.",
+        "legend": "<b>Kiitos</b> is a thank between two people. <b>Kiitti</b> is care for a thing, a plant or an animal.",
+        "dl": "Download my record",
+        "dl_note": "The file holds every entry and what you need to check it yourself, even if this service is ever gone. Keep it private: it proves your side.",
+        "season": "Season 1 · 26 November 2026 to 7 January 2027",
+        "rows": [("thank_out", "You thanked someone", "Kiitos", "333.eco", "2 Dec 2026, 9:41 AM"),
+                 ("thank_in", "Someone thanked you", "Kiitos", "333.eco", "30 Nov 2026, 6:12 PM"),
+                 ("plant", "You came back to a plant", "Kiitti", "B-Twin", "29 Nov 2026, 8:03 AM"),
+                 ("thing", "You thanked a thing", "Kiitti", "B-Twin", "28 Nov 2026, 7:55 PM"),
+                 ("animal", "You came back to an animal", "Kiitti", "B-Twin", "27 Nov 2026, 10:20 AM")],
+        "receipt": "Receipt", "r_place": "Place in the log", "r_finger": "Fingerprint", "r_log": "Log", "r_sig": "Signature",
+        "copy": "Copy receipt", "check": "Check it on the public ledger",
+        "jubilee": "On 7 January every balance starts again from zero. These entries stay.",
+        "leave": "When you leave this page, you'll need your passkey to open it again.",
+        "none_p": "This is where your entries will appear. When you thank someone on a HeartBank® app, or someone thanks you, it shows up here.",
+        "pk_h": "This page opens with a passkey",
+        "pk_p": "A passkey is the face or fingerprint you already use to open your phone. It proves the person opening this record is you. Add one to your HeartBank® account, then come back.",
+        "pk_btn": "Add a passkey",
+        "err_h": "This page can't open right now",
+        "err_p": "Nothing in your record has changed. Try again in a little while.",
+        "err_btn": "Try again",
+        "st_none": "State · nothing yet", "st_pk": "State · needs a passkey", "st_err": "State · can't open",
+        "tag": "[ Drawing. Nothing here is live, and these entries are made up. ]",
+    },
+    "km": {
+        "lang": "km", "share": "ចែករំលែក", "ph": "ខ្មែរនេះជាពាក្យរង់ចាំ មុននឹងមានការអនុម័ត",
+        "h1": "កំណត់ត្រាឯកជននៃការអរគុណរបស់អ្នក",
+        "para": ("ពេលអ្នកអរគុណនរណាម្នាក់នៅលើកម្មវិធី HeartBank® សេវានេះរក្សាកំណត់ចំណាំដែលបានអ៊ិនគ្រីបមួយថាវាបានកើតឡើង។ "
+                 "យើងបោះត្រាពេលវេលាលើស្នាមម្រាមដៃឌីជីថលនៃកំណត់ចំណាំនោះទៅក្នុងបញ្ជីសាធារណៈ ដូច្នេះវាមិនអាចត្រូវបានផ្លាស់ប្តូរនៅពេលក្រោយដោយមិនបង្ហាញឲ្យឃើញឡើយ។ "
+                 "កំណត់ចំណាំនោះនៅតែឯកជន ហើយជារបស់អ្នក៖ អ្នកអាចបើកមើលនៅទីនេះ និងទាញយកបាន។ "
+                 "អ្វីដែលអ្នកបានសរសេរ និងចំនួនប្រាក់ ឬពេលវេលាណាមួយ នៅតែស្ថិតក្នុងកម្មវិធីដែលអ្នកបានប្រើ។ គ្មានការបង់ប្រាក់នៅទីនេះទេ។"),
+        "cta": "មើលកំណត់ត្រារបស់ខ្ញុំ",
+        "cta_note": "អ្នកនឹងចូលជាមួយ HeartBank® ដោយប្រើ passkey គឺមុខ ឬស្នាមម្រាមដៃដែលអ្នកប្រើសម្រាប់បើកទូរស័ព្ទរបស់អ្នក។",
+        "pub": "ពិនិត្យបញ្ជីសាធារណៈដោយខ្លួនឯង",
+        "visits": "ការចូលមើលទំព័រនេះត្រូវបានរាប់ដោយគ្មានខូគី។",
+        "who1": "ស្ថាបនិកគឺ Thon Ly", "who2": "Miss Aquarius℠ ជាប្រធានប្រតិបត្តិ",
+        "disc": ("HeartBank® គឺជាឃ្លាំងទិន្នន័យនៃការដឹងគុណសម្រាប់ពិភពលោក។ HeartBank មិនមែនជាធនាគារដែលមានអាជ្ញាប័ណ្ណ ឬស្ថាប័នហិរញ្ញវត្ថុទេ "
+                 "ហើយមិនផ្តល់សេវាធនាគារ មិនទទួលប្រាក់បញ្ញើ និងមិនផ្តល់ឥណទានឡើយ។ គ្មានការបង់ប្រាក់នៅទីនេះទេ៖ សេវានេះរក្សាកំណត់ត្រានៃការអរគុណ "
+                 "ហើយមិនផ្លាស់ទីប្រាក់ឡើយ។ HeartBank មិនផ្តល់សេវាហិរញ្ញវត្ថុទេ។"),
+        "you_h": "កំណត់ត្រារបស់អ្នក",
+        "you_sub": "បន្ទាត់នីមួយៗគឺជាធាតុមួយ ដូចដែលវាត្រូវបានរក្សាទុក។ ធាតុនីមួយៗបង្ហាញតែផ្នែករបស់អ្នកប៉ុណ្ណោះ។ រាល់ពេលដែលទំព័រនេះត្រូវបានបើក ការបើកនោះត្រូវបានកត់ទុក ប៉ុន្តែអ្វីដែលវាបង្ហាញមិនត្រូវបានកត់ទុកទេ។",
+        "legend": "<b>Kiitos</b> គឺជាការអរគុណរវាងមនុស្សពីរនាក់។ <b>Kiitti</b> គឺជាការថែទាំវត្ថុ រុក្ខជាតិ ឬសត្វ។",
+        "dl": "ទាញយកកំណត់ត្រារបស់ខ្ញុំ",
+        "dl_note": "ឯកសារនេះមានធាតុទាំងអស់ និងអ្វីដែលអ្នកត្រូវការដើម្បីពិនិត្យដោយខ្លួនឯង ទោះបីសេវានេះលែងមានក៏ដោយ។ សូមរក្សាវាជាឯកជន៖ វាបញ្ជាក់ផ្នែករបស់អ្នក។",
+        "season": "រដូវកាលទី ១ · ២៦ វិច្ឆិកា ២០២៦ ដល់ ៧ មករា ២០២៧",
+        "rows": [("thank_out", "អ្នកបានអរគុណនរណាម្នាក់", "Kiitos", "333.eco", "២ ធ្នូ ២០២៦ ម៉ោង ៩:៤១ ព្រឹក"),
+                 ("thank_in", "មាននរណាម្នាក់បានអរគុណអ្នក", "Kiitos", "333.eco", "៣០ វិច្ឆិកា ២០២៦ ម៉ោង ៦:១២ ល្ងាច"),
+                 ("plant", "អ្នកបានត្រឡប់ទៅរករុក្ខជាតិមួយ", "Kiitti", "B-Twin", "២៩ វិច្ឆិកា ២០២៦ ម៉ោង ៨:០៣ ព្រឹក"),
+                 ("thing", "អ្នកបានអរគុណវត្ថុមួយ", "Kiitti", "B-Twin", "២៨ វិច្ឆិកា ២០២៦ ម៉ោង ៧:៥៥ យប់"),
+                 ("animal", "អ្នកបានត្រឡប់ទៅរកសត្វមួយ", "Kiitti", "B-Twin", "២៧ វិច្ឆិកា ២០២៦ ម៉ោង ១០:២០ ព្រឹក")],
+        "receipt": "បង្កាន់ដៃ", "r_place": "ទីតាំងក្នុងកំណត់ហេតុ", "r_finger": "ស្នាមម្រាមដៃឌីជីថល", "r_log": "កំណត់ហេតុ", "r_sig": "ហត្ថលេខា",
+        "copy": "ចម្លងបង្កាន់ដៃ", "check": "ពិនិត្យវានៅលើបញ្ជីសាធារណៈ",
+        "jubilee": "នៅថ្ងៃទី ៧ មករា សមតុល្យទាំងអស់ចាប់ផ្តើមពីសូន្យឡើងវិញ។ ធាតុទាំងនេះនៅដដែល។",
+        "leave": "ពេលអ្នកចាកចេញពីទំព័រនេះ អ្នកនឹងត្រូវការ passkey របស់អ្នកដើម្បីបើកវាម្តងទៀត។",
+        "none_p": "នេះជាកន្លែងដែលធាតុរបស់អ្នកនឹងបង្ហាញ។ ពេលអ្នកអរគុណនរណាម្នាក់នៅលើកម្មវិធី HeartBank® ឬមាននរណាម្នាក់អរគុណអ្នក វានឹងបង្ហាញនៅទីនេះ។",
+        "pk_h": "ទំព័រនេះបើកដោយ passkey",
+        "pk_p": "Passkey គឺមុខ ឬស្នាមម្រាមដៃដែលអ្នកប្រើសម្រាប់បើកទូរស័ព្ទរបស់អ្នក។ វាបញ្ជាក់ថាអ្នកដែលបើកកំណត់ត្រានេះគឺជាអ្នក។ សូមបន្ថែមមួយទៅក្នុងគណនី HeartBank® របស់អ្នក រួចត្រឡប់មកវិញ។",
+        "pk_btn": "បន្ថែម passkey",
+        "err_h": "ទំព័រនេះមិនអាចបើកបានទេឥឡូវនេះ",
+        "err_p": "គ្មានអ្វីនៅក្នុងកំណត់ត្រារបស់អ្នកបានផ្លាស់ប្តូរទេ។ សូមព្យាយាមម្តងទៀតបន្តិចក្រោយ។",
+        "err_btn": "ព្យាយាមម្តងទៀត",
+        "st_none": "ស្ថានភាព · មិនទាន់មានធាតុ", "st_pk": "ស្ថានភាព · ត្រូវការ passkey", "st_err": "ស្ថានភាព · មិនអាចបើកបាន",
+        "tag": "[ គំនូរព្រាង។ គ្មានអ្វីនៅទីនេះដំណើរការពិតទេ ហើយធាតុទាំងនេះជាការបង្កើតឡើង។ ]",
+    },
+}
+
+
+def brand_css(css):
+    for k in ("bg", "surface", "surface-2", "line", "line-strong", "ink", "ink-dim"):
+        for p in ("l", "d"):
+            css = css.replace("@%s_%s@" % (p.upper(), k.upper().replace("-", "_")), tok("%s-%s" % (p, k)))
+    css = css.replace("@SAPPHIRE@", tok("color-sapphire"))
+    for k in ("duration", "delay"):
+        css = css.replace("@BEAT_%s@" % k.upper(), tok("beat-" + k))
+    assert not re.search(r"@[A-Z_0-9]+@", css), "unfilled brand placeholder"
+    return css
+
+
+# ⭐ The one block that is this surface's own: heartbank.net's hue is blue (data/tlds.json), so its accent is the sapphire gem,
+# with a lighter measured value on dark. Every other value is read from the brand layer.
+CSS = """
+:root,[data-theme="light"]{
+  --bg:@L_BG@; --surface:@L_SURFACE@; --surface-2:@L_SURFACE_2@; --line:@L_LINE@; --line-strong:@L_LINE_STRONG@;
+  --ink:@L_INK@; --ink-dim:@L_INK_DIM@; --beat-duration:@BEAT_DURATION@; --beat-delay:@BEAT_DELAY@;
+  --accent:@SAPPHIRE@; --accent-ink:#ffffff; --wash:rgba(15,82,186,.08); --edge:rgba(15,82,186,.26);
+  --font-display:"Newsreader",Georgia,serif; --font-text:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace; --font-khmer:"Noto Sans Khmer",sans-serif;
+  --r-card:1.25rem; --r-control:1rem; --r-pill:999px;
+}
+[data-theme="dark"]{
+  --bg:@D_BG@; --surface:@D_SURFACE@; --surface-2:@D_SURFACE_2@; --line:@D_LINE@; --line-strong:@D_LINE_STRONG@;
+  --ink:@D_INK@; --ink-dim:@D_INK_DIM@;
+  --accent:#8ab4f8; --accent-ink:#10141c; --wash:rgba(138,180,248,.10); --edge:rgba(138,180,248,.30);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.km{font-family:var(--font-khmer),var(--font-text);line-height:1.75}
+.board{width:var(--w);margin:0 auto;padding:0 var(--pad);background:var(--bg)}
+.desk{--w:1440px;--pad:96px} .phone{--w:390px;--pad:20px}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:12px}
+.wordmark{font-family:var(--font-display);font-weight:600;font-size:1.5rem;white-space:nowrap;letter-spacing:-.01em;
+  --emblem-cap:.66em;--emblem-size:calc(var(--emblem-cap)*1.1);--emblem-box:calc(var(--emblem-size)/.7534)}
+.wordmark svg{width:var(--emblem-box);height:var(--emblem-box);color:var(--accent);vertical-align:baseline;
+  margin-top:calc(var(--emblem-box)*-.09312);margin-bottom:calc(var(--emblem-box)*-.15333);
+  margin-left:calc(var(--emblem-box)*-.15343 + 1px);margin-right:calc(var(--emblem-box)*-.09312 - 1px)}
+.wordmark sup{font-size:.72em;font-weight:500;vertical-align:-.27em;margin-left:.05em;line-height:0}
+.tools{display:flex;gap:8px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:var(--r-pill);padding:3px;font-size:.8rem}
+.seg span{padding:5px 12px;border-radius:var(--r-pill);color:var(--ink-dim)}
+.seg span.on{background:var(--ink);color:var(--bg)}
+.share{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line-strong);border-radius:var(--r-pill);padding:6px 13px;font-size:.85rem}
+.share svg{width:16px;height:16px;flex:none}
+.phone .share{padding:7px 9px}.phone .share .lbl{display:none}
+h1{font-family:var(--font-display);font-weight:600;letter-spacing:-.022em;line-height:1.08;margin:0}
+.desk h1{font-size:3.6rem;max-width:17ch} .phone h1{font-size:2.4rem}
+.km h1,h1.km{letter-spacing:0;line-height:1.4} .desk h1.km{font-size:2.8rem;max-width:22ch} .phone h1.km{font-size:1.8rem}
+.para{font-size:1.15rem;margin:24px 0 0;max-width:60ch}
+.phone .para{font-size:1.05rem}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);border-radius:var(--r-control);padding:14px 26px;font-weight:600;font-size:1.05rem}
+.btn2{display:inline-block;border:1px solid var(--line-strong);border-radius:var(--r-control);padding:12px 20px;font-weight:600;font-size:.95rem}
+.note{color:var(--ink-dim);font-size:.9rem;margin:12px 0 0;max-width:60ch}
+.tagline{font-family:var(--font-mono);color:var(--ink-dim);font-size:.75rem;margin:0 0 14px}
+.cta{margin:30px 0 0}
+a.link,.link{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.intro{padding:28px 0 56px}
+.desk .intro{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.art{border:1px solid var(--edge);background:var(--wash);border-radius:var(--r-card);padding:20px;margin-top:32px}
+.desk .art{margin-top:0}
+.art svg{width:100%;height:auto;display:block}
+.you{padding:12px 0 8px}
+.you .sub{color:var(--ink-dim);margin:14px 0 0;max-width:62ch}
+.legend{background:var(--wash);border-radius:var(--r-control);padding:12px 16px;margin:20px 0 0;font-size:.95rem;max-width:62ch}
+.dl{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:22px 0 0}
+.season{font-family:var(--font-mono);font-size:.78rem;color:var(--ink-dim);margin:34px 0 10px}
+.season.km{font-family:var(--font-khmer);font-size:.9rem}
+.rows{border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface);overflow:hidden}
+.row{padding:16px 18px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.line{display:flex;gap:14px;align-items:flex-start}
+.ico{flex:none;width:34px;height:34px;border-radius:50%;background:var(--wash);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.ico svg{width:20px;height:20px}
+.what{font-weight:500}
+.meta{color:var(--ink-dim);font-size:.88rem}
+.sum{display:inline-block;margin:8px 0 0 48px;color:var(--accent);font-size:.9rem}
+.receipt{margin:10px 0 0 48px;background:var(--surface-2);border-radius:var(--r-control);padding:14px}
+.phone .receipt{margin-left:0}
+.f{display:grid;grid-template-columns:1fr;gap:1px;margin:0 0 10px}
+.desk .f{grid-template-columns:170px 1fr;gap:12px}
+.f dt{color:var(--ink-dim);font-size:.82rem}
+.f dd{margin:0;font-family:var(--font-mono);font-size:.82rem;word-break:break-all}
+.acts{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.small{color:var(--ink-dim);font-size:.9rem;margin:18px 0 0;max-width:62ch}
+.state{padding:44px 0;border-top:1px solid var(--line)}
+.state:first-of-type{border-top:0}
+.state h2{font-family:var(--font-display);font-weight:600;font-size:1.7rem;line-height:1.2;margin:0 0 10px}
+.state h2.km{font-size:1.45rem;line-height:1.45}
+.state p{margin:0 0 18px;max-width:60ch}
+.spot{width:100%;height:88px;display:block;margin:0 0 16px;background:var(--wash);border-radius:var(--r-control)}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:30px 0 48px;color:var(--ink-dim);font-size:.88rem}
+footer p{margin:0 0 14px}
+.foot-row{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 18px}
+.foot-row p{margin:0}
+.nw{white-space:nowrap}
+.sm{font-size:.5em;vertical-align:.7em;margin-left:.04em;line-height:0}
+"""
+
+
+def mark():
+    return 'Heart<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="%s"/></svg>ank<sup>®</sup>' % EMBLEM
+
+
+def heart(cx, cy, k=1.0, fill="var(--accent)"):
+    """Every heart is the B-Emblem, centered by its bbox, at .8 of a stock heart's width (founder 2026-10-24)."""
+    return '<g transform="translate(%s %s) scale(%s) translate(-12.7237 -11.2776)"><path d="%s" fill="%s"/></g>' % (cx, cy, .8 * k, EMBLEM, fill)
+
+
+def sm(s):
+    return s.replace("℠", '<span class="sm">℠</span>')
+
+
+def note_svg():
+    """A private note with a lock, and a row of public fingerprints with one lit: the note stays, only its fingerprint goes out."""
+    tiles = []
+    for r in range(3):
+        for c in range(6):
+            lit = (r, c) == (1, 2)
+            tiles.append('<rect x="%d" y="%d" width="28" height="28" rx="5" fill="%s" stroke="%s" stroke-width="1.5"/>'
+                         % (300 + c * 34, 58 + r * 34, "var(--accent)" if lit else "var(--surface)", "var(--accent)" if lit else "var(--line-strong)"))
+    return ('<svg viewBox="0 0 520 220" role="img" aria-hidden="true">'
+            '<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="var(--accent)"/></marker></defs>'
+            '<rect x="22" y="36" width="170" height="148" rx="14" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.5"/>'
+            '<line x1="46" y1="70" x2="168" y2="70" stroke="var(--line-strong)" stroke-width="5" stroke-linecap="round"/>'
+            '<line x1="46" y1="92" x2="150" y2="92" stroke="var(--line-strong)" stroke-width="5" stroke-linecap="round"/>'
+            + heart(70, 134, 1.3) +
+            '<g transform="translate(142 120)"><rect x="0" y="16" width="36" height="30" rx="6" fill="var(--accent)"/><path d="M8 16v-7a10 10 0 0 1 20 0v7" fill="none" stroke="var(--accent)" stroke-width="4"/></g>'
+            '<path d="M204 110 C232 110 256 110 288 110" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" marker-end="url(#ar)"/>'
+            + "".join(tiles) + '</svg>')
+
+
+ICONS = {
+    "thank_out": lambda: '<svg viewBox="0 0 24 24" aria-hidden="true">%s</svg>' % heart(12, 12, 1.0, "currentColor"),
+    "thank_in": lambda: '<svg viewBox="0 0 24 24" aria-hidden="true">%s</svg>' % heart(12, 12, 1.0, "currentColor"),
+    "plant": lambda: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12C12 7 8 5 4 5c0 5 3 7 8 7z"/><path d="M12 14c0-4 3-6 8-6 0 5-3 6-8 6z"/></svg>',
+    "thing": lambda: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg>',
+    "animal": lambda: '<svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><ellipse cx="12" cy="16" rx="5.5" ry="4.5"/><circle cx="6" cy="10" r="2.2"/><circle cx="18" cy="10" r="2.2"/><circle cx="9.5" cy="6.5" r="2.2"/><circle cx="14.5" cy="6.5" r="2.2"/></svg>',
+}
+
+
+def spot(kind):
+    if kind == "none":
+        inner = '<rect x="150" y="18" width="90" height="56" rx="10" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1.5"/>' + heart(195, 46, 1.2)
+    elif kind == "key":
+        inner = ('<circle cx="176" cy="46" r="17" fill="none" stroke="var(--accent)" stroke-width="5"/>'
+                 '<path d="M193 46h44M226 46v12M214 46v9" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>')
+    else:
+        inner = '<path d="M155 62a40 40 0 0 1 80 0" fill="none" stroke="var(--line-strong)" stroke-width="5" stroke-linecap="round"/><circle cx="195" cy="62" r="6" fill="var(--accent)"/>'
+    return '<svg class="spot" viewBox="0 0 390 88" aria-hidden="true">%s</svg>' % inner
+
+
+def who(t):
+    a = lambda n: '<span class="link">%s</span>' % n
+    return (t["who1"].replace("Thon Ly", a("Thon Ly")), sm(t["who2"].replace("Miss Aquarius", a("Miss Aquarius"))))
+
+
+def disc(t):
+    d = t["disc"]
+    for sep in (". ", "។ "):
+        i = d.find(sep)
+        if i > 0:
+            return '<span class="nw">%s</span> %s' % (d[:i + len(sep.strip())], d[i + len(sep):])
+    return d
+
+
+def page(lang, theme, size, kind):
+    t = T[lang]
+    kmc = " km" if lang == "km" else ""
+    k = kmc.strip()
+    cls = "desk" if size == "desk" else "phone"
+    seg_l = '<div class="seg"><span%s>EN</span><span%s class="km">ខ្មែរ</span></div>' % (' class="on"' if lang == "en" else "", ' class="on"' if lang == "km" else "")
+    tl = ("Auto", "Light", "Dark") if lang == "en" else ("ស្វ័យប្រវត្តិ", "ភ្លឺ", "ងងឹត")
+    seg_t = '<div class="seg%s"><span>%s</span><span%s>%s</span><span%s>%s</span></div>' % (kmc, tl[0], ' class="on"' if theme == "light" else "", tl[1], ' class="on"' if theme == "dark" else "", tl[2])
+    share = ('<span class="share"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M12 3l-4 4M12 3l4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+             '<span class="lbl%s">%s</span></span>' % (kmc, t["share"])) if kind == "landing" else ""
+    head = '<header><div class="wordmark">%s</div><div class="tools">%s%s</div></header>' % (mark(), seg_l, share)
+    ph = '<p class="tagline km">[ %s ]</p>' % t["ph"] if t["ph"] else ""
+    tag = '<p class="tagline%s">%s</p>' % (kmc, t["tag"])
+    w1, w2 = who(t)
+    foot_extra = '<p>%s</p>' % t["visits"] if kind == "landing" else ""
+    foot = ('<footer class="%s"><p>%s</p>%s<div class="foot-row"><p>%s · %s</p>%s</div></footer>' % (k, disc(t), foot_extra, w1, w2, seg_t))
+
+    if kind == "landing":
+        body = ('%s%s%s<section class="intro"><div><h1 class="%s">%s</h1><p class="para%s">%s</p>'
+                '<p class="cta"><span class="btn%s">%s</span></p><p class="note%s">%s</p>'
+                '<p class="note%s"><span class="link">%s</span> · <span class="mono">%s</span></p></div>'
+                '<div class="art">%s</div></section>'
+                % (head, ph, tag, k, t["h1"], kmc, t["para"], kmc, t["cta"], kmc, t["cta_note"], kmc, t["pub"], LEDGER_LINK, note_svg()))
+    elif kind == "record":
+        rows = []
+        for n, (ic, what, led, app, when) in enumerate(t["rows"]):
+            line = ('<div class="line"><span class="ico">%s</span><div><div class="what%s">%s</div><div class="meta">%s · %s · <span class="%s">%s</span></div></div></div>'
+                    % (ICONS[ic](), kmc, what, led, app, k, when))
+            if n == 0:
+                detail = ('<div class="receipt"><dl class="f">'
+                          '<dt class="%s">%s</dt><dd>1,024</dd><dt class="%s">%s</dt><dd>Aq3fXv…9Lw2</dd>'
+                          '<dt class="%s">%s</dt><dd>log.333.eco/ledger</dd><dt class="%s">%s</dt><dd>MEUCIQ…7hJw==</dd></dl>'
+                          '<div class="acts"><span class="btn2%s">%s</span><span class="link%s">%s</span></div></div>'
+                          % (k, t["r_place"], k, t["r_finger"], k, t["r_log"], k, t["r_sig"], kmc, t["copy"], kmc, t["check"]))
+            else:
+                detail = '<span class="sum%s">%s</span>' % (kmc, t["receipt"])
+            rows.append('<div class="row">%s%s</div>' % (line, detail))
+        body = ('%s%s%s<section class="you"><h1 class="%s">%s</h1><p class="sub%s">%s</p><p class="legend%s">%s</p>'
+                '<div class="dl"><span class="btn%s">%s</span><p class="note%s" style="margin:0">%s</p></div></section>'
+                '<p class="season%s">%s</p><div class="rows">%s</div><p class="small%s">%s</p><p class="small%s">%s</p>'
+                % (head, ph, tag, k, t["you_h"], kmc, t["you_sub"], kmc, t["legend"], kmc, t["dl"], kmc, t["dl_note"],
+                   kmc, t["season"], "".join(rows), kmc, t["jubilee"], kmc, t["leave"]))
+    else:  # the other states of /you
+        body = ('%s%s%s'
+                '<section class="state"><p class="tagline%s">%s</p>%s<h2 class="%s">%s</h2><p class="%s">%s</p></section>'
+                '<section class="state"><p class="tagline%s">%s</p>%s<h2 class="%s">%s</h2><p class="%s">%s</p><span class="btn%s">%s</span></section>'
+                '<section class="state"><p class="tagline%s">%s</p>%s<h2 class="%s">%s</h2><p class="%s">%s</p><span class="btn2%s">%s</span></section>'
+                % (head, ph, tag,
+                   kmc, t["st_none"], spot("none"), k, t["you_h"], k, t["none_p"],
+                   kmc, t["st_pk"], spot("key"), k, t["pk_h"], k, t["pk_p"], kmc, t["pk_btn"],
+                   kmc, t["st_err"], spot("err"), k, t["err_h"], k, t["err_p"], kmc, t["err_btn"]))
+
+    width = 1440 if size == "desk" else 390
+    return ('<!doctype html>\n<html lang="%s" data-theme="%s">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=%d">\n'
+            '<meta name="googlebot" content="noindex,nofollow"><meta name="bingbot" content="noindex,nofollow">\n'
+            '<link rel="icon" type="image/svg+xml" href="favicon.svg">\n'
+            '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Khmer:wght@400;500;600&display=swap">\n'
+            '<link rel="stylesheet" href="board.css?v=%s">\n<title>%s (%s, %s, %s)</title>\n</head>\n<body>\n<div class="board %s">%s%s</div>\n</body>\n</html>\n'
+            % (t["lang"], theme, width, CSSV, APP_HOST, lang, theme, size, cls, body, foot))
+
+
+BOARDS = [
+    # file, lang, theme, size, kind, title, page
+    ("LandingEnPhone.html", "en", "light", "phone", "landing", "1 · The front page, English, phone", "front"),
+    ("LandingKmPhone.html", "km", "light", "phone", "landing", "2 · The front page, Khmer, phone", "front"),
+    ("LandingEnDesktop.html", "en", "light", "desk", "landing", "3 · The front page, English, desktop", "front"),
+    ("LandingDarkPhone.html", "en", "dark", "phone", "landing", "4 · Dark pass, front page, phone", "front"),
+    ("RecordEnPhone.html", "en", "light", "phone", "record", "5 · Your record, English, phone", "you"),
+    ("RecordKmPhone.html", "km", "light", "phone", "record", "6 · Your record, Khmer, phone", "you"),
+    ("RecordEnDesktop.html", "en", "light", "desk", "record", "7 · Your record, English, desktop", "you"),
+    ("RecordDarkPhone.html", "en", "dark", "phone", "record", "8 · Dark pass, your record, phone", "you"),
+    ("StatesEn.html", "en", "light", "phone", "states", "9 · Nothing yet, needs a passkey, can't open, English", "you"),
+    ("StatesKm.html", "km", "light", "phone", "states", "10 · Nothing yet, needs a passkey, can't open, Khmer", "you"),
+]
+HEIGHTS = {}
+if os.path.exists(os.path.join(HERE, "heights.json")):
+    HEIGHTS = json.load(open(os.path.join(HERE, "heights.json")))
+CSSV = hashlib.sha256((CSS.strip() + "\n").encode("utf-8")).hexdigest()[:8]
+
+
+def contrast(a, b):
+    def lum(h):
+        h = h.lstrip("#")
+        v = [int(h[i:i + 2], 16) / 255 for i in (0, 2, 4)]
+        v = [x / 12.92 if x <= .03928 else ((x + .055) / 1.055) ** 2.4 for x in v]
+        return .2126 * v[0] + .7152 * v[1] + .0722 * v[2]
+    la, lb = lum(a), lum(b)
+    return (max(la, lb) + .05) / (min(la, lb) + .05)
+
+
+def main():
+    # The accent is the one thing typed here, so its contrast is checked here (button text, and links on the page).
+    pairs = [("light button", tok("color-sapphire"), "#ffffff"), ("light link", tok("color-sapphire"), tok("l-surface")),
+             ("dark button", "#8ab4f8", "#10141c"), ("dark link", "#8ab4f8", tok("d-surface"))]
+    for name, fg, bg in pairs:
+        c = contrast(fg, bg)
+        assert c >= 4.5, "%s contrast %.2f" % (name, c)
+    io.open(os.path.join(HERE, "board.css"), "w", encoding="utf-8").write(brand_css(CSS).strip() + "\n")
+    artboards, xs = [], {"front": 0, "you": 0}
+    for f, lang, theme, size, kind, title, pg in BOARDS:
+        html = page(lang, theme, size, kind)
+        # the four build checks that apply to a page with no script
+        assert html.count("<div") == html.count("</div>"), "%s: div balance" % f
+        assert not re.search(r'="[^"]*<', html), "%s: a tag inside a quoted attribute" % f
+        for tag in re.findall(r"<[^>]+>", html):
+            assert tag.count('"') % 2 == 0, "%s: odd quotes in %s" % (f, tag[:60])
+        io.open(os.path.join(HERE, f), "w", encoding="utf-8").write(html)
+        w = 1440 if size == "desk" else 390
+        artboards.append({"file": f, "x": xs[pg], "y": 0, "w": w, "h": HEIGHTS.get(f, 900 if size == "desk" else 1400), "title": title, "page": pg})
+        xs[pg] += w + 120
+    canvas = {"artboards": artboards, "annotations": [], "launch": {"view": "canvas", "page": "front"},
+              "pages": [{"id": "front", "name": "The front page"}, {"id": "you", "name": "Your record"}]}
+    io.open(os.path.join(HERE, "canvas.json"), "w", encoding="utf-8").write(json.dumps(canvas, indent=1, ensure_ascii=False) + "\n")
+    print("wrote %d artboards" % len(artboards))
+
+
+if __name__ == "__main__":
+    main()
