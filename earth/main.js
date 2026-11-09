@@ -134,23 +134,12 @@ for (let i = 0; i < mask.length; i++) mask[i] = isLand(...toLL(new THREE.Vector3
 fine.setAttribute("aLand", new THREE.BufferAttribute(mask, 1));
 globe.add(new THREE.Mesh(fine, surface));
 
-// The mesh you would tap: each edge bent along the sphere.
-const edgeKey = (a, b) => [a, b].map((v) => `${v.x.toFixed(4)},${v.y.toFixed(4)},${v.z.toFixed(4)}`).sort().join("|");
-const seen = new Set(), wirePts = [];
-for (let i = 0; i < cp.count; i += 3) for (const [m, n] of [[0, 1], [1, 2], [2, 0]]) {
-    const a = new THREE.Vector3().fromBufferAttribute(cp, i + m), b = new THREE.Vector3().fromBufferAttribute(cp, i + n), key = edgeKey(a, b);
-    if (seen.has(key)) continue; seen.add(key);
-    for (let s = 0; s < 4; s++) { const p = a.clone().lerp(b, s / 4).normalize(), q = a.clone().lerp(b, (s + 1) / 4).normalize(); wirePts.push(p.x, p.y, p.z, q.x, q.y, q.z); }
-}
-const wire = new THREE.BufferGeometry().setAttribute("position", new THREE.Float32BufferAttribute(wirePts, 3));
-const wireMat = lineMat(0.13); globe.add(new THREE.LineSegments(wire, wireMat));
-
 // The coasts, the only lines of geography on this Earth. No borders are drawn.
 const coastPts = []; for (const line of topoMesh(land, land.objects.land).coordinates) for (let i = 0; i + 1 < line.length; i++) { const a = fromLL(...line[i]), b = fromLL(...line[i + 1]); coastPts.push(a.x, a.y, a.z, b.x, b.y, b.z); }
 const coast = new THREE.BufferGeometry().setAttribute("position", new THREE.Float32BufferAttribute(coastPts, 3));
 const coastMat = lineMat(0.55); globe.add(new THREE.LineSegments(coast, coastMat));
 
-const bodies = [body(fine), body(wire), body(coast)];
+const bodies = [body(fine), body(coast)];
 let sea = "kiitos", day = 0;
 function sumOf(s, d) { let t = 0; for (const x of series[s].values()) t += x[d]; return t; }
 function load(slot, d) { const st = stateOf(sea, d); for (const b of bodies) { fill(st, b.count, b.dir, b.H[slot], b.A[slot], b.P[slot], b.C[slot]); for (const n of [`aH${slot}`, `aA${slot}`, `aP${slot}`, `aC${slot}`]) b.geometry.attributes[n].needsUpdate = true; } }
