@@ -12,11 +12,15 @@ import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
 import { feature, mesh as topoMesh } from "topojson-client";
 import land from "world-atlas/land-110m.json";
 
+const LIVE = document.getElementById("earth").dataset.live === "1";
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const SEASON_DAYS = 42, STEP_MS = reduce ? 1e12 : 2600;
 // The published ramp: brand.333.eco data/auras.json, in crossings a month.
 const RAMP = [[0.5, "#dc2626"], [1.5, "#ea580c"], [3, "#ca8a04"], [6, "#16a34a"], [12, "#2563eb"], [24, "#4f46e5"], [Infinity, "#7c3aed"]].map(([u, c]) => [u, new THREE.Color(c)]);
 const auraOf = (perMonth) => RAMP.find(([u]) => perMonth < u)[1];
+const AURA = Object.fromEntries(["red", "orange", "yellow", "green", "blue", "indigo", "violet"].map((n, i) => [n, RAMP[i][1]]));
+/** The real sea, once fetched: the last days, oldest first. */
+let frames = [];
 
 // ── seeded, so everyone reviews the same sea ──
 let seed = 333;
@@ -51,9 +55,9 @@ const towns = [[104.9, 11.6], [103.8, 13.4], [-118.2, 33.8], [-119.8, 36.7], [10
 const placed = [...new Set(towns.flatMap(([x, y]) => { const c = nearestCell(fromLL(x, y)); return [c, nearestCell(fromLL(x + (rand() - 0.5) * 14, y + (rand() - 0.5) * 10))]; }))];
 const open = cells.map((c, i) => (!c.land ? i : -1)).filter((i) => i >= 0).sort(() => rand() - 0.5).slice(0, 5);
 const live = [...placed, ...open];
-const series = { kiitos: new Map(live.map((c) => [c, [0]])), kiitti: new Map(placed.map((c) => [c, [0]])) };
+const series = LIVE ? { kiitos: new Map(), kiitti: new Map() } : { kiitos: new Map(live.map((c) => [c, [0]])), kiitti: new Map(placed.map((c) => [c, [0]])) };
 const crossings = (s, upto) => { let n = 0; for (let i = 1; i <= upto; i++) if ((s[i - 1] > 0 && s[i] <= 0) || (s[i - 1] < 0 && s[i] >= 0)) n++; return n; };
-for (let d = 1; d < SEASON_DAYS; d++) {
+for (let d = 1; !LIVE && d < SEASON_DAYS; d++) {
     for (const s of series.kiitos.values()) s.push(s.at(-1));
     for (const s of series.kiitti.values()) s.push(s.at(-1));
     for (let m = 0; m < 26; m++) { const a = live[Math.floor(rand() * live.length)], b = live[Math.floor(rand() * live.length)]; if (a === b) continue; series.kiitos.get(a)[d]++; series.kiitos.get(b)[d]--; }
@@ -63,6 +67,7 @@ for (let d = 1; d < SEASON_DAYS; d++) {
 // ── the field: one sample per direction, for one sea on one day ──
 const SIG = 2 * 0.13 * 0.13, TINT = 2 * 0.085 * 0.085, WIDE = 2 * 0.3 * 0.3;
 function stateOf(sea, day) {
+    if (LIVE) { const list = (frames[day]?.seas[sea] ?? []).map((x) => ({ d: fromLL(x.lon, x.lat), b: x.b, rgb: AURA[x.a] ?? AURA.red })); return { list, top: Math.max(4, ...list.map((x) => Math.abs(x.b))) }; }
     const list = [...series[sea]].map(([c, s]) => ({ d: cells[c].d, b: s[day], rgb: auraOf(day ? (crossings(s, day) / day) * 30 : 0) }));
     return { list, top: Math.max(4, ...list.map((x) => Math.abs(x.b))) };
 }
@@ -145,9 +150,11 @@ const coastMat = lineMat(0.55); globe.add(new THREE.LineSegments(coast, coastMat
 
 const bodies = [body(fine), body(coast)];
 let sea = "kiitos", day = 0;
-function sumOf(s, d) { let t = 0; for (const x of series[s].values()) t += x[d]; return t; }
+function sumOf(s, d) { if (LIVE) return frames[d]?.sums[s] ?? 0; let t = 0; for (const x of series[s].values()) t += x[d]; return t; }
+const frameCount = () => (LIVE ? Math.max(1, frames.length) : SEASON_DAYS);
 function load(slot, d) { const st = stateOf(sea, d); for (const b of bodies) { fill(st, b.count, b.dir, b.H[slot], b.A[slot], b.P[slot], b.C[slot]); for (const n of [`aH${slot}`, `aA${slot}`, `aP${slot}`, `aC${slot}`]) b.geometry.attributes[n].needsUpdate = true; } }
-function seaLevel(d) { return sea === "kiitos" ? 0 : (-sumOf("kiitti", d) / Math.max(1, stateOf(sea, d).top * 12)) * 0.2; }
+// Whatever is not shown on land sits in the open sea, which takes the mirror of it, so the world still sums to zero.
+function seaLevel(d) { return (-sumOf(sea, d) / Math.max(1, stateOf(sea, d).top * 12)) * 0.15; }
 
 // ── what a person sees and does ──
 const controls = new OrbitControls(camera, canvas);
@@ -156,7 +163,7 @@ const $ = (id) => document.getElementById(id);
 const say = (l) => document.documentElement.dataset.lang === "km" ? l[1] : l[0];
 const fmt = (n) => (n > 0 ? "+" : n < 0 ? "−" : "") + Math.abs(n);
 function paint() {
-    $("day").textContent = say(["Day ", "ថ្ងៃទី "]) + (day + 1);
+    $("day").textContent = LIVE ? (frames[day]?.day ?? "") : say(["Day ", "ថ្ងៃទី "]) + (day + 1);
     const label = sea === "kiitos" ? say(["Every Kiitos balance added together: 0", "សមតុល្យ Kiitos ទាំងអស់បូកចូលគ្នា៖ 0"]) : say(["People and nature added together: 0", "មនុស្ស និងធម្មជាតិបូកចូលគ្នា៖ 0"]);
     $("sum").textContent = label;
 }
@@ -176,23 +183,30 @@ canvas.addEventListener("pointerup", (e) => {
     if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 6) return;
     const box = canvas.getBoundingClientRect(); ptr.set(((e.clientX - box.left) / box.width) * 2 - 1, -((e.clientY - box.top) / box.height) * 2 + 1);
     ray.setFromCamera(ptr, camera); const hit = ray.ray.intersectSphere(sphere, new THREE.Vector3());
-    const c = hit ? nearestCell(globe.worldToLocal(hit).normalize()) : -1, a = series.kiitos.get(c), b = series.kiitti.get(c);
-    if (!a && !b) { $("card").hidden = true; return; }
-    $("card-k").textContent = a ? fmt(a[day]) : "—"; $("card-t").textContent = b ? fmt(b[day]) : "—"; $("card").hidden = false;
+    const at = hit ? globe.worldToLocal(hit).normalize() : null;
+    let k, t;
+    if (LIVE) {
+        const near = (list) => { if (!at) return undefined; let best, bd = Math.cos((1.6 * Math.PI) / 180); for (const x of list) { const q = fromLL(x.lon, x.lat).dot(at); if (q > bd) { bd = q; best = x; } } return best?.b; };
+        k = near(frames[day]?.seas.kiitos ?? []); t = near(frames[day]?.seas.kiitti ?? []);
+    } else { const c = at ? nearestCell(at) : -1; k = series.kiitos.get(c)?.[day]; t = series.kiitti.get(c)?.[day]; }
+    if (k === undefined && t === undefined) { $("card").hidden = true; return; }
+    const dash = "\u2014";
+    $("card-k").textContent = k === undefined ? dash : fmt(k); $("card-t").textContent = t === undefined ? dash : fmt(t); $("card").hidden = false;
 });
 
 function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.position.setLength(w < h ? 7.2 : 4.7); camera.setViewOffset(w, h, 0, w < h ? h * 0.03 : 0, w, h); camera.updateProjectionMatrix(); }
 addEventListener("resize", resize); resize();
-goto(24, true);
+goto(LIVE ? 0 : 24, true);
+if (LIVE) fetch("/earth/days.json").then((r) => r.json()).then((j) => { frames = j.days ?? []; const o = $("opens"); if (o) o.hidden = frames.length > 0; if (frames.length) goto(frames.length - 1, true); }).catch(() => { /* the calm sea stays */ });
 let last = performance.now(), hold = 0;
 function frame(now) {
     const dt = now - last; last = now; hold += dt;
     uniforms.uT.value = reduce ? 0 : now / 1000;
     if (uniforms.uMix.value < 1) uniforms.uMix.value = Math.min(1, uniforms.uMix.value + dt / 1500);
-    if (hold > STEP_MS) { hold = 0; goto((day + 1) % SEASON_DAYS); }
+    if (hold > STEP_MS && frameCount() > 1) { hold = 0; goto((day + 1) % frameCount()); }
     controls.update(); renderer.render(scene, camera); requestAnimationFrame(frame);
 }
-if (reduce) { goto(28, true); controls.autoRotate = false; }
+if (reduce) { if (!LIVE) goto(28, true); controls.autoRotate = false; }
 if (location.search.includes("still")) { document.documentElement.classList.add("still"); controls.autoRotate = false; goto(24, true); uniforms.uMix.value = 1; }
 requestAnimationFrame(frame);
 window.__earth = { check: () => ({ kiitosZero: Array.from({ length: SEASON_DAYS }, (_, d) => sumOf("kiitos", d)).every((x) => x === 0), cells: cells.length, placed: placed.length, seaDays: SEASON_DAYS }) };
