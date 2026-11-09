@@ -204,15 +204,18 @@ canvas.addEventListener("pointerup", (e) => {
 
 let seenW = 0, seenH = 0, seenFit = 0;
 /** Fits the whole Earth inside the shorter side. ⚠️ iPhone Safari reports its new size late when the phone turns, so this runs every frame and acts only on a real change (founder: cut off in landscape, 2026-11-09). */
+// On the site the globe has its own band between the words and the legend, whatever the phone's height; the prototype has none and uses the whole canvas.
+const band = document.querySelector(".g-band");
+let seenBand = "";
 function resize() {
-    const w = canvas.clientWidth, h = canvas.clientHeight;
-    if (!w || !h || (w === seenW && h === seenH)) return;
-    seenW = w; seenH = h;
+    const w = canvas.clientWidth, h = canvas.clientHeight, b = band?.getBoundingClientRect(), bandTop = b ? b.top - canvas.getBoundingClientRect().top : 0, bandH = b ? b.height : h, key = `${Math.round(bandTop)}:${Math.round(bandH)}`;
+    if (!w || !h || (w === seenW && h === seenH && key === seenBand)) return;
+    seenW = w; seenH = h; seenBand = key;
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
-    const halfV = THREE.MathUtils.degToRad(camera.fov / 2), half = Math.min(halfV, Math.atan(Math.tan(halfV) * camera.aspect)), fit = 1.2 / Math.sin(half);
+    const halfV = THREE.MathUtils.degToRad(camera.fov / 2), half = Math.atan((Math.min(bandH, w) / h) * Math.tan(halfV)), fit = 1.2 / Math.sin(half);
     if (Math.abs(fit - seenFit) / fit > 0.02) { seenFit = fit; camera.position.setLength(fit); controls.minDistance = fit * 0.55; controls.maxDistance = fit * 1.5; }
-    camera.setViewOffset(w, h, 0, w < h ? h * 0.03 : 0, w, h);
+    camera.setViewOffset(w, h, 0, band ? h / 2 - (bandTop + bandH / 2) : w < h ? h * 0.03 : 0, w, h);
     camera.updateProjectionMatrix();
 }
 addEventListener("resize", resize); resize();
