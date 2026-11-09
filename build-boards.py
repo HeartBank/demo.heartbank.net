@@ -47,6 +47,8 @@ T = {
                   "thanks": {"thing": "You thanked a thing", "plant": "You thanked a plant", "animal": "You thanked an animal"}},
         "seasons": {"1": "Season 1 · 26 November 2026 to 7 January 2027"},
         "thanked": "You thanked someone", "was_thanked": "Someone thanked you",
+        "privacy_link": "Privacy (draft)", "terms_link": "Terms (draft)", "home_link": "Back to the front page",
+        "draft_note": "This is a draft. No lawyer has reviewed it, and it may change before it is final. Where something is not settled yet, it says so.",
         "copied": "Copied", "working": "Working", "auto": "Auto", "light": "Light", "dark": "Dark",
         "title_home": "A private record of your thanks · HeartBank®", "title_you": "Your record · HeartBank®",
         "desc": "A private, encrypted record of your thanks, timestamped to a public ledger. Yours to open and download.",
@@ -94,6 +96,8 @@ T = {
                   "thanks": {"thing": "អ្នកបានអរគុណវត្ថុមួយ", "plant": "អ្នកបានអរគុណរុក្ខជាតិមួយ", "animal": "អ្នកបានអរគុណសត្វមួយ"}},
         "seasons": {"1": "រដូវកាលទី ១ · ២៦ វិច្ឆិកា ២០២៦ ដល់ ៧ មករា ២០២៧"},
         "thanked": "អ្នកបានអរគុណនរណាម្នាក់", "was_thanked": "មាននរណាម្នាក់បានអរគុណអ្នក",
+        "privacy_link": "ឯកជនភាព (សេចក្តីព្រាង)", "terms_link": "លក្ខខណ្ឌ (សេចក្តីព្រាង)", "home_link": "ត្រឡប់ទៅទំព័រដើម",
+        "draft_note": "នេះជាសេចក្តីព្រាង ហើយមានជាភាសាអង់គ្លេសតែប៉ុណ្ណោះនៅពេលនេះ។ មិនទាន់មានមេធាវីពិនិត្យទេ ហើយវាអាចផ្លាស់ប្តូរមុនពេលចុងក្រោយ។",
         "copied": "បានចម្លង", "working": "កំពុងដំណើរការ", "auto": "ស្វ័យប្រវត្តិ", "light": "ភ្លឺ", "dark": "ងងឹត",
         "title_home": "កំណត់ត្រាឯកជននៃការអរគុណរបស់អ្នក · HeartBank®", "title_you": "កំណត់ត្រារបស់អ្នក · HeartBank®",
         "desc": "កំណត់ត្រាឯកជន និងបានអ៊ិនគ្រីបនៃការអរគុណរបស់អ្នក បោះត្រាពេលវេលាទៅក្នុងបញ្ជីសាធារណៈ។ ជារបស់អ្នកសម្រាប់បើកមើល និងទាញយក។",
@@ -299,7 +303,8 @@ def page(lang, theme, size, kind):
     tag = '<p class="tagline%s">%s</p>' % (kmc, t["tag"])
     w1, w2 = who(t)
     foot_extra = '<p>%s</p>' % t["visits"] if kind == "landing" else ""
-    foot = ('<footer class="%s"><p>%s</p>%s<div class="foot-row"><p>%s · %s</p>%s</div></footer>' % (k, disc(t), foot_extra, w1, w2, seg_t))
+    links = '<p><span class="link">%s</span> · <span class="link">%s</span></p>' % (t["privacy_link"], t["terms_link"])
+    foot = ('<footer class="%s"><p>%s</p>%s%s<div class="foot-row"><p>%s · %s</p>%s</div></footer>' % (k, disc(t), foot_extra, links, w1, w2, seg_t))
 
     if kind == "landing":
         body = ('%s%s%s<section class="intro"><div><h1 class="%s">%s</h1><p class="para%s">%s</p>'
