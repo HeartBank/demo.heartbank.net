@@ -171,7 +171,7 @@ function goto(d, instant) { load(0, day); load(1, d); day = d; uniforms.uMix.val
 $("sea").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; sea = b.dataset.sea; document.querySelectorAll("#sea button").forEach((x) => x.classList.toggle("on", x === b)); $("card").hidden = true; goto(day, true); });
 document.addEventListener("langchange", paint);
 // Tiny stars behind the Earth, each blinking at its own pace; still under reduced motion.
-const starN = 460, starP = new Float32Array(starN * 3), starA = new Float32Array(starN), starS = new Float32Array(starN);
+const starN = 3200, starP = new Float32Array(starN * 3), starA = new Float32Array(starN), starS = new Float32Array(starN);
 for (let i = 0; i < starN; i++) { const v = new THREE.Vector3(rand() * 2 - 1, rand() * 2 - 1, rand() * 2 - 1).normalize().multiplyScalar(30); starP.set([v.x, v.y, v.z], i * 3); starA[i] = rand() * 6.28; starS[i] = rand(); }
 const starGeo = new THREE.BufferGeometry().setAttribute("position", new THREE.BufferAttribute(starP, 3)).setAttribute("aP", new THREE.BufferAttribute(starA, 1)).setAttribute("aS", new THREE.BufferAttribute(starS, 1));
 const starUni = { uT: uniforms.uT, uStar: { value: new THREE.Color() }, uBright: { value: 1 }, uDpr: { value: renderer.getPixelRatio() } };
