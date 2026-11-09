@@ -67,6 +67,11 @@ CARDS = {
               '<div class="site">Heart' + emblem("1em") + 'ank</div>'
               '<h1 style="font-size:76px;margin-bottom:22px">A private record<br>of your thanks.</h1>'
               '<p class="wide">The ledger.heartbank.net screens. Drawings, in English and Khmer.</p></div>',
+    # The live site's card: no "drawings" on it. Copied to ledger.heartbank.net public/og.png.
+    "og-site.png": '<div class="inner">'
+              '<div class="site">Heart' + emblem("1em") + 'ank</div>'
+              '<h1 style="font-size:76px;margin-bottom:22px">A private record<br>of your thanks.</h1>'
+              '<p class="wide">Kept encrypted, and yours to open and download.</p></div>',
 }
 
 def main():

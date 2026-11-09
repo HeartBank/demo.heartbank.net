@@ -43,6 +43,13 @@ T = {
                  ("plant", "You came back to a plant", "Kiitti", "B-Twin", "29 Nov 2026, 8:03 AM"),
                  ("thing", "You thanked a thing", "Kiitti", "B-Twin", "28 Nov 2026, 7:55 PM"),
                  ("animal", "You came back to an animal", "Kiitti", "B-Twin", "27 Nov 2026, 10:20 AM")],
+        "kinds": {"care": {"thing": "You came back to a thing", "plant": "You came back to a plant", "animal": "You came back to an animal"},
+                  "thanks": {"thing": "You thanked a thing", "plant": "You thanked a plant", "animal": "You thanked an animal"}},
+        "seasons": {"1": "Season 1 · 26 November 2026 to 7 January 2027"},
+        "thanked": "You thanked someone", "was_thanked": "Someone thanked you",
+        "copied": "Copied", "working": "Working", "auto": "Auto", "light": "Light", "dark": "Dark",
+        "title_home": "A private record of your thanks · HeartBank®", "title_you": "Your record · HeartBank®",
+        "desc": "A private, encrypted record of your thanks, timestamped to a public ledger. Yours to open and download.",
         "receipt": "Receipt", "r_place": "Place in the log", "r_finger": "Fingerprint", "r_log": "Log", "r_sig": "Signature",
         "copy": "Copy receipt", "check": "Check it on the public ledger",
         "jubilee": "On 7 January every balance starts again from zero. These entries stay.",
@@ -83,6 +90,13 @@ T = {
                  ("plant", "អ្នកបានត្រឡប់ទៅរករុក្ខជាតិមួយ", "Kiitti", "B-Twin", "២៩ វិច្ឆិកា ២០២៦ ម៉ោង ៨:០៣ ព្រឹក"),
                  ("thing", "អ្នកបានអរគុណវត្ថុមួយ", "Kiitti", "B-Twin", "២៨ វិច្ឆិកា ២០២៦ ម៉ោង ៧:៥៥ យប់"),
                  ("animal", "អ្នកបានត្រឡប់ទៅរកសត្វមួយ", "Kiitti", "B-Twin", "២៧ វិច្ឆិកា ២០២៦ ម៉ោង ១០:២០ ព្រឹក")],
+        "kinds": {"care": {"thing": "អ្នកបានត្រឡប់ទៅរកវត្ថុមួយ", "plant": "អ្នកបានត្រឡប់ទៅរករុក្ខជាតិមួយ", "animal": "អ្នកបានត្រឡប់ទៅរកសត្វមួយ"},
+                  "thanks": {"thing": "អ្នកបានអរគុណវត្ថុមួយ", "plant": "អ្នកបានអរគុណរុក្ខជាតិមួយ", "animal": "អ្នកបានអរគុណសត្វមួយ"}},
+        "seasons": {"1": "រដូវកាលទី ១ · ២៦ វិច្ឆិកា ២០២៦ ដល់ ៧ មករា ២០២៧"},
+        "thanked": "អ្នកបានអរគុណនរណាម្នាក់", "was_thanked": "មាននរណាម្នាក់បានអរគុណអ្នក",
+        "copied": "បានចម្លង", "working": "កំពុងដំណើរការ", "auto": "ស្វ័យប្រវត្តិ", "light": "ភ្លឺ", "dark": "ងងឹត",
+        "title_home": "កំណត់ត្រាឯកជននៃការអរគុណរបស់អ្នក · HeartBank®", "title_you": "កំណត់ត្រារបស់អ្នក · HeartBank®",
+        "desc": "កំណត់ត្រាឯកជន និងបានអ៊ិនគ្រីបនៃការអរគុណរបស់អ្នក បោះត្រាពេលវេលាទៅក្នុងបញ្ជីសាធារណៈ។ ជារបស់អ្នកសម្រាប់បើកមើល និងទាញយក។",
         "receipt": "បង្កាន់ដៃ", "r_place": "ទីតាំងក្នុងកំណត់ហេតុ", "r_finger": "ស្នាមម្រាមដៃឌីជីថល", "r_log": "កំណត់ហេតុ", "r_sig": "ហត្ថលេខា",
         "copy": "ចម្លងបង្កាន់ដៃ", "check": "ពិនិត្យវានៅលើបញ្ជីសាធារណៈ",
         "jubilee": "នៅថ្ងៃទី ៧ មករា សមតុល្យទាំងអស់ចាប់ផ្តើមពីសូន្យឡើងវិញ។ ធាតុទាំងនេះនៅដដែល។",
@@ -155,6 +169,7 @@ h1{font-family:var(--font-display);font-weight:600;letter-spacing:-.022em;line-h
 .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);border-radius:var(--r-control);padding:14px 26px;font-weight:600;font-size:1.05rem}
 .btn2{display:inline-block;border:1px solid var(--line-strong);border-radius:var(--r-control);padding:12px 20px;font-weight:600;font-size:.95rem}
 .note{color:var(--ink-dim);font-size:.9rem;margin:12px 0 0;max-width:60ch}
+.flush{margin:0}
 .tagline{font-family:var(--font-mono);color:var(--ink-dim);font-size:.75rem;margin:0 0 14px}
 .cta{margin:30px 0 0}
 a.link,.link{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
@@ -305,7 +320,7 @@ def page(lang, theme, size, kind):
                 detail = '<span class="sum%s">%s</span>' % (kmc, t["receipt"])
             rows.append('<div class="row">%s%s</div>' % (line, detail))
         body = ('%s%s%s<section class="you"><h1 class="%s">%s</h1><p class="sub%s">%s</p><p class="legend%s">%s</p>'
-                '<div class="dl"><span class="btn%s">%s</span><p class="note%s" style="margin:0">%s</p></div></section>'
+                '<div class="dl"><span class="btn%s">%s</span><p class="note flush%s">%s</p></div></section>'
                 '<p class="season%s">%s</p><div class="rows">%s</div><p class="small%s">%s</p><p class="small%s">%s</p>'
                 % (head, ph, tag, k, t["you_h"], kmc, t["you_sub"], kmc, t["legend"], kmc, t["dl"], kmc, t["dl_note"],
                    kmc, t["season"], "".join(rows), kmc, t["jubilee"], kmc, t["leave"]))
@@ -365,6 +380,9 @@ def main():
         c = contrast(fg, bg)
         assert c >= 4.5, "%s contrast %.2f" % (name, c)
     io.open(os.path.join(HERE, "board.css"), "w", encoding="utf-8").write(brand_css(CSS).strip() + "\n")
+    # The site reads its words from here (ledger.heartbank.net public/copy.json), so the page cannot drift from the drawing.
+    drop = ("tag", "st_none", "st_pk", "st_err", "rows", "ph", "share_note")
+    io.open(os.path.join(HERE, "copy.json"), "w", encoding="utf-8").write(json.dumps({l: {k: v for k, v in T[l].items() if k not in drop} for l in T}, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
     artboards, xs = [], {"front": 0, "you": 0}
     for f, lang, theme, size, kind, title, pg in BOARDS:
         html = page(lang, theme, size, kind)
