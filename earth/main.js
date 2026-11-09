@@ -83,7 +83,12 @@ function fill(state, count, dir, H, A, P, C) {
 
 // ── the scene ──
 const canvas = document.getElementById("earth");
-const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+let renderer;
+try { renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true }); }
+catch (e) { // A phone that cannot draw this gets the Earth as a picture (found by real Android Chrome at the floor, 2026-11-08).
+    document.documentElement.classList.add("no-gl");
+    throw e;
+}
 renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(32, 1, 0.1, 50), globe = new THREE.Group();
 camera.position.set(0, 0.5, 4.6);
@@ -195,5 +200,6 @@ function frame(now) {
     controls.update(); renderer.render(scene, camera); requestAnimationFrame(frame);
 }
 if (reduce) { goto(28, true); controls.autoRotate = false; }
+if (location.search.includes("still")) { document.documentElement.classList.add("still"); controls.autoRotate = false; goto(24, true); uniforms.uMix.value = 1; }
 requestAnimationFrame(frame);
 window.__earth = { check: () => ({ kiitosZero: Array.from({ length: SEASON_DAYS }, (_, d) => sumOf("kiitos", d)).every((x) => x === 0), cells: cells.length, placed: placed.length, seaDays: SEASON_DAYS }) };

@@ -30,10 +30,13 @@ p.sub{color:var(--dim);margin:6px 0 0;font-size:.92rem;line-height:1.45;max-widt
 .row{display:flex;justify-content:space-between;gap:10px;color:var(--dim);margin-top:5px;font-size:.79rem;flex-wrap:wrap}
 #card{position:fixed;left:50%;top:44%;transform:translate(-50%,-50%);max-width:17rem;text-align:center;font-size:.9rem;pointer-events:none}
 #card b{font-size:1.2rem}.proto{font-family:ui-monospace,Menlo,monospace;font-size:.68rem;color:var(--dim);text-align:center}
+.fallback{display:none}.no-gl #earth{display:none}.no-gl .fallback{display:block;position:fixed;left:50%;top:50%;transform:translate(-50%,-52%);width:min(92vw,62vh);height:auto;border-radius:50%}
+.still .top,.still .bottom{display:none}.still,.still body{background:transparent}
 </style>
 </head>
 <body>
 <canvas id="earth" aria-label="A turning globe. Each place rises or falls around zero as people thank one another."></canvas>
+<img class="fallback" src="earth-still.png" alt="The Earth, with colored crests where people have thanked one another.">
 <div class="top">
   <div class="head">
     <h1 data-l="en">Every thank makes a crest and a trough.</h1>
