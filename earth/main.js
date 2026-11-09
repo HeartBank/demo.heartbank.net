@@ -23,13 +23,17 @@ let seed = 333;
 const rand = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
 
 // ── the land, for a mask only ──
-const polys = feature(land, land.objects.land).features.flatMap((f) => f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates).map((rings) => {
-    let a = 180, b = -180, c = 90, d = -90;
+// A ring that goes all the way round (Antarctica) ends 360° from where it began: close it over the pole, or everything south of its coast reads as sea.
+const closePole = (r) => { const f = r[0], l = r[r.length - 1]; if (Math.abs(l[0] - f[0]) < 359) return r; const pole = f[1] < 0 ? -90 : 90; return [...r, [l[0], pole], [f[0], pole], f]; };
+const polys = feature(land, land.objects.land).features.flatMap((f) => f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates).map((raw) => {
+    // ⚠️ A ring that crosses the 180° line jumps from +180 to -180: unwrap it, or an island in Fiji reads as a strip around the whole planet (founder saw a row of "hexagons" at 16°S, 2026-11-09). The jump along the South Pole's edge is real and stays.
+    const rings = raw.map((r) => { let off = 0; return r.map(([x, y], i) => { if (i && Math.abs(y) < 89 && Math.abs(r[i - 1][1]) < 89) { const dx = x - r[i - 1][0]; if (dx > 180) off -= 360; else if (dx < -180) off += 360; } return [x + off, y]; }); }).map(closePole);
+    let a = Infinity, b = -Infinity, c = 90, d = -90;
     for (const [x, y] of rings[0]) { a = Math.min(a, x); b = Math.max(b, x); c = Math.min(c, y); d = Math.max(d, y); }
     return { rings, a, b, c, d };
 });
 function inRing(r, x, y) { let on = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) on = !on; } return on; }
-function isLand(lon, lat) { for (const p of polys) if (lon >= p.a && lon <= p.b && lat >= p.c && lat <= p.d && inRing(p.rings[0], lon, lat) && !p.rings.slice(1).some((h) => inRing(h, lon, lat))) return true; return false; }
+function isLand(lon, lat) { for (const p of polys) for (const x of [lon, lon + 360, lon - 360]) if (x >= p.a && x <= p.b && lat >= p.c && lat <= p.d && inRing(p.rings[0], x, lat) && !p.rings.slice(1).some((h) => inRing(h, x, lat))) return true; return false; }
 const toLL = (v) => [(Math.atan2(v.x, v.z) * 180) / Math.PI, (Math.asin(THREE.MathUtils.clamp(v.y, -1, 1)) * 180) / Math.PI];
 const fromLL = (lon, lat, r = 1) => { const a = (lon * Math.PI) / 180, b = (lat * Math.PI) / 180; return new THREE.Vector3(r * Math.cos(b) * Math.sin(a), r * Math.sin(b), r * Math.cos(b) * Math.cos(a)); };
 
