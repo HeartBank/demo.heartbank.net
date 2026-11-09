@@ -1,16 +1,3 @@
 # demo.heartbank.net
 
-Review site for `earth.heartbank.net`: static artboards of its public front page and of *your record* (English and Khmer, light plus one dark pass, phone and desktop).
-
-- These are **drawings. They charge nobody** and nothing here is live. The entries shown are made up.
-- Unlisted: hidden from search by named crawler in each page, no `robots.txt` (so link previews work).
-- Khmer is our own and marked as a placeholder until a native reader approves it.
-- Public repo: it holds drawings only. The spec lives in a private repo.
-- Source of truth is this repo; the index and wall are generated from `canvas.json`. The look comes from `brand.333.eco` (`brand.lock`, `scripts/check-brand.mjs`).
-- Where a drawing and the memory files disagree, memory is canonical.
-
-    python3 build-boards.py && python3 build-icons.py && python3 build-og.py
-    python3 -m http.server 8333 &
-    python3 measure.py && python3 build-boards.py && python3 build-index.py && python3 build-wall.py
-
-`Earth.html` is the 3D prototype for earth.heartbank.net (`earth/`, built with `npm run build` there). Every number in it is made up. It bundles three.js (MIT) and the Natural Earth land outlines (public domain, through world-atlas, ISC). It draws no national borders.
+These drawings moved on 2026-11-09 to `demo.333.eco/earth/` (repo `333eco/demo.333.eco`, folder `earth/`), with the page itself moving to `earth.333.eco`. Every page here now redirects there. This repo keeps the host answering, and the history of the drawings.
