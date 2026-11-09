@@ -56,7 +56,7 @@ out = """<!doctype html>
 <meta name="bingbot" content="noindex,nofollow">
 <meta name="slurp" content="noindex,nofollow">
 <meta name="yandex" content="noindex,nofollow">
-<title>ledger.heartbank.net: the wall</title>
+<title>earth.heartbank.net: the wall</title>
 <meta name="theme-color" content="#0f52ba">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
@@ -115,7 +115,7 @@ out = """<!doctype html>
 </head>
 <body>
 <header>
-  <a class="home" href="./">&#8592; ledger.heartbank.net</a>
+  <a class="home" href="./">&#8592; earth.heartbank.net</a>
   <div class="tabs">__TABS__</div>
   <div class="zoom">
     <button class="fit" id="fit">Fit</button>

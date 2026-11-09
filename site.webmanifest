@@ -1,7 +1,7 @@
 {
-  "name": "ledger.heartbank.net drawings",
+  "name": "earth.heartbank.net drawings",
   "short_name": "demo.heartbank.net",
-  "description": "Drawings of the ledger.heartbank.net screens, in English and Khmer. They charge nobody.",
+  "description": "Drawings of the earth.heartbank.net screens, in English and Khmer. They charge nobody.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -36,9 +36,9 @@ for name, px, pad in (("favicon-96x96.png", 96, 0), ("apple-touch-icon.png", 180
     print("%-22s %6d bytes" % (name, os.path.getsize(os.path.join(HERE, name))))
 
 manifest = {
-    "name": "ledger.heartbank.net drawings",
+    "name": "earth.heartbank.net drawings",
     "short_name": "demo.heartbank.net",
-    "description": "Drawings of the ledger.heartbank.net screens, in English and Khmer. They charge nobody.",
+    "description": "Drawings of the earth.heartbank.net screens, in English and Khmer. They charge nobody.",
     "start_url": "./", "scope": "./", "display": "standalone",
     "background_color": BG, "theme_color": ACCENT,
     "icons": [{"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},

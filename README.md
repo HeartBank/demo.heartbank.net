@@ -1,6 +1,6 @@
 # demo.heartbank.net
 
-Review site for `ledger.heartbank.net`: static artboards of its public front page and of *your record* (English and Khmer, light plus one dark pass, phone and desktop).
+Review site for `earth.heartbank.net`: static artboards of its public front page and of *your record* (English and Khmer, light plus one dark pass, phone and desktop).
 
 - These are **drawings. They charge nobody** and nothing here is live. The entries shown are made up.
 - Unlisted: hidden from search by named crawler in each page, no `robots.txt` (so link previews work).

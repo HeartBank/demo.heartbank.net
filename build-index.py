@@ -23,12 +23,12 @@ page = """<!doctype html>
 <meta name="slurp" content="noindex,nofollow">
 <meta name="yandex" content="noindex,nofollow">
 <script src="./analytics.js"></script>
-<title>ledger.heartbank.net: drawings</title>
+<title>earth.heartbank.net: drawings</title>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://demo.heartbank.net/">
-<meta property="og:site_name" content="ledger.heartbank.net drawings">
-<meta property="og:title" content="ledger.heartbank.net: drawings">
-<meta property="og:description" content="A private record of your thanks: the ledger.heartbank.net screens, drawn in English and Khmer. These are drawings. They charge nobody.">
+<meta property="og:site_name" content="earth.heartbank.net drawings">
+<meta property="og:title" content="earth.heartbank.net: drawings">
+<meta property="og:description" content="A private record of your thanks: the earth.heartbank.net screens, drawn in English and Khmer. These are drawings. They charge nobody.">
 <meta property="og:image" content="https://demo.heartbank.net/og.png?v=@OGV@">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -37,9 +37,9 @@ page = """<!doctype html>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="description" content="A private record of your thanks: the ledger.heartbank.net screens, drawn in English and Khmer. These are drawings. They charge nobody.">
-<meta name="twitter:title" content="ledger.heartbank.net: drawings">
-<meta name="twitter:description" content="A private record of your thanks: the ledger.heartbank.net screens, drawn in English and Khmer. These are drawings. They charge nobody.">
+<meta name="description" content="A private record of your thanks: the earth.heartbank.net screens, drawn in English and Khmer. These are drawings. They charge nobody.">
+<meta name="twitter:title" content="earth.heartbank.net: drawings">
+<meta name="twitter:description" content="A private record of your thanks: the earth.heartbank.net screens, drawn in English and Khmer. These are drawings. They charge nobody.">
 <meta name="twitter:image" content="https://demo.heartbank.net/og.png?v=@OGV@">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0f52ba">
@@ -64,8 +64,8 @@ small{display:block;margin-top:2rem;color:var(--dim)}</style>
 <body>
 <main>
 <div class="top"><button type="button" class="share" id="share" aria-label="Share this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>Share</button></div>
-<h1>ledger.heartbank.net: drawings</h1>
-<p>The screens for <b>ledger.heartbank.net</b>: a public front page, and <b>your record</b>, the page where a person opens their own entries and receipts after a passkey log-in. English and Khmer, light and a dark pass, on phone and desktop. The entries are made up.</p>
+<h1>earth.heartbank.net: drawings</h1>
+<p>The screens for <b>earth.heartbank.net</b>: a public front page, and <b>your record</b>, the page where a person opens their own entries and receipts after a passkey log-in. English and Khmer, light and a dark pass, on phone and desktop. The entries are made up.</p>
 <a class="start" href="Earth.html"><b>The Earth</b><br>The prototype for earth.heartbank.net: every balance in the world as a sea around zero. Drag it, pinch it, tap a place. The numbers are made up.</a>
 <a class="start" href="wall.html"><b>Start here</b><br>Every screen on one wall. Drag to pan, pinch to zoom, tap a screen to open it.</a>
 <ul>%s</ul>

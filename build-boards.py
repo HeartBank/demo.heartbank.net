@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the ledger.heartbank.net artboards, canvas.json and the board stylesheet.
+"""Generate the earth.heartbank.net artboards, canvas.json and the board stylesheet.
 
 One source for both languages and both themes, so the artboards cannot drift from each other. The spec is private
 (HeartBank/ledger.heartbank.net SPEC §8.1); this public repo holds drawings only, with made-up entries.
@@ -13,7 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from brand import EMBLEM, tok  # the vendored brand layer: the emblem and the neutrals are READ, never typed here
 
-APP_HOST = "ledger.heartbank.net"
+APP_HOST = "earth.heartbank.net"
 LEDGER_LINK = "explorer.333.eco/ledger"
 
 T = {
