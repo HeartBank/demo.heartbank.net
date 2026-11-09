@@ -20,7 +20,7 @@ const RAMP = [[0.5, "#dc2626"], [1.5, "#ea580c"], [3, "#ca8a04"], [6, "#16a34a"]
 const auraOf = (perMonth) => RAMP.find(([u]) => perMonth < u)[1];
 const AURA = Object.fromEntries(["red", "orange", "yellow", "green", "blue", "indigo", "violet"].map((n, i) => [n, RAMP[i][1]]));
 /** The real sea, once fetched: the last days, oldest first. */
-let frames = [];
+let frames = [], sampleRun = false;
 
 // ── seeded, so everyone reviews the same sea ──
 let seed = 333;
@@ -76,17 +76,17 @@ function fill(state, count, dir, H, A, P, C) {
     state.list.forEach((x, i) => { px[i] = x.d.x; py[i] = x.d.y; pz[i] = x.d.z; pb[i] = x.b / state.top; });
     for (let v = 0; v < count; v++) {
         const X = dir[v * 3], Y = dir[v * 3 + 1], Z = dir[v * 3 + 2];
-        let h = 0, w = 0, r = 0, g = 0, b = 0, near = 9, amp = 0;
+        let h = 0, w = 0, best = -1, top = null, near = 9, amp = 0;
         for (let i = 0; i < n; i++) {
             const d2 = 2 - 2 * (X * px[i] + Y * py[i] + Z * pz[i]);
             if (d2 > 0.9) continue;
             const k = Math.exp(-d2 / SIG), t = Math.exp(-d2 / TINT);
             h += pb[i] * k;
-            const c = state.list[i].rgb; w += t; r += c.r * t; g += c.g * t; b += c.b * t;
+            w += t; if (t > best) { best = t; top = state.list[i].rgb; } // the strongest area's own color: mixing the ramp's ends makes pink, which is reserved
             if (d2 < near) { near = d2; amp = Math.abs(pb[i]) * Math.exp(-d2 / WIDE); }
         }
         H[v] = h; A[v] = amp; P[v] = near > 8 ? 0 : Math.sqrt(near);
-        if (w > 0) { C[v * 4] = r / w; C[v * 4 + 1] = g / w; C[v * 4 + 2] = b / w; C[v * 4 + 3] = Math.min(1, w * 1.15); } else C[v * 4 + 3] = 0;
+        if (top) { C[v * 4] = top.r; C[v * 4 + 1] = top.g; C[v * 4 + 2] = top.b; C[v * 4 + 3] = Math.min(1, w * 1.15); } else C[v * 4 + 3] = 0;
     }
 }
 
@@ -163,7 +163,7 @@ const $ = (id) => document.getElementById(id);
 const say = (l) => document.documentElement.dataset.lang === "km" ? l[1] : l[0];
 const fmt = (n) => (n > 0 ? "+" : n < 0 ? "−" : "") + Math.abs(n);
 function paint() {
-    $("day").textContent = LIVE ? (frames[day]?.day ?? "") : say(["Day ", "ថ្ងៃទី "]) + (day + 1);
+    $("day").textContent = LIVE ? (sampleRun ? say(["Made-up day ", "\u1790\u17d2\u1784\u17c3\u1782\u17c6\u179a\u17bc\u1791\u17b8 "]) + (day + 1) : (frames[day]?.day ?? "")) : say(["Day ", "ថ្ងៃទី "]) + (day + 1);
     const label = sea === "kiitos" ? say(["Every Kiitos balance added together: 0", "សមតុល្យ Kiitos ទាំងអស់បូកចូលគ្នា៖ 0"]) : say(["People and nature added together: 0", "មនុស្ស និងធម្មជាតិបូកចូលគ្នា៖ 0"]);
     $("sum").textContent = label;
 }
@@ -171,13 +171,13 @@ function goto(d, instant) { load(0, day); load(1, d); day = d; uniforms.uMix.val
 $("sea").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; sea = b.dataset.sea; document.querySelectorAll("#sea button").forEach((x) => x.classList.toggle("on", x === b)); $("card").hidden = true; goto(day, true); });
 document.addEventListener("langchange", paint);
 // Tiny stars behind the Earth, each blinking at its own pace; still under reduced motion.
-const starN = 1100, starP = new Float32Array(starN * 3), starA = new Float32Array(starN), starS = new Float32Array(starN);
+const starN = 460, starP = new Float32Array(starN * 3), starA = new Float32Array(starN), starS = new Float32Array(starN);
 for (let i = 0; i < starN; i++) { const v = new THREE.Vector3(rand() * 2 - 1, rand() * 2 - 1, rand() * 2 - 1).normalize().multiplyScalar(30); starP.set([v.x, v.y, v.z], i * 3); starA[i] = rand() * 6.28; starS[i] = rand(); }
 const starGeo = new THREE.BufferGeometry().setAttribute("position", new THREE.BufferAttribute(starP, 3)).setAttribute("aP", new THREE.BufferAttribute(starA, 1)).setAttribute("aS", new THREE.BufferAttribute(starS, 1));
 const starUni = { uT: uniforms.uT, uStar: { value: new THREE.Color() }, uBright: { value: 1 }, uDpr: { value: renderer.getPixelRatio() } };
 scene.add(new THREE.Points(starGeo, new THREE.ShaderMaterial({ uniforms: starUni, transparent: true, depthWrite: false,
-    vertexShader: `attribute float aP, aS; uniform float uT, uDpr; varying float vB; void main(){ vB=0.35+0.65*abs(sin(uT*(0.5+aS*1.8)+aP)); gl_PointSize=(0.7+aS*1.2)*uDpr; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
-    fragmentShader: `uniform vec3 uStar; uniform float uBright; varying float vB; void main(){ float d=length(gl_PointCoord-0.5); if(d>0.5) discard; gl_FragColor=vec4(uStar,(1.0-d*2.0)*vB*uBright);
+    vertexShader: `attribute float aP, aS; uniform float uT, uDpr; varying float vB; void main(){ vB=0.28+0.72*pow(abs(sin(uT*(0.35+aS*1.1)+aP)),2.0); gl_PointSize=(6.0+aS*aS*11.0)*uDpr; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
+    fragmentShader: `uniform vec3 uStar; uniform float uBright; varying float vB; void main(){ vec2 p=(gl_PointCoord-0.5)*2.0; float l=length(p); if(l>1.0) discard; float cross=smoothstep(0.05,0.0,abs(p.x)*abs(p.y))*smoothstep(1.0,0.12,l); float core=smoothstep(0.2,0.0,l); gl_FragColor=vec4(uStar,max(cross,core)*vB*uBright);
 #include <colorspace_fragment>
     }` })));
 const applyTheme = () => {
@@ -219,7 +219,7 @@ function resize() {
 }
 addEventListener("resize", resize); resize();
 goto(LIVE ? 0 : 24, true);
-if (FETCH) fetch("/ledger/days.json").then((r) => r.json()).then((j) => { frames = j.days ?? []; const o = $("opens"); if (o) o.hidden = frames.length > 0; if (frames.length) goto(frames.length - 1, true); }).catch(() => { /* the calm sea stays */ });
+if (FETCH) fetch("/ledger/days.json").then((r) => r.json()).then((j) => { frames = j.days ?? []; sampleRun = !!j.sample; const o = $("opens"), n = $("sample"); if (o) o.hidden = frames.length > 0 && !sampleRun; if (n) n.hidden = !sampleRun; if (frames.length) goto(frames.length - 1, true); }).catch(() => { /* the calm sea stays */ });
 let last = performance.now(), hold = 0;
 function frame(now) {
     const dt = now - last; last = now; hold += dt;
