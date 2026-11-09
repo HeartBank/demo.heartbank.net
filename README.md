@@ -12,3 +12,5 @@ Review site for `ledger.heartbank.net`: static artboards of its public front pag
     python3 build-boards.py && python3 build-icons.py && python3 build-og.py
     python3 -m http.server 8333 &
     python3 measure.py && python3 build-boards.py && python3 build-index.py && python3 build-wall.py
+
+`Earth.html` is the 3D prototype for earth.heartbank.net (`earth/`, built with `npm run build` there). Every number in it is made up. It bundles three.js (MIT) and the Natural Earth land outlines (public domain, through world-atlas, ISC). It draws no national borders.

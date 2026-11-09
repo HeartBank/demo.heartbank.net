@@ -1,0 +1,199 @@
+/**
+ * The Earth prototype for earth.heartbank.net. Every number is made up, by the small simulation below, which keeps the one thing that matters: each Kiitos
+ * adds one to one place and takes one from another, so the world sums to exactly zero on every day.
+ *
+ *   shape = amplitude: a crest where people have been kind, a trough where they have been thankful.
+ *   color = frequency: the aura ramp, from how often a place's own balance has crossed zero (the published ƒ's buckets).
+ *   the grain = the mesh: 980 triangles about 1,100 km across. No borders are drawn.
+ */
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
+import { feature, mesh as topoMesh } from "topojson-client";
+import land from "world-atlas/land-110m.json";
+
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const SEASON_DAYS = 42, STEP_MS = reduce ? 1e12 : 2600;
+// The published ramp: brand.333.eco data/auras.json, in crossings a month.
+const RAMP = [[0.5, "#dc2626"], [1.5, "#ea580c"], [3, "#ca8a04"], [6, "#16a34a"], [12, "#2563eb"], [24, "#4f46e5"], [Infinity, "#7c3aed"]].map(([u, c]) => [u, new THREE.Color(c)]);
+const auraOf = (perMonth) => RAMP.find(([u]) => perMonth < u)[1];
+
+// ── seeded, so everyone reviews the same sea ──
+let seed = 333;
+const rand = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
+
+// ── the land, for a mask only ──
+const polys = feature(land, land.objects.land).features.flatMap((f) => f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates).map((rings) => {
+    let a = 180, b = -180, c = 90, d = -90;
+    for (const [x, y] of rings[0]) { a = Math.min(a, x); b = Math.max(b, x); c = Math.min(c, y); d = Math.max(d, y); }
+    return { rings, a, b, c, d };
+});
+function inRing(r, x, y) { let on = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) on = !on; } return on; }
+function isLand(lon, lat) { for (const p of polys) if (lon >= p.a && lon <= p.b && lat >= p.c && lat <= p.d && inRing(p.rings[0], lon, lat) && !p.rings.slice(1).some((h) => inRing(h, lon, lat))) return true; return false; }
+const toLL = (v) => [(Math.atan2(v.x, v.z) * 180) / Math.PI, (Math.asin(THREE.MathUtils.clamp(v.y, -1, 1)) * 180) / Math.PI];
+const fromLL = (lon, lat, r = 1) => { const a = (lon * Math.PI) / 180, b = (lat * Math.PI) / 180; return new THREE.Vector3(r * Math.cos(b) * Math.sin(a), r * Math.sin(b), r * Math.cos(b) * Math.cos(a)); };
+
+// ── the 980 cells ──
+const coarse = new THREE.IcosahedronGeometry(1, 6), cp = coarse.attributes.position, cells = [];
+for (let i = 0; i < cp.count; i += 3) {
+    const a = new THREE.Vector3().fromBufferAttribute(cp, i), b = new THREE.Vector3().fromBufferAttribute(cp, i + 1), c = new THREE.Vector3().fromBufferAttribute(cp, i + 2);
+    const d = a.clone().add(b).add(c).normalize();
+    cells.push({ d, land: isLand(...toLL(d)) });
+}
+const nearestCell = (v) => { let best = -1, bd = -2; for (let i = 0; i < cells.length; i++) { const q = cells[i].d.dot(v); if (q > bd) { bd = q; best = i; } } return best; };
+
+// ── made-up people: placed around where people live, plus some who said nothing and so sit in the open sea ──
+const towns = [[104.9, 11.6], [103.8, 13.4], [-118.2, 33.8], [-119.8, 36.7], [100.5, 13.8], [106.7, 10.8], [139.7, 35.7], [121.5, 31.2], [77.2, 28.6], [72.9, 19.1], [90.4, 23.8], [-0.1, 51.5], [2.4, 48.9], [13.4, 52.5], [37.6, 55.8], [31.2, 30.0], [3.4, 6.5], [36.8, -1.3], [28.0, -26.2], [-46.6, -23.5], [-58.4, -34.6], [-99.1, 19.4], [-74.0, 40.7], [-79.4, 43.7], [151.2, -33.9], [174.8, -36.9], [126.9, 37.6], [120.9, 14.6], [106.8, -6.2], [55.3, 25.3]];
+const placed = [...new Set(towns.flatMap(([x, y]) => { const c = nearestCell(fromLL(x, y)); return [c, nearestCell(fromLL(x + (rand() - 0.5) * 14, y + (rand() - 0.5) * 10))]; }))];
+const open = cells.map((c, i) => (!c.land ? i : -1)).filter((i) => i >= 0).sort(() => rand() - 0.5).slice(0, 5);
+const live = [...placed, ...open];
+const series = { kiitos: new Map(live.map((c) => [c, [0]])), kiitti: new Map(placed.map((c) => [c, [0]])) };
+const crossings = (s, upto) => { let n = 0; for (let i = 1; i <= upto; i++) if ((s[i - 1] > 0 && s[i] <= 0) || (s[i - 1] < 0 && s[i] >= 0)) n++; return n; };
+for (let d = 1; d < SEASON_DAYS; d++) {
+    for (const s of series.kiitos.values()) s.push(s.at(-1));
+    for (const s of series.kiitti.values()) s.push(s.at(-1));
+    for (let m = 0; m < 26; m++) { const a = live[Math.floor(rand() * live.length)], b = live[Math.floor(rand() * live.length)]; if (a === b) continue; series.kiitos.get(a)[d]++; series.kiitos.get(b)[d]--; }
+    for (let m = 0; m < 18; m++) { const a = placed[Math.floor(rand() * placed.length)]; series.kiitti.get(a)[d] += rand() < 0.62 ? 1 : -1; }
+}
+
+// ── the field: one sample per direction, for one sea on one day ──
+const SIG = 2 * 0.13 * 0.13, TINT = 2 * 0.085 * 0.085, WIDE = 2 * 0.3 * 0.3;
+function stateOf(sea, day) {
+    const list = [...series[sea]].map(([c, s]) => ({ d: cells[c].d, b: s[day], rgb: auraOf(day ? (crossings(s, day) / day) * 30 : 0) }));
+    return { list, top: Math.max(4, ...list.map((x) => Math.abs(x.b))) };
+}
+function fill(state, count, dir, H, A, P, C) {
+    const n = state.list.length, px = new Float32Array(n), py = new Float32Array(n), pz = new Float32Array(n), pb = new Float32Array(n);
+    state.list.forEach((x, i) => { px[i] = x.d.x; py[i] = x.d.y; pz[i] = x.d.z; pb[i] = x.b / state.top; });
+    for (let v = 0; v < count; v++) {
+        const X = dir[v * 3], Y = dir[v * 3 + 1], Z = dir[v * 3 + 2];
+        let h = 0, w = 0, r = 0, g = 0, b = 0, near = 9, amp = 0;
+        for (let i = 0; i < n; i++) {
+            const d2 = 2 - 2 * (X * px[i] + Y * py[i] + Z * pz[i]);
+            if (d2 > 0.9) continue;
+            const k = Math.exp(-d2 / SIG), t = Math.exp(-d2 / TINT);
+            h += pb[i] * k;
+            const c = state.list[i].rgb; w += t; r += c.r * t; g += c.g * t; b += c.b * t;
+            if (d2 < near) { near = d2; amp = Math.abs(pb[i]) * Math.exp(-d2 / WIDE); }
+        }
+        H[v] = h; A[v] = amp; P[v] = near > 8 ? 0 : Math.sqrt(near);
+        if (w > 0) { C[v * 4] = r / w; C[v * 4 + 1] = g / w; C[v * 4 + 2] = b / w; C[v * 4 + 3] = Math.min(1, w * 1.15); } else C[v * 4 + 3] = 0;
+    }
+}
+
+// ── the scene ──
+const canvas = document.getElementById("earth");
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(32, 1, 0.1, 50), globe = new THREE.Group();
+camera.position.set(0, 0.5, 4.6);
+globe.rotation.z = THREE.MathUtils.degToRad(-23.4);
+scene.add(globe);
+const uniforms = { uT: { value: 0 }, uMix: { value: 1 }, uOcean: { value: new THREE.Color() }, uLand: { value: new THREE.Color() }, uInk: { value: new THREE.Color() }, uSea: { value: 0 } };
+const carry = `attribute float aH0, aH1, aA0, aA1, aP0, aP1; uniform float uT, uMix, uSea;
+float lift(vec3 p){ float h=mix(aH0,aH1,uMix), a=mix(aA0,aA1,uMix), q=mix(aP0,aP1,uMix); return 0.15*h + 0.014*a*sin(q*30.0-uT*1.4) + uSea; }`;
+const surface = new THREE.ShaderMaterial({
+    uniforms,
+    vertexShader: `${carry} attribute float aLand; attribute vec4 aC0, aC1; varying vec3 vP; varying float vLand; varying vec4 vC;
+      void main(){ vec3 p=position*(1.0+lift(position)); vP=(modelViewMatrix*vec4(p,1.0)).xyz; vLand=aLand; vC=mix(aC0,aC1,uMix); gl_Position=projectionMatrix*vec4(vP,1.0); }`,
+    fragmentShader: `uniform vec3 uOcean,uLand; varying vec3 vP; varying float vLand; varying vec4 vC;
+      void main(){ vec3 n=normalize(cross(dFdx(vP),dFdy(vP))); float l=0.42+0.68*pow(max(0.0,dot(n,normalize(vec3(-0.45,0.65,0.62)))),1.3);
+        vec3 base=mix(uOcean,uLand,vLand); vec3 c=mix(base,vC.rgb,vC.a*0.92); gl_FragColor=vec4(c*l,1.0);
+#include <colorspace_fragment>
+      }`,
+});
+const lineMat = (opacity) => new THREE.ShaderMaterial({
+    uniforms: { ...uniforms, uAlpha: { value: opacity } }, transparent: true, depthWrite: false,
+    vertexShader: `${carry} uniform float uOut; void main(){ vec3 p=position*(1.006+lift(position)); gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.0); }`,
+    fragmentShader: `uniform vec3 uInk; uniform float uAlpha; void main(){ gl_FragColor=vec4(uInk,uAlpha);
+#include <colorspace_fragment>
+      }`,
+});
+
+function body(geometry, extra) {
+    const count = geometry.attributes.position.count, dir = geometry.attributes.position.array;
+    const parts = { count, dir, H: [new Float32Array(count), new Float32Array(count)], A: [new Float32Array(count), new Float32Array(count)], P: [new Float32Array(count), new Float32Array(count)], C: [new Float32Array(count * 4), new Float32Array(count * 4)] };
+    for (const i of [0, 1]) {
+        geometry.setAttribute(`aH${i}`, new THREE.BufferAttribute(parts.H[i], 1).setUsage(THREE.DynamicDrawUsage));
+        geometry.setAttribute(`aA${i}`, new THREE.BufferAttribute(parts.A[i], 1).setUsage(THREE.DynamicDrawUsage));
+        geometry.setAttribute(`aP${i}`, new THREE.BufferAttribute(parts.P[i], 1).setUsage(THREE.DynamicDrawUsage));
+        geometry.setAttribute(`aC${i}`, new THREE.BufferAttribute(parts.C[i], 4).setUsage(THREE.DynamicDrawUsage));
+    }
+    return Object.assign(parts, { geometry }, extra);
+}
+
+const fine = mergeVertices(new THREE.IcosahedronGeometry(1, 30).deleteAttribute("uv").deleteAttribute("normal"));
+for (let i = 0; i < fine.attributes.position.count; i++) { const v = new THREE.Vector3().fromBufferAttribute(fine.attributes.position, i).normalize(); fine.attributes.position.setXYZ(i, v.x, v.y, v.z); }
+const mask = new Float32Array(fine.attributes.position.count);
+for (let i = 0; i < mask.length; i++) mask[i] = isLand(...toLL(new THREE.Vector3().fromBufferAttribute(fine.attributes.position, i))) ? 1 : 0;
+fine.setAttribute("aLand", new THREE.BufferAttribute(mask, 1));
+globe.add(new THREE.Mesh(fine, surface));
+
+// The mesh you would tap: each edge bent along the sphere.
+const edgeKey = (a, b) => [a, b].map((v) => `${v.x.toFixed(4)},${v.y.toFixed(4)},${v.z.toFixed(4)}`).sort().join("|");
+const seen = new Set(), wirePts = [];
+for (let i = 0; i < cp.count; i += 3) for (const [m, n] of [[0, 1], [1, 2], [2, 0]]) {
+    const a = new THREE.Vector3().fromBufferAttribute(cp, i + m), b = new THREE.Vector3().fromBufferAttribute(cp, i + n), key = edgeKey(a, b);
+    if (seen.has(key)) continue; seen.add(key);
+    for (let s = 0; s < 4; s++) { const p = a.clone().lerp(b, s / 4).normalize(), q = a.clone().lerp(b, (s + 1) / 4).normalize(); wirePts.push(p.x, p.y, p.z, q.x, q.y, q.z); }
+}
+const wire = new THREE.BufferGeometry().setAttribute("position", new THREE.Float32BufferAttribute(wirePts, 3));
+const wireMat = lineMat(0.13); globe.add(new THREE.LineSegments(wire, wireMat));
+
+// The coasts, the only lines of geography on this Earth. No borders are drawn.
+const coastPts = []; for (const line of topoMesh(land, land.objects.land).coordinates) for (let i = 0; i + 1 < line.length; i++) { const a = fromLL(...line[i]), b = fromLL(...line[i + 1]); coastPts.push(a.x, a.y, a.z, b.x, b.y, b.z); }
+const coast = new THREE.BufferGeometry().setAttribute("position", new THREE.Float32BufferAttribute(coastPts, 3));
+const coastMat = lineMat(0.55); globe.add(new THREE.LineSegments(coast, coastMat));
+
+const bodies = [body(fine), body(wire), body(coast)];
+let sea = "kiitos", day = 0;
+function sumOf(s, d) { let t = 0; for (const x of series[s].values()) t += x[d]; return t; }
+function load(slot, d) { const st = stateOf(sea, d); for (const b of bodies) { fill(st, b.count, b.dir, b.H[slot], b.A[slot], b.P[slot], b.C[slot]); for (const n of [`aH${slot}`, `aA${slot}`, `aP${slot}`, `aC${slot}`]) b.geometry.attributes[n].needsUpdate = true; } }
+function seaLevel(d) { return sea === "kiitos" ? 0 : (-sumOf("kiitti", d) / Math.max(1, stateOf(sea, d).top * 12)) * 0.2; }
+
+// ── what a person sees and does ──
+const controls = new OrbitControls(camera, canvas);
+Object.assign(controls, { enableDamping: true, dampingFactor: 0.07, enablePan: false, minDistance: 2.5, maxDistance: 7, autoRotate: !reduce, autoRotateSpeed: 0.55 });
+const $ = (id) => document.getElementById(id);
+const say = (l) => document.documentElement.dataset.lang === "km" ? l[1] : l[0];
+const fmt = (n) => (n > 0 ? "+" : n < 0 ? "−" : "") + Math.abs(n);
+function paint() {
+    $("day").textContent = say(["Day ", "ថ្ងៃទី "]) + (day + 1);
+    const label = sea === "kiitos" ? say(["Every Kiitos balance added together: 0", "សមតុល្យ Kiitos ទាំងអស់បូកចូលគ្នា៖ 0"]) : say(["People and nature added together: 0", "មនុស្ស និងធម្មជាតិបូកចូលគ្នា៖ 0"]);
+    $("sum").textContent = label;
+}
+function goto(d, instant) { load(0, day); load(1, d); day = d; uniforms.uMix.value = instant ? 1 : 0; uniforms.uSea.value = seaLevel(d); paint(); }
+$("sea").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; sea = b.dataset.sea; document.querySelectorAll("#sea button").forEach((x) => x.classList.toggle("on", x === b)); $("card").hidden = true; goto(day, true); });
+document.addEventListener("langchange", paint);
+const applyTheme = () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    uniforms.uOcean.value.set(dark ? "#10234a" : "#bcd0ee"); uniforms.uLand.value.set(dark ? "#3b4763" : "#f2eee2"); uniforms.uInk.value.set(dark ? "#d5def0" : "#26365a");
+};
+document.addEventListener("themechange", applyTheme); applyTheme();
+
+const ray = new THREE.Raycaster(), ptr = new THREE.Vector2(), sphere = new THREE.Sphere(new THREE.Vector3(), 1);
+let down = null;
+canvas.addEventListener("pointerdown", (e) => { down = [e.clientX, e.clientY]; });
+canvas.addEventListener("pointerup", (e) => {
+    if (!down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 6) return;
+    const box = canvas.getBoundingClientRect(); ptr.set(((e.clientX - box.left) / box.width) * 2 - 1, -((e.clientY - box.top) / box.height) * 2 + 1);
+    ray.setFromCamera(ptr, camera); const hit = ray.ray.intersectSphere(sphere, new THREE.Vector3());
+    const c = hit ? nearestCell(globe.worldToLocal(hit).normalize()) : -1, a = series.kiitos.get(c), b = series.kiitti.get(c);
+    if (!a && !b) { $("card").hidden = true; return; }
+    $("card-k").textContent = a ? fmt(a[day]) : "—"; $("card-t").textContent = b ? fmt(b[day]) : "—"; $("card").hidden = false;
+});
+
+function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.position.setLength(w < h ? 7.2 : 4.7); camera.setViewOffset(w, h, 0, w < h ? h * 0.03 : 0, w, h); camera.updateProjectionMatrix(); }
+addEventListener("resize", resize); resize();
+goto(24, true);
+let last = performance.now(), hold = 0;
+function frame(now) {
+    const dt = now - last; last = now; hold += dt;
+    uniforms.uT.value = reduce ? 0 : now / 1000;
+    if (uniforms.uMix.value < 1) uniforms.uMix.value = Math.min(1, uniforms.uMix.value + dt / 1500);
+    if (hold > STEP_MS) { hold = 0; goto((day + 1) % SEASON_DAYS); }
+    controls.update(); renderer.render(scene, camera); requestAnimationFrame(frame);
+}
+if (reduce) { goto(28, true); controls.autoRotate = false; }
+requestAnimationFrame(frame);
+window.__earth = { check: () => ({ kiitosZero: Array.from({ length: SEASON_DAYS }, (_, d) => sumOf("kiitos", d)).every((x) => x === 0), cells: cells.length, placed: placed.length, seaDays: SEASON_DAYS }) };

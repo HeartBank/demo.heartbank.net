@@ -66,6 +66,7 @@ small{display:block;margin-top:2rem;color:var(--dim)}</style>
 <div class="top"><button type="button" class="share" id="share" aria-label="Share this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>Share</button></div>
 <h1>ledger.heartbank.net: drawings</h1>
 <p>The screens for <b>ledger.heartbank.net</b>: a public front page, and <b>your record</b>, the page where a person opens their own entries and receipts after a passkey log-in. English and Khmer, light and a dark pass, on phone and desktop. The entries are made up.</p>
+<a class="start" href="Earth.html"><b>The Earth</b><br>The prototype for earth.heartbank.net: every balance in the world as a sea around zero. Drag it, pinch it, tap a place. The numbers are made up.</a>
 <a class="start" href="wall.html"><b>Start here</b><br>Every screen on one wall. Drag to pan, pinch to zoom, tap a screen to open it.</a>
 <ul>%s</ul>
 <small>These are drawings. They charge nobody, and nothing here is live. The Khmer is our own placeholder until a native reader approves it. Hidden from search by named crawler; shareable by link. This site counts visits without cookies.</small>
