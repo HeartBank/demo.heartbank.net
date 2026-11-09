@@ -164,8 +164,6 @@ const say = (l) => document.documentElement.dataset.lang === "km" ? l[1] : l[0];
 const fmt = (n) => (n > 0 ? "+" : n < 0 ? "−" : "") + Math.abs(n);
 function paint() {
     $("day").textContent = LIVE ? (sampleRun ? say(["Made-up day ", "\u1790\u17d2\u1784\u17c3\u1782\u17c6\u179a\u17bc\u1791\u17b8 "]) + (day + 1) : (frames[day]?.day ?? "")) : say(["Day ", "ថ្ងៃទី "]) + (day + 1);
-    const label = sea === "kiitos" ? say(["Every Kiitos balance added together: 0", "សមតុល្យ Kiitos ទាំងអស់បូកចូលគ្នា៖ 0"]) : say(["People and nature added together: 0", "មនុស្ស និងធម្មជាតិបូកចូលគ្នា៖ 0"]);
-    $("sum").textContent = label;
 }
 function goto(d, instant) { load(0, day); load(1, d); day = d; uniforms.uMix.value = instant ? 1 : 0; uniforms.uSea.value = seaLevel(d); paint(); }
 $("sea").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; sea = b.dataset.sea; document.querySelectorAll("#sea button").forEach((x) => x.classList.toggle("on", x === b)); $("card").hidden = true; goto(day, true); });

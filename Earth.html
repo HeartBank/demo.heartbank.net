@@ -25,11 +25,12 @@ p.sub{color:var(--dim);margin:6px 0 0;font-size:.92rem;line-height:1.45;max-widt
 .bottom{position:fixed;left:0;right:0;bottom:0;padding:0 14px max(14px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:9px;pointer-events:none}
 .bottom>*{pointer-events:auto}
 .panel{background:var(--glass);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;padding:10px 14px;font-size:.84rem;line-height:1.4;max-width:34rem;width:100%}
-.legend{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;justify-content:center}.legend b{font-weight:600}
+.legend{display:flex;flex-direction:column;gap:4px;align-items:center}.lr{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;justify-content:center}.legend b{font-weight:600}
 .ramp{display:inline-flex;height:9px;width:76px;border-radius:5px;overflow:hidden;vertical-align:middle;margin-right:6px}.ramp i{flex:1}
 .row{display:flex;justify-content:space-between;gap:10px;color:var(--dim);margin-top:5px;font-size:.79rem;flex-wrap:wrap}
 #card{position:fixed;left:50%;top:44%;transform:translate(-50%,-50%);max-width:17rem;text-align:center;font-size:.9rem;pointer-events:none}
 #card b{font-size:1.2rem}.proto{font-family:ui-monospace,Menlo,monospace;font-size:.68rem;color:var(--dim);text-align:center}
+@media (max-width:640px){.panel{text-align:center}.row{flex-direction:column;align-items:center;gap:2px}}
 .fallback{display:none}.no-gl #earth{display:none}.no-gl .fallback{display:block;position:fixed;left:50%;top:50%;transform:translate(-50%,-52%);width:min(92vw,62vh);height:auto;border-radius:50%}
 .still .top,.still .bottom{display:none}.still,.still body{background:transparent}
 </style>
@@ -58,11 +59,11 @@ p.sub{color:var(--dim);margin:6px 0 0;font-size:.92rem;line-height:1.45;max-widt
   <div class="seg" id="sea"><button data-sea="kiitos" class="on">Kiitos</button><button data-sea="kiitti">Kiitti</button></div>
   <div class="panel">
     <div class="legend">
-      <span data-l="en"><b>Crest</b> kind</span><span data-l="km"><b>កំពូលរលក</b> ចិត្តល្អ</span>
-      <span data-l="en"><b>Trough</b> thankful</span><span data-l="km"><b>បាតរលក</b> ដឹងគុណ</span>
-      <span><span class="ramp"><i style="background:#dc2626"></i><i style="background:#ea580c"></i><i style="background:#ca8a04"></i><i style="background:#16a34a"></i><i style="background:#2563eb"></i><i style="background:#4f46e5"></i><i style="background:#7c3aed"></i></span><span data-l="en">how often a place crosses zero</span><span data-l="km">ញឹកញាប់ប៉ុណ្ណាដែលកន្លែងមួយឆ្លងកាត់សូន្យ</span></span>
+      <div class="lr"><span data-l="en"><b>Crest</b> kind</span><span data-l="km"><b>កំពូលរលក</b> ចិត្តល្អ</span>
+      <span data-l="en"><b>Trough</b> thankful</span><span data-l="km"><b>បាតរលក</b> ដឹងគុណ</span></div>
+      <div class="lr"><span class="ramp"><i style="background:#dc2626"></i><i style="background:#ea580c"></i><i style="background:#ca8a04"></i><i style="background:#16a34a"></i><i style="background:#2563eb"></i><i style="background:#4f46e5"></i><i style="background:#7c3aed"></i></span><span data-l="en">how often a place crosses zero</span><span data-l="km">ញឹកញាប់ប៉ុណ្ណាដែលកន្លែងមួយឆ្លងកាត់សូន្យ</span></div>
     </div>
-    <div class="row"><span id="sum"></span><span id="day"></span></div>
+    <div class="row"><span id="day"></span></div>
   </div>
   <div class="proto"><span data-l="en">Prototype. Every number here is made up. Drag to turn, pinch to zoom, tap a place.</span><span data-l="km">គំរូសាកល្បង។ លេខទាំងអស់នៅទីនេះជាការបង្កើតឡើង។ អូសដើម្បីបង្វិល។ ខ្មែរនេះជាពាក្យរង់ចាំ។</span></div>
 </div>
