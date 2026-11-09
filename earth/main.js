@@ -170,9 +170,19 @@ function paint() {
 function goto(d, instant) { load(0, day); load(1, d); day = d; uniforms.uMix.value = instant ? 1 : 0; uniforms.uSea.value = seaLevel(d); paint(); }
 $("sea").addEventListener("click", (e) => { const b = e.target.closest("button"); if (!b) return; sea = b.dataset.sea; document.querySelectorAll("#sea button").forEach((x) => x.classList.toggle("on", x === b)); $("card").hidden = true; goto(day, true); });
 document.addEventListener("langchange", paint);
+// Tiny stars behind the Earth, each blinking at its own pace; still under reduced motion.
+const starN = 1100, starP = new Float32Array(starN * 3), starA = new Float32Array(starN), starS = new Float32Array(starN);
+for (let i = 0; i < starN; i++) { const v = new THREE.Vector3(rand() * 2 - 1, rand() * 2 - 1, rand() * 2 - 1).normalize().multiplyScalar(30); starP.set([v.x, v.y, v.z], i * 3); starA[i] = rand() * 6.28; starS[i] = rand(); }
+const starGeo = new THREE.BufferGeometry().setAttribute("position", new THREE.BufferAttribute(starP, 3)).setAttribute("aP", new THREE.BufferAttribute(starA, 1)).setAttribute("aS", new THREE.BufferAttribute(starS, 1));
+const starUni = { uT: uniforms.uT, uStar: { value: new THREE.Color() }, uBright: { value: 1 }, uDpr: { value: renderer.getPixelRatio() } };
+scene.add(new THREE.Points(starGeo, new THREE.ShaderMaterial({ uniforms: starUni, transparent: true, depthWrite: false,
+    vertexShader: `attribute float aP, aS; uniform float uT, uDpr; varying float vB; void main(){ vB=0.35+0.65*abs(sin(uT*(0.5+aS*1.8)+aP)); gl_PointSize=(0.7+aS*1.2)*uDpr; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0); }`,
+    fragmentShader: `uniform vec3 uStar; uniform float uBright; varying float vB; void main(){ float d=length(gl_PointCoord-0.5); if(d>0.5) discard; gl_FragColor=vec4(uStar,(1.0-d*2.0)*vB*uBright);
+#include <colorspace_fragment>
+    }` })));
 const applyTheme = () => {
     const dark = document.documentElement.dataset.theme === "dark";
-    uniforms.uOcean.value.set(dark ? "#10234a" : "#bcd0ee"); uniforms.uLand.value.set(dark ? "#3b4763" : "#f2eee2"); uniforms.uInk.value.set(dark ? "#d5def0" : "#26365a");
+    uniforms.uOcean.value.set(dark ? "#10234a" : "#bcd0ee"); uniforms.uLand.value.set(dark ? "#3b4763" : "#f2eee2"); uniforms.uInk.value.set(dark ? "#d5def0" : "#26365a"); starUni.uStar.value.set(dark ? "#ffffff" : "#26365a"); starUni.uBright.value = dark ? 1 : 0.45;
 };
 document.addEventListener("themechange", applyTheme); applyTheme();
 
@@ -194,17 +204,29 @@ canvas.addEventListener("pointerup", (e) => {
     $("card-k").textContent = k === undefined ? dash : fmt(k); $("card-t").textContent = t === undefined ? dash : fmt(t); $("card").hidden = false;
 });
 
-function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.position.setLength(w < h ? 7.2 : 4.7); camera.setViewOffset(w, h, 0, w < h ? h * 0.03 : 0, w, h); camera.updateProjectionMatrix(); }
+let seenW = 0, seenH = 0, seenFit = 0;
+/** Fits the whole Earth inside the shorter side. ⚠️ iPhone Safari reports its new size late when the phone turns, so this runs every frame and acts only on a real change (founder: cut off in landscape, 2026-11-09). */
+function resize() {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h || (w === seenW && h === seenH)) return;
+    seenW = w; seenH = h;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    const halfV = THREE.MathUtils.degToRad(camera.fov / 2), half = Math.min(halfV, Math.atan(Math.tan(halfV) * camera.aspect)), fit = 1.2 / Math.sin(half);
+    if (Math.abs(fit - seenFit) / fit > 0.02) { seenFit = fit; camera.position.setLength(fit); controls.minDistance = fit * 0.55; controls.maxDistance = fit * 1.5; }
+    camera.setViewOffset(w, h, 0, w < h ? h * 0.03 : 0, w, h);
+    camera.updateProjectionMatrix();
+}
 addEventListener("resize", resize); resize();
 goto(LIVE ? 0 : 24, true);
-if (FETCH) fetch("/earth/days.json").then((r) => r.json()).then((j) => { frames = j.days ?? []; const o = $("opens"); if (o) o.hidden = frames.length > 0; if (frames.length) goto(frames.length - 1, true); }).catch(() => { /* the calm sea stays */ });
+if (FETCH) fetch("/ledger/days.json").then((r) => r.json()).then((j) => { frames = j.days ?? []; const o = $("opens"); if (o) o.hidden = frames.length > 0; if (frames.length) goto(frames.length - 1, true); }).catch(() => { /* the calm sea stays */ });
 let last = performance.now(), hold = 0;
 function frame(now) {
     const dt = now - last; last = now; hold += dt;
     uniforms.uT.value = reduce ? 0 : now / 1000;
     if (uniforms.uMix.value < 1) uniforms.uMix.value = Math.min(1, uniforms.uMix.value + dt / 1500);
     if (hold > STEP_MS && frameCount() > 1) { hold = 0; goto((day + 1) % frameCount()); }
-    controls.update(); renderer.render(scene, camera); requestAnimationFrame(frame);
+    resize(); controls.update(); renderer.render(scene, camera); requestAnimationFrame(frame);
 }
 if (reduce) { if (!LIVE) goto(28, true); controls.autoRotate = false; }
 if (location.search.includes("still")) { document.documentElement.classList.add("still"); controls.autoRotate = false; if (!LIVE) goto(24, true); uniforms.uMix.value = 1; }
