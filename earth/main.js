@@ -12,7 +12,7 @@ import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
 import { feature, mesh as topoMesh } from "topojson-client";
 import land from "world-atlas/land-110m.json";
 
-const LIVE = document.getElementById("earth").dataset.live === "1";
+const FETCH = document.getElementById("earth").dataset.live === "1", LIVE = FETCH || location.search.includes("calm"); // calm: no made-up numbers, for the live page's still picture
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const SEASON_DAYS = 42, STEP_MS = reduce ? 1e12 : 2600;
 // The published ramp: brand.333.eco data/auras.json, in crossings a month.
@@ -197,7 +197,7 @@ canvas.addEventListener("pointerup", (e) => {
 function resize() { const w = canvas.clientWidth, h = canvas.clientHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.position.setLength(w < h ? 7.2 : 4.7); camera.setViewOffset(w, h, 0, w < h ? h * 0.03 : 0, w, h); camera.updateProjectionMatrix(); }
 addEventListener("resize", resize); resize();
 goto(LIVE ? 0 : 24, true);
-if (LIVE) fetch("/earth/days.json").then((r) => r.json()).then((j) => { frames = j.days ?? []; const o = $("opens"); if (o) o.hidden = frames.length > 0; if (frames.length) goto(frames.length - 1, true); }).catch(() => { /* the calm sea stays */ });
+if (FETCH) fetch("/earth/days.json").then((r) => r.json()).then((j) => { frames = j.days ?? []; const o = $("opens"); if (o) o.hidden = frames.length > 0; if (frames.length) goto(frames.length - 1, true); }).catch(() => { /* the calm sea stays */ });
 let last = performance.now(), hold = 0;
 function frame(now) {
     const dt = now - last; last = now; hold += dt;
@@ -207,6 +207,6 @@ function frame(now) {
     controls.update(); renderer.render(scene, camera); requestAnimationFrame(frame);
 }
 if (reduce) { if (!LIVE) goto(28, true); controls.autoRotate = false; }
-if (location.search.includes("still")) { document.documentElement.classList.add("still"); controls.autoRotate = false; goto(24, true); uniforms.uMix.value = 1; }
+if (location.search.includes("still")) { document.documentElement.classList.add("still"); controls.autoRotate = false; if (!LIVE) goto(24, true); uniforms.uMix.value = 1; }
 requestAnimationFrame(frame);
 window.__earth = { check: () => ({ kiitosZero: Array.from({ length: SEASON_DAYS }, (_, d) => sumOf("kiitos", d)).every((x) => x === 0), cells: cells.length, placed: placed.length, seaDays: SEASON_DAYS }) };
