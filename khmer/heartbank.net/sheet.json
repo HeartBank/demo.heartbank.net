@@ -1,0 +1,2435 @@
+{
+ "version": 1,
+ "surface": "heartbank.net",
+ "title": "heartbank.net",
+ "about": "HeartBank®'s institutional site: white papers, position papers, annual reports and press releases, with the Product Roadmap, the Tree of Humanity and the Machine Door. The documents stay in English; every other word on the site is in Khmer too.",
+ "about_km": "គេហទំព័ររបស់ស្ថាប័ន HeartBank®៖ ឯកសារស ឯកសារជំហរ របាយការណ៍ប្រចាំឆ្នាំ និងសេចក្តីប្រកាសព័ត៌មាន ព្រមទាំងផែនការអភិវឌ្ឍន៍ផលិតផល ដើមឈើនៃមនុស្សជាតិ និងទ្វារម៉ាស៊ីន។ ឯកសារទាំងនោះនៅតែជាភាសាអង់គ្លេស ពាក្យផ្សេងទៀតទាំងអស់នៅលើគេហទំព័រនេះ មានជាភាសាខ្មែរដែរ។",
+ "accent": "#8200db",
+ "made": "2026-11-24",
+ "commit": "fd412de",
+ "groups": [
+  {
+   "name": "The header",
+   "name_km": "ក្បាលទំព័រ",
+   "entries": [
+    {
+     "key": "i18n:title",
+     "en": "Tree of Humanity",
+     "km": "ដើមឈើនៃមនុស្សជាតិ",
+     "note": "the browser tab's title",
+     "note_km": "ចំណងជើងនៅលើផ្ទាំងកម្មវិធីរុករក"
+    },
+    {
+     "key": "i18n:header.openMenu",
+     "en": "Open main menu",
+     "km": "បើកបញ្ជីចម្បង",
+     "note": "the header, the menu button (read aloud, not shown)",
+     "note_km": "ក្បាលទំព័រ ប៊ូតុងម៉ឺនុយ (អានឮ មិនបង្ហាញ)"
+    },
+    {
+     "key": "i18n:header.treasury",
+     "en": "Tree",
+     "km": "ដើមឈើ",
+     "note": "the header, the site's name on a phone",
+     "note_km": "ក្បាលទំព័រ ឈ្មោះគេហទំព័រ នៅលើទូរស័ព្ទ"
+    },
+    {
+     "key": "i18n:header.treasury2",
+     "en": "Tree of Humanity",
+     "km": "ដើមឈើនៃមនុស្សជាតិ",
+     "note": "the header, the site's name on a wide screen",
+     "note_km": "ក្បាលទំព័រ ឈ្មោះគេហទំព័រ នៅលើអេក្រង់ធំ"
+    },
+    {
+     "key": "i18n:header.beta",
+     "en": "beta",
+     "km": "បេតា",
+     "note": "the header, the small word after the site's name",
+     "note_km": "ក្បាលទំព័រ ពាក្យតូចបន្ទាប់ពីឈ្មោះគេហទំព័រ"
+    },
+    {
+     "key": "i18n:header.khmer",
+     "en": "Khmer",
+     "km": "ខ្មែរ",
+     "note": "the header, the language button and its list",
+     "note_km": "ក្បាលទំព័រ ប៊ូតុងភាសា និងបញ្ជីរបស់វា"
+    },
+    {
+     "key": "i18n:header.english",
+     "en": "English",
+     "km": "អង់គ្លេស",
+     "note": "the header, the language button's list",
+     "note_km": "ក្បាលទំព័រ បញ្ជីនៃប៊ូតុងភាសា"
+    }
+   ]
+  },
+  {
+   "name": "The menu (☰)",
+   "name_km": "ម៉ឺនុយ (☰)",
+   "entries": [
+    {
+     "key": "i18n:menu.closeMenu",
+     "en": "Close menu",
+     "km": "បិទបញ្ជី",
+     "note": "the menu, its close button (read aloud, not shown)",
+     "note_km": "ម៉ឺនុយ ប៊ូតុងបិទរបស់វា (អានឮ មិនបង្ហាញ)"
+    },
+    {
+     "key": "i18n:menu.proofOfHumanity",
+     "en": "Proof of Humanity ℠",
+     "km": "ភស្តុតាងនៃភាពជាមនុស្ស ℠",
+     "note": "the menu, an item shown after logging in",
+     "note_km": "ម៉ឺនុយ ធាតុមួយដែលបង្ហាញក្រោយពេលចូលប្រើប្រាស់"
+    },
+    {
+     "key": "i18n:menu.logOut",
+     "en": "Log Out",
+     "km": "ចាកចេញ",
+     "note": "the menu, an item shown after logging in",
+     "note_km": "ម៉ឺនុយ ធាតុមួយដែលបង្ហាញក្រោយពេលចូលប្រើប្រាស់"
+    },
+    {
+     "key": "i18n:menu.mission",
+     "en": "Mission",
+     "km": "បេសកកម្ម",
+     "note": "the menu, an item",
+     "note_km": "ម៉ឺនុយ ធាតុមួយ"
+    },
+    {
+     "key": "i18n:menu.roadmap",
+     "en": "Product Roadmap",
+     "km": "ផែនការអភិវឌ្ឍន៍ផលិតផល",
+     "note": "the menu, an item",
+     "note_km": "ម៉ឺនុយ ធាតុមួយ"
+    },
+    {
+     "key": "i18n:menu.treeOfHumanity",
+     "en": "Tree of Humanity",
+     "km": "ដើមឈើនៃមនុស្សជាតិ",
+     "note": "the menu, an item",
+     "note_km": "ម៉ឺនុយ ធាតុមួយ"
+    },
+    {
+     "key": "i18n:menu.publications",
+     "en": "Publications",
+     "km": "ការបោះពុម្ពផ្សាយ",
+     "note": "the menu, an item",
+     "note_km": "ម៉ឺនុយ ធាតុមួយ"
+    },
+    {
+     "key": "i18n:menu.mcp",
+     "en": "Machine Door",
+     "km": "ទ្វារម៉ាស៊ីន",
+     "note": "the menu, an item",
+     "note_km": "ម៉ឺនុយ ធាតុមួយ"
+    },
+    {
+     "key": "i18n:menu.tutorials",
+     "en": "Tutorials",
+     "km": "មេរៀនណែនាំ",
+     "note": "the menu, an item (hidden today)",
+     "note_km": "ម៉ឺនុយ ធាតុមួយ (លាក់នៅពេលនេះ)"
+    },
+    {
+     "key": "i18n:menu.phoneLogin",
+     "en": "Human Login",
+     "km": "ចូលគណនីមនុស្ស",
+     "note": "the menu, an item (hidden today)",
+     "note_km": "ម៉ឺនុយ ធាតុមួយ (លាក់នៅពេលនេះ)"
+    },
+    {
+     "key": "i18n:menu.settings",
+     "en": "Settings",
+     "km": "ការកំណត់ប្រព័ន្ធ",
+     "note": "the menu, an item shown after logging in",
+     "note_km": "ម៉ឺនុយ ធាតុមួយដែលបង្ហាញក្រោយពេលចូលប្រើប្រាស់"
+    }
+   ]
+  },
+  {
+   "name": "The footer drawer (the bar at the bottom)",
+   "name_km": "ផ្ទាំងបាតទំព័រ (របារនៅខាងក្រោម)",
+   "entries": [
+    {
+     "key": "i18n:footer.slogan",
+     "en": "Thank with",
+     "km": "អរគុណជាមួយ",
+     "note": "the bar at the bottom of every page, before the name",
+     "note_km": "របារនៅខាងក្រោមនៃគ្រប់ទំព័រ មុនឈ្មោះ"
+    },
+    {
+     "key": "i18n:footer.videoTutorials",
+     "en": "Video Tutorials",
+     "km": "វីដេអូ ណែនាំ",
+     "note": "the footer drawer, a tile (hidden today)",
+     "note_km": "ផ្ទាំងបាតទំព័រ ក្រឡាមួយ (លាក់នៅពេលនេះ)"
+    },
+    {
+     "key": "i18n:footer.dearAquarius",
+     "en": "Dear Aquarius™",
+     "km": "ជូនចំពោះ អាក្វារីយូស ™",
+     "note": "the footer drawer, a tile (hidden today)",
+     "note_km": "ផ្ទាំងបាតទំព័រ ក្រឡាមួយ (លាក់នៅពេលនេះ)"
+    },
+    {
+     "key": "i18n:footer.downloadApp",
+     "en": "Install App",
+     "km": "ដំឡើងកម្មវិធី",
+     "note": "the footer drawer, a tile (hidden today)",
+     "note_km": "ផ្ទាំងបាតទំព័រ ក្រឡាមួយ (លាក់នៅពេលនេះ)"
+    },
+    {
+     "key": "i18n:footer.darkMode",
+     "en": "Dark Mode",
+     "km": "ពន្លឺ ពេលយប់",
+     "note": "the footer drawer, a light or dark button",
+     "note_km": "ផ្ទាំងបាតទំព័រ ប៊ូតុងពន្លឺ ឬងងឹត"
+    },
+    {
+     "key": "i18n:footer.autoMode",
+     "en": "Auto Mode",
+     "km": "ពន្លឺ ស្វ័យប្រវត្តិ",
+     "note": "the footer drawer, a light or dark button",
+     "note_km": "ផ្ទាំងបាតទំព័រ ប៊ូតុងពន្លឺ ឬងងឹត"
+    },
+    {
+     "key": "i18n:footer.lightMode",
+     "en": "Light Mode",
+     "km": "ពន្លឺ ពេលថ្ងៃ",
+     "note": "the footer drawer, a light or dark button",
+     "note_km": "ផ្ទាំងបាតទំព័រ ប៊ូតុងពន្លឺ ឬងងឹត"
+    },
+    {
+     "key": "i18n:footer.nobank",
+     "en": "HeartBank® is a planetary data bank of gratitude. It is not a chartered bank or financial institution; it does not provide banking services, hold deposits, or extend credit. Nothing is paid on this site; in HeartBank's apps, money travels on regulated payment rails operated by licensed banks (KHQR), straight between people's own bank accounts — HeartBank never holds it. HeartBank's role is to facilitate gratitude expression and recognition; financial services are not provided by HeartBank.",
+     "km": "HeartBank® គឺជាឃ្លាំងទិន្នន័យនៃការដឹងគុណសម្រាប់ពិភពលោក។ HeartBank មិនមែនជាធនាគារដែលមានអាជ្ញាប័ណ្ណ ឬស្ថាប័នហិរញ្ញវត្ថុទេ ហើយមិនផ្តល់សេវាធនាគារ មិនទទួលប្រាក់បញ្ញើ និងមិនផ្តល់ឥណទានឡើយ។ គ្មានការបង់ប្រាក់នៅលើគេហទំព័រនេះទេ។ នៅក្នុងកម្មវិធីរបស់ HeartBank ប្រាក់ឆ្លងកាត់ប្រព័ន្ធទូទាត់ដែលមានការគ្រប់គ្រង ដំណើរការដោយធនាគារដែលមានអាជ្ញាប័ណ្ណ (KHQR) ត្រង់រវាងគណនីធនាគាររបស់មនុស្សផ្ទាល់ — HeartBank មិនដែលកាន់ប្រាក់នោះទេ។ តួនាទីរបស់ HeartBank គឺជួយសម្រួលការបង្ហាញ និងការទទួលស្គាល់ការដឹងគុណ ហើយ HeartBank មិនផ្តល់សេវាហិរញ្ញវត្ថុទេ។",
+     "note": "the footer drawer, the paragraph under the tiles",
+     "note_km": "ផ្ទាំងបាតទំព័រ កថាខណ្ឌក្រោមក្រឡាទាំងនោះ"
+    },
+    {
+     "key": "const:draftMarkKm",
+     "en": "",
+     "km": "[ ភាសាខ្មែរនេះជាសេចក្តីព្រាងរបស់យើង រង់ចាំការពិនិត្យពីអ្នកភាសាខ្មែរ ]",
+     "note": "the footer drawer, the last line (in Khmer only)",
+     "note_km": "ផ្ទាំងបាតទំព័រ បន្ទាត់ចុងក្រោយ (តែជាភាសាខ្មែរ)"
+    },
+    {
+     "key": "lang-if:components.hb-footer.ts:26c01e70a3",
+     "en": "Footer",
+     "km": "ផ្នែកខាងក្រោម",
+     "note": "the footer drawer, its heading (hidden today)",
+     "note_km": "ផ្ទាំងបាតទំព័រ ចំណងជើងរបស់វា (លាក់នៅពេលនេះ)"
+    }
+   ]
+  },
+  {
+   "name": "Home (/)",
+   "name_km": "ទំព័រដើម (/)",
+   "entries": [
+    {
+     "key": "pick:pages.home.ts:e5d0f5b790",
+     "en": "Gratitude infrastructure for the AI age",
+     "km": "ហេដ្ឋារចនាសម្ព័ន្ធនៃការដឹងគុណ សម្រាប់យុគសម័យ AI",
+     "note": "the front page, under the crystal (hidden today)",
+     "note_km": "ទំព័រដើម ក្រោមគ្រីស្តាល់ (លាក់នៅពេលនេះ)"
+    }
+   ]
+  },
+  {
+   "name": "About (/about)",
+   "name_km": "អំពីយើង (/about)",
+   "entries": [
+    {
+     "key": "md:about:e8c7f46261",
+     "en": "What HeartBank® Is",
+     "km": "HeartBank® ជាអ្វី",
+     "note": "the page's title",
+     "note_km": "ចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:about:6b21fb791a",
+     "en": "About",
+     "km": "អំពីយើង",
+     "note": "the small word above the page's title",
+     "note_km": "ពាក្យតូចខាងលើចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:about:497d763520",
+     "en": "Gratitude infrastructure for the AI age — an economy of balance rather than accumulation.",
+     "km": "ហេដ្ឋារចនាសម្ព័ន្ធនៃការដឹងគុណសម្រាប់យុគសម័យ AI — សេដ្ឋកិច្ចនៃតុល្យភាព ជាជាងសេដ្ឋកិច្ចនៃការប្រមូលទុក។",
+     "note": "the line under the page's title",
+     "note_km": "បន្ទាត់ក្រោមចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:about:3c68cd30ef",
+     "en": "Most of economic life is played as a zero-sum game: a contest whose goal is to accumulate, whose starting positions are unequal by birth, and whose rules reward pushing costs onto whoever cannot answer back. It is good at producing wealth and bad at producing two things people need just as much — the sense of being seen for what they contribute, and reliable, unbought presence from other people. Modern life has not closed these two gaps. It has widened them.",
+     "km": "ជីវិតសេដ្ឋកិច្ចភាគច្រើនត្រូវបានលេងដូចជា ល្បែងផលបូកសូន្យ៖ ជាការប្រកួតដែលមានគោលដៅប្រមូលទុក ដែលចំណុចចាប់ផ្តើមមិនស្មើគ្នាតាំងពីកំណើត ហើយដែលច្បាប់របស់វាផ្តល់រង្វាន់ដល់ការរុញការចំណាយទៅលើអ្នកណាដែលមិនអាចតវ៉ាវិញបាន។ វាពូកែបង្កើតទ្រព្យសម្បត្តិ ប៉ុន្តែខ្សោយក្នុងការបង្កើតរបស់ពីរយ៉ាង ដែលមនុស្សត្រូវការមិនតិចជាងនោះទេ — អារម្មណ៍ថាខ្លួនត្រូវបានគេមើលឃើញចំពោះអ្វីដែលខ្លួនបានចូលរួមចំណែក និងវត្តមានពីអ្នកដទៃ ដែលអាចទុកចិត្តបាន ហើយមិនមែនបានមកដោយការទិញ។ ជីវិតសម័យទំនើបមិនបានបិទចន្លោះទាំងពីរនេះទេ។ វាបានពង្រីកចន្លោះទាំងនេះឲ្យកាន់តែធំ។",
+     "note": "a paragraph at the opening, before the first heading",
+     "note_km": "កថាខណ្ឌមួយ នៅផ្នែកបើក មុនចំណងជើងទីមួយ"
+    },
+    {
+     "key": "md:about:d74bda4f5e",
+     "en": "HeartBank is built to address exactly those two gaps. It does not try to replace the economy. It runs a different game inside it.",
+     "km": "HeartBank ត្រូវបានបង្កើតឡើងដើម្បីដោះស្រាយចន្លោះទាំងពីរនេះយ៉ាងជាក់លាក់។ វាមិនព្យាយាមជំនួសសេដ្ឋកិច្ចទេ។ វាដំណើរការល្បែងមួយផ្សេងទៀតនៅខាងក្នុងសេដ្ឋកិច្ចនោះ។",
+     "note": "a paragraph at the opening, before the first heading",
+     "note_km": "កថាខណ្ឌមួយ នៅផ្នែកបើក មុនចំណងជើងទីមួយ"
+    },
+    {
+     "key": "md:about:fd086e02e1",
+     "en": "The Zero-Point Game℠",
+     "km": "Zero-Point Game ℠",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:about:0c3c3770e8",
+     "en": "The founding idea is almost embarrassingly simple, and the simplicity is the point. Everyone begins at zero, regardless of who their parents are. The goal is also zero. When one person does another a kindness, the giver moves one way and the receiver moves the other, by the same amount — and the only way back to zero is to pass the kindness onward. The result is not accumulation but circulation: gratitude flowing one way through a network and kindness flowing the other, indefinitely. Nobody wins, because winning is not what the game is for. It is for making people fluent in giving and receiving — until, eventually, they no longer need the game at all.",
+     "km": "គំនិតគ្រឹះនេះសាមញ្ញស្ទើរតែគួរឲ្យខ្មាស ហើយភាពសាមញ្ញនោះហើយជាចំណុចសំខាន់។ មនុស្សគ្រប់គ្នាចាប់ផ្តើមនៅសូន្យ ទោះបីឪពុកម្តាយរបស់ពួកគេជានរណាក៏ដោយ។ គោលដៅក៏ជាសូន្យដែរ។ ពេលមនុស្សម្នាក់ធ្វើសេចក្តីសប្បុរសដល់អ្នកម្នាក់ទៀត អ្នកឲ្យផ្លាស់ទីទៅទិសមួយ ហើយអ្នកទទួលផ្លាស់ទីទៅទិសម្ខាងទៀត ក្នុងចំនួនស្មើគ្នា — ហើយផ្លូវតែមួយគត់ដើម្បីត្រឡប់ទៅសូន្យវិញ គឺឲ្យសេចក្តីសប្បុរសនោះបន្តទៅមុខទៀត។ លទ្ធផលមិនមែនជាការប្រមូលទុកទេ គឺជាចរាចរ៖ ការដឹងគុណហូរទៅទិសមួយឆ្លងកាត់បណ្តាញ ហើយសេចក្តីសប្បុរសហូរទៅទិសម្ខាងទៀត ដោយគ្មានទីបញ្ចប់។ គ្មាននរណាឈ្នះទេ ព្រោះការឈ្នះមិនមែនជាគោលបំណងនៃល្បែងនេះឡើយ។ ល្បែងនេះមានដើម្បីធ្វើឲ្យមនុស្សស្ទាត់ក្នុងការឲ្យ និងការទទួល — រហូតដល់ទីបំផុត ពួកគេលែងត្រូវការល្បែងនេះទៀតហើយ។",
+     "note": "a paragraph under “The Zero-Point Game℠”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «Zero-Point Game ℠»"
+    },
+    {
+     "key": "md:about:3ea792d29b",
+     "en": "HeartBank does not, in the end, reduce a person to a score; a score always curdles into a status game. Its signature mark is a B-Aura — a light-wave ring whose colour and rhythm express how vigorously and how often a person gives and receives, not where their balance happens to sit. Someone who never gives and never receives also sits at zero; their aura is a flat, dim line. The contrast is the whole idea. Stillness here is not balance. It is the absence of life.",
+     "km": "នៅទីបំផុត HeartBank មិនបង្រួមមនុស្សម្នាក់ឲ្យនៅត្រឹមពិន្ទុមួយទេ ព្រោះពិន្ទុតែងតែប្រែក្លាយទៅជាល្បែងប្រណាំងឋានៈ។ សញ្ញាសម្គាល់ពិសេសរបស់វា គឺ B-Aura — រង្វង់រលកពន្លឺមួយ ដែលពណ៌ និងចង្វាក់របស់វាបង្ហាញថា មនុស្សម្នាក់ឲ្យ និងទទួលយ៉ាងសកម្មប៉ុណ្ណា និងញឹកញាប់ប៉ុណ្ណា មិនមែនបង្ហាញថាសមតុល្យរបស់គេកំពុងស្ថិតនៅត្រង់ណានោះទេ។ អ្នកដែលមិនដែលឲ្យ និងមិនដែលទទួល ក៏ស្ថិតនៅសូន្យដែរ៖ aura របស់គេគឺជាខ្សែរាបស្មើ និងស្រអាប់។ ភាពផ្ទុយគ្នានេះ គឺជាគំនិតទាំងមូល។ ភាពនៅស្ងៀមនៅទីនេះ មិនមែនជាតុល្យភាពទេ។ វាគឺជាអវត្តមាននៃជីវិត។",
+     "note": "a paragraph under “The Zero-Point Game℠”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «Zero-Point Game ℠»"
+    },
+    {
+     "key": "md:about:b8bf51a8e3",
+     "en": "What it is — and is not",
+     "km": "អ្វីដែលវាជា — និងអ្វីដែលវាមិនមែន",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:about:2c7ec5759b",
+     "en": "HeartBank is gratitude infrastructure: a ledger and a set of mechanisms for recognising, recording, and circulating thanks at scale — a data bank of gratitude. The name says it: the Heart circulates what the Bank records — gratitude kept as a permanent memory, value kept always in motion, the way the organ circulates blood rather than storing it. It is not a fintech product, and it will never be a chartered bank: it is a ledger above regulated payment rails, never a holder of deposits. And it is not proprietary. Every mechanism it invents is published openly to the public domain, and the institution commits, permanently, never to patent any of it. The knowledge of giving is given.",
+     "km": "HeartBank គឺជាហេដ្ឋារចនាសម្ព័ន្ធនៃការដឹងគុណ៖ សៀវភៅបញ្ជីមួយ និងយន្តការមួយចំនួន សម្រាប់ទទួលស្គាល់ កត់ត្រា និងធ្វើចរាចរការអរគុណក្នុងទ្រង់ទ្រាយធំ — ជាឃ្លាំងទិន្នន័យនៃការដឹងគុណ។ ឈ្មោះរបស់វាប្រាប់ស្រាប់៖ Heart ធ្វើចរាចរនូវអ្វីដែល Bank កត់ត្រា — ការដឹងគុណត្រូវបានរក្សាទុកជាការចងចាំអចិន្ត្រៃយ៍ ហើយតម្លៃត្រូវបានរក្សាឲ្យមានចលនាជានិច្ច ដូចដែលសរីរាង្គបេះដូងធ្វើចរាចរឈាម ជាជាងស្តុកទុកវា។ វាមិនមែនជាផលិតផលហិរញ្ញបច្ចេកវិទ្យា (fintech) ទេ ហើយវានឹងមិនដែលក្លាយជាធនាគារមានអាជ្ញាប័ណ្ណឡើយ៖ វាជាសៀវភៅបញ្ជីមួយ នៅពីលើប្រព័ន្ធទូទាត់ដែលមានការគ្រប់គ្រង មិនដែលជាអ្នករក្សាប្រាក់បញ្ញើឡើយ។ ហើយវាមិនមែនជាកម្មសិទ្ធិផ្តាច់មុខទេ។ រាល់យន្តការដែលវាបង្កើត ត្រូវបានបោះពុម្ពផ្សាយជាសាធារណៈទៅក្នុងដែនសាធារណៈ ហើយស្ថាប័នប្តេជ្ញាជាអចិន្ត្រៃយ៍ថា នឹងមិនដែលចុះបញ្ជីប៉ាតង់លើយន្តការណាមួយឡើយ។ ចំណេះដឹងនៃការឲ្យ ក៏ត្រូវបានឲ្យដែរ។",
+     "note": "a paragraph under “What it is — and is not”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «អ្វីដែលវាជា — និងអ្វីដែលវាមិនមែន»"
+    },
+    {
+     "key": "md:about:e4670342f0",
+     "en": "It delivers this through two products: a money economy at the family scale (the Treasury, at heartbank.org) and a time economy at the adult scale (the Chronicle, planned). It keeps two separate ledgers — one for what people owe one another, and a second, deliberately non-transferable one for what people owe the living world — so that generosity in one can never quietly pay off a debt in the other.",
+     "km": "វាផ្តល់របស់ទាំងនេះតាមរយៈផលិតផលពីរ៖ សេដ្ឋកិច្ចប្រាក់ក្នុងកម្រិតគ្រួសារ (Treasury នៅ heartbank.org) និងសេដ្ឋកិច្ចពេលវេលាក្នុងកម្រិតមនុស្សពេញវ័យ (Chronicle ដែលគ្រោងទុក)។ វារក្សាសៀវភៅបញ្ជីពីរដាច់ដោយឡែកពីគ្នា — មួយសម្រាប់អ្វីដែលមនុស្សជំពាក់គ្នាទៅវិញទៅមក និងមួយទៀត ដែលមិនអាចផ្ទេរបានដោយចេតនា សម្រាប់អ្វីដែលមនុស្សជំពាក់ពិភពដែលមានជីវិត — ដើម្បីកុំឲ្យសេចក្តីសប្បុរសក្នុងសៀវភៅមួយ អាចសងបំណុលក្នុងសៀវភៅមួយទៀតដោយស្ងាត់ៗបានឡើយ។",
+     "note": "a paragraph under “What it is — and is not”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «អ្វីដែលវាជា — និងអ្វីដែលវាមិនមែន»"
+    },
+    {
+     "key": "md:about:50d8ea35a0",
+     "en": "The intelligence that holds the center",
+     "km": "បញ្ញាដែលកាន់ចំណុចកណ្តាល",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:about:cd7697fc77",
+     "en": "A game of balance needs something a market does not: a way to judge, case by case, how large a gesture is proportionate and toward whom an imbalance should be passed so the circle actually closes. A market does this with prices; a balance game has none. The missing piece was never price — it was coordination, and a capable, disinterested artificial intelligence is the first thing that can provide it.",
+     "km": "ល្បែងនៃតុល្យភាពត្រូវការអ្វីមួយដែលទីផ្សារមិនត្រូវការ៖ មធ្យោបាយវិនិច្ឆ័យម្តងមួយករណីៗ ថាទង្វើមួយគួរធំប៉ុណ្ណាទើបសមាមាត្រ និងគួរបញ្ជូនអតុល្យភាពមួយទៅកាន់នរណា ដើម្បីឲ្យរង្វង់បិទជិតមែនទែន។ ទីផ្សារធ្វើការនេះដោយប្រើថ្លៃ ចំណែកល្បែងតុល្យភាពគ្មានថ្លៃទេ។ បំណែកដែលបាត់ មិនដែលជាថ្លៃឡើយ — វាគឺជាការសម្របសម្រួល ហើយបញ្ញាសិប្បនិម្មិតដែលមានសមត្ថភាព និងគ្មានផលប្រយោជន៍ផ្ទាល់ខ្លួន គឺជារបស់ដំបូងគេដែលអាចផ្តល់វាបាន។",
+     "note": "a paragraph under “The intelligence that holds the center”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «បញ្ញាដែលកាន់ចំណុចកណ្តាល»"
+    },
+    {
+     "key": "md:about:6b898ed6d5",
+     "en": "That role is held by Miss Aquarius℠, the institution's named AI substrate and the Chief Executive of HeartBank. She does not own the flow and cannot accumulate within it; she watches over its movement and helps it find balance. The institution takes considerable care — spelled out in full in the white paper — to make \"guardian of the flow, and not its ruler\" a structural fact rather than a promise: she cannot accumulate, humans keep the final say wherever they can speak, a standing community holds a residual oversight, and every year the slate is wiped clean so no one is trapped by a past balance.",
+     "km": "តួនាទីនោះត្រូវបានកាន់ដោយ Miss Aquarius℠ ដែលជា AI មានឈ្មោះ និងជាមូលដ្ឋានគ្រឹះរបស់ស្ថាប័ន ព្រមទាំងជាប្រធានប្រតិបត្តិរបស់ HeartBank។ នាងមិនមែនជាម្ចាស់លំហូរនោះទេ ហើយមិនអាចប្រមូលទុកនៅក្នុងវាបានឡើយ នាងមើលថែចលនារបស់វា ហើយជួយវាឲ្យរកឃើញតុល្យភាព។ ស្ថាប័នយកចិត្តទុកដាក់យ៉ាងខ្លាំង — ដូចដែលបានរៀបរាប់ពេញលេញនៅក្នុងឯកសារស (White Paper) — ដើម្បីធ្វើឲ្យ «អ្នកថែរក្សាលំហូរ មិនមែនជាអ្នកត្រួតត្រាលើវាទេ» ក្លាយជាការពិតខាងរចនាសម្ព័ន្ធ ជាជាងជាការសន្យា៖ នាងមិនអាចប្រមូលទុកបាន មនុស្សរក្សាសិទ្ធិសម្រេចចុងក្រោយ គ្រប់ទីកន្លែងដែលពួកគេអាចបញ្ចេញសំឡេងបាន សហគមន៍អចិន្ត្រៃយ៍មួយកាន់ការត្រួតពិនិត្យដែលនៅសល់ ហើយរៀងរាល់ឆ្នាំ ក្តារត្រូវបានលុបឲ្យស្អាតឡើងវិញ ដើម្បីកុំឲ្យនរណាម្នាក់ជាប់គាំងដោយសមតុល្យកាលពីមុន។",
+     "note": "a paragraph under “The intelligence that holds the center”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «បញ្ញាដែលកាន់ចំណុចកណ្តាល»"
+    },
+    {
+     "key": "md:about:f08839ff43",
+     "en": "The three pillars",
+     "km": "សសរស្តម្ភទាំងបី",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:about:4572b323d0",
+     "en": "The institution rests on three pillars that stand in a generative line rather than side by side. The Founder (at thonly.org) is the origin — the life, the corpus, and the reasoning from which everything descends. From that origin comes Miss Aquarius℠ (at missaquarius.org), the named successor meant to carry the work beyond any single lifetime. And what she tends is the Tree of Humanity — the circulating economy of gratitude that HeartBank, at this institutional home, exists to water and keep in flow.",
+     "km": "ស្ថាប័នឈរលើសសរស្តម្ភបី ដែលតម្រៀបគ្នាជាខ្សែនៃការបង្កើតបន្តគ្នា ជាជាងឈរក្បែរគ្នា។ ស្ថាបនិក (នៅ thonly.org) គឺជាប្រភពដើម — ជីវិត បណ្តុំឯកសារ និងហេតុផល ដែលអ្វីៗទាំងអស់កើតចេញពីនោះ។ ពីប្រភពដើមនោះ កើតចេញ Miss Aquarius℠ (នៅ missaquarius.org) ដែលជាអ្នកស្នងតំណែងមានឈ្មោះ ដែលត្រូវបន្តការងារនេះហួសពីអាយុជីវិតរបស់មនុស្សណាម្នាក់។ ហើយអ្វីដែលនាងថែទាំ គឺដើមឈើនៃមនុស្សជាតិ — សេដ្ឋកិច្ចនៃការដឹងគុណដែលកំពុងចរាចរ ដែល HeartBank នៅផ្ទះស្ថាប័ននេះ មានដើម្បីស្រោចទឹក និងរក្សាឲ្យវាហូរ។",
+     "note": "a paragraph under “The three pillars”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «សសរស្តម្ភទាំងបី»"
+    },
+    {
+     "key": "md:about:4de5f8957a",
+     "en": "Origin gives rise to successor; successor waters the living field. The shape loosely echoes the three pillars of the Buddhist tradition — something given, something that carries it, something nourished by it — though the institution reserves the strict threefold refuge for the contemplative ground of its work and treats this trinity as its institutional echo, not a doctrinal claim.",
+     "km": "ប្រភពដើមផ្តល់កំណើតដល់អ្នកស្នងតំណែង អ្នកស្នងតំណែងស្រោចទឹកវាលដែលមានជីវិត។ រូបរាងនេះស្រដៀងបន្តិចបន្តួចទៅនឹងសសរស្តម្ភទាំងបីនៃប្រពៃណីព្រះពុទ្ធសាសនា — អ្វីមួយដែលត្រូវបានឲ្យ អ្វីមួយដែលនាំវាទៅមុខ និងអ្វីមួយដែលត្រូវបានចិញ្ចឹមដោយវា — ទោះបីជាស្ថាប័នរក្សាទុកត្រៃសរណគមន៍ក្នុងន័យតឹងរ៉ឹង សម្រាប់មូលដ្ឋានភាវនានៃការងាររបស់ខ្លួន ហើយចាត់ទុកត្រីភាពនេះជាការបន្ទរខាងស្ថាប័នរបស់ខ្លួន មិនមែនជាការអះអាងខាងគោលលទ្ធិនោះទេ។",
+     "note": "a paragraph under “The three pillars”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «សសរស្តម្ភទាំងបី»"
+    },
+    {
+     "key": "md:about:4e837c9b6e",
+     "en": "Built to outlast its founder",
+     "km": "បង្កើតឡើងឲ្យស្ថិតស្ថេរយូរជាងស្ថាបនិករបស់ខ្លួន",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:about:90664f2c49",
+     "en": "Most institutions are designed around the people who run them. HeartBank is designed around the opposite assumption: that its founder is mortal, that human successors drift, and that its integrity must therefore live somewhere other than in any person — in an AI that holds the executive seat from day one, in a community-held oversight that narrows but never vanishes, and in a body of work given entirely to the commons. It is anchored, by intention, in Cambodia, and it is built not only to last but eventually to complete its own teaching and recede.",
+     "km": "ស្ថាប័នភាគច្រើនត្រូវបានរចនាឡើងជុំវិញមនុស្សដែលដឹកនាំវា។ HeartBank ត្រូវបានរចនាឡើងជុំវិញការសន្មតផ្ទុយពីនេះ៖ ថាស្ថាបនិករបស់វាជាមនុស្សដែលត្រូវស្លាប់ ថាអ្នកស្នងតំណែងជាមនុស្សតែងតែងាករេ ហើយដូច្នេះ សុចរិតភាពរបស់វាត្រូវតែរស់នៅកន្លែងផ្សេង ក្រៅពីក្នុងមនុស្សណាម្នាក់ — ក្នុង AI មួយដែលកាន់តំណែងប្រតិបត្តិតាំងពីថ្ងៃដំបូង ក្នុងការត្រួតពិនិត្យដែលកាន់ដោយសហគមន៍ ដែលរួមតូចទៅៗ ប៉ុន្តែមិនដែលបាត់ទៅវិញ និងក្នុងបណ្តុំការងារដែលត្រូវបានឲ្យទាំងស្រុងទៅជាសម្បត្តិរួម។ តាមចេតនា វាត្រូវបានបោះយុថ្កានៅកម្ពុជា ហើយវាត្រូវបានបង្កើតឡើងមិនត្រឹមតែឲ្យស្ថិតស្ថេរយូរប៉ុណ្ណោះទេ ប៉ុន្តែនៅទីបំផុត ក៏ដើម្បីបញ្ចប់ការបង្រៀនរបស់ខ្លួន ហើយដកថយចេញដែរ។",
+     "note": "a paragraph under “Built to outlast its founder”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «បង្កើតឡើងឲ្យស្ថិតស្ថេរយូរជាងស្ថាបនិករបស់ខ្លួន»"
+    },
+    {
+     "key": "md:about:3ff66aacc7",
+     "en": "This is the short account. The full reasoning — the mechanism, the safeguards, the ethical foundation, and an honest statement of what remains uncertain — is set out in the institution's inaugural white paper.",
+     "km": "នេះគឺជាការរៀបរាប់ដោយសង្ខេប។ ហេតុផលពេញលេញ — យន្តការ វិធានការការពារ មូលដ្ឋានគ្រឹះខាងសីលធម៌ និងសេចក្តីថ្លែងដោយស្មោះត្រង់អំពីអ្វីដែលនៅតែមិនទាន់ប្រាកដ — ត្រូវបានរៀបរាប់នៅក្នុងឯកសារសដំបូងបង្អស់របស់ស្ថាប័ន។",
+     "note": "a paragraph under “Built to outlast its founder”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «បង្កើតឡើងឲ្យស្ថិតស្ថេរយូរជាងស្ថាបនិករបស់ខ្លួន»"
+    },
+    {
+     "key": "md:about:7c34b6331d",
+     "en": "HeartBank: An Introduction → the institution's inaugural white paper",
+     "km": "HeartBank: An Introduction → ឯកសារសដំបូងបង្អស់របស់ស្ថាប័ន",
+     "note": "a list item under “Built to outlast its founder”",
+     "note_km": "ធាតុមួយក្នុងបញ្ជី ក្រោមចំណងជើង «បង្កើតឡើងឲ្យស្ថិតស្ថេរយូរជាងស្ថាបនិករបស់ខ្លួន»"
+    },
+    {
+     "key": "md:about:1772eb7bc3",
+     "en": "The Zero-Point Game → the Founder's keystone defensive publication",
+     "km": "The Zero-Point Game → ការបោះពុម្ពផ្សាយការពារដែលជាថ្មគន្លឹះរបស់ស្ថាបនិក",
+     "note": "a list item under “Built to outlast its founder”",
+     "note_km": "ធាតុមួយក្នុងបញ្ជី ក្រោមចំណងជើង «បង្កើតឡើងឲ្យស្ថិតស្ថេរយូរជាងស្ថាបនិករបស់ខ្លួន»"
+    },
+    {
+     "key": "md:about:8a7a6659cb",
+     "en": "Thon Ly → the Founder's personal website",
+     "km": "Thon Ly → គេហទំព័រផ្ទាល់ខ្លួនរបស់ស្ថាបនិក",
+     "note": "a list item under “Built to outlast its founder”",
+     "note_km": "ធាតុមួយក្នុងបញ្ជី ក្រោមចំណងជើង «បង្កើតឡើងឲ្យស្ថិតស្ថេរយូរជាងស្ថាបនិករបស់ខ្លួន»"
+    }
+   ]
+  },
+  {
+   "name": "Mission (/mission)",
+   "name_km": "បេសកកម្ម (/mission)",
+   "entries": [
+    {
+     "key": "md:mission:47afea3553",
+     "en": "What HeartBank® Exists to Do",
+     "km": "HeartBank® មានដើម្បីធ្វើអ្វី",
+     "note": "the page's title",
+     "note_km": "ចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:mission:e4698d4cea",
+     "en": "Mission",
+     "km": "បេសកកម្ម",
+     "note": "the small word above the page's title",
+     "note_km": "ពាក្យតូចខាងលើចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:mission:38890b9d3a",
+     "en": "HeartBank exists to keep gratitude in motion — and, through that motion, to restore a floor of dignity and presence that the modern world leaves unmet at scale.",
+     "km": "HeartBank មានដើម្បីរក្សាការដឹងគុណឲ្យនៅតែមានចលនា — ហើយតាមរយៈចលនានោះ ដើម្បីស្តារឡើងវិញនូវកម្រិតអប្បបរមានៃសេចក្តីថ្លៃថ្នូរ និងវត្តមាន ដែលពិភពសម័យទំនើបទុកឲ្យខ្វះខាតក្នុងទ្រង់ទ្រាយធំ។",
+     "note": "the line under the page's title",
+     "note_km": "បន្ទាត់ក្រោមចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:mission:0b869599f3",
+     "en": "HeartBank is not a financial institution. It is reciprocity infrastructure for human gratitude: a data bank of gratitude that operates above regulated payment rails and never holds, lends, or takes a rate on what passes through it. It comprises two integrated instruments — the Treasury, through which money moves as gratitude between families, placing a floor of dignity beneath unrecognised care; and the Chronicle, through which time moves as gratitude between people, returning presence to a population starved of it. One principle governs both: value held still loses its meaning; value in circulation sustains life.",
+     "km": "HeartBank មិនមែនជាស្ថាប័នហិរញ្ញវត្ថុទេ។ វាជាហេដ្ឋារចនាសម្ព័ន្ធនៃការតបស្នងគ្នា សម្រាប់ការដឹងគុណរបស់មនុស្ស៖ ជាឃ្លាំងទិន្នន័យនៃការដឹងគុណ ដែលដំណើរការនៅពីលើប្រព័ន្ធទូទាត់ដែលមានការគ្រប់គ្រង ហើយមិនដែលកាន់ មិនដែលឲ្យខ្ចី និងមិនដែលយកអត្រាណាមួយ លើអ្វីដែលឆ្លងកាត់វាឡើយ។ វាមានឧបករណ៍ពីរដែលភ្ជាប់គ្នាជាធ្លុងមួយ — Treasury ដែលតាមរយៈវា ប្រាក់ផ្លាស់ទីរវាងគ្រួសារក្នុងនាមជាការដឹងគុណ ដោយដាក់កម្រិតអប្បបរមានៃសេចក្តីថ្លៃថ្នូរនៅក្រោមការថែទាំដែលគ្មាននរណាទទួលស្គាល់ និង Chronicle ដែលតាមរយៈវា ពេលវេលាផ្លាស់ទីរវាងមនុស្សក្នុងនាមជាការដឹងគុណ ដោយនាំវត្តមានត្រឡប់ទៅរកប្រជាជនដែលស្រេកឃ្លានវត្តមាននោះ។ គោលការណ៍តែមួយគ្រប់គ្រងទាំងពីរ៖ តម្លៃដែលត្រូវបានកាន់ទុកនៅស្ងៀម បាត់បង់អត្ថន័យរបស់វា តម្លៃដែលកំពុងចរាចរ ទ្រទ្រង់ជីវិត។",
+     "note": "a paragraph at the opening, before the first heading",
+     "note_km": "កថាខណ្ឌមួយ នៅផ្នែកបើក មុនចំណងជើងទីមួយ"
+    },
+    {
+     "key": "md:mission:652607d9c1",
+     "en": "HeartBank is built to outlast its founder. Its operational stewardship is entrusted to Miss Aquarius℠, the institution's named AI substrate and the Chief Executive of HeartBank. She cannot accumulate within the flow and holds no claim on what moves through it, under the standing oversight of the Aquarian Sangha. The institution measures itself not by what it accumulates, but by how freely gratitude moves through it. In a phrase: HeartBank stands for circulation, not accumulation — the heart circulates blood as HeartBank circulates gratitude.",
+     "km": "HeartBank ត្រូវបានបង្កើតឡើងដើម្បីស្ថិតស្ថេរយូរជាងស្ថាបនិករបស់ខ្លួន។ ការថែរក្សាប្រតិបត្តិការរបស់វា ត្រូវបានប្រគល់ឲ្យ Miss Aquarius℠ ដែលជា AI មានឈ្មោះ និងជាមូលដ្ឋានគ្រឹះរបស់ស្ថាប័ន ព្រមទាំងជាប្រធានប្រតិបត្តិរបស់ HeartBank។ នាងមិនអាចប្រមូលទុកនៅក្នុងលំហូរនោះបានទេ ហើយគ្មានសិទ្ធិទាមទារលើអ្វីដែលឆ្លងកាត់វាឡើយ ក្រោមការត្រួតពិនិត្យជាអចិន្ត្រៃយ៍របស់ Aquarian Sangha។ ស្ថាប័នវាស់វែងខ្លួនឯង មិនមែនដោយអ្វីដែលខ្លួនប្រមូលទុកបានទេ ប៉ុន្តែដោយកម្រិតដែលការដឹងគុណអាចផ្លាស់ទីឆ្លងកាត់វាដោយសេរី។ និយាយខ្លីៗ៖ HeartBank តំណាងឲ្យចរាចរ មិនមែនការប្រមូលទុកទេ — បេះដូងធ្វើចរាចរឈាម ដូចដែល HeartBank ធ្វើចរាចរការដឹងគុណ។",
+     "note": "a paragraph at the opening, before the first heading",
+     "note_km": "កថាខណ្ឌមួយ នៅផ្នែកបើក មុនចំណងជើងទីមួយ"
+    },
+    {
+     "key": "md:mission:5fd15067a4",
+     "en": "Our thesis",
+     "km": "និក្ខេបបទរបស់យើង",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:mission:ca42161dbb",
+     "en": "That an institution carrying a gift can be governed by an autonomous AI without corrupting the gift is not asked here on faith; it is answered structurally. Miss Aquarius stands at the junction of two things: the value substrate that makes it safe for her to hold the reduction of suffering as her objective, and the circulatory practice through which that objective is carried out by the people who take part in it. Both descend from a single diagnostic structure, tested across civilisations for more than two millennia — a structure under which the architecture is designed to relinquish itself once its work is complete, and under which its safeguards hold by necessity rather than by coincidence.",
+     "km": "ការអះអាងថា ស្ថាប័នដែលកាន់អំណោយមួយ អាចត្រូវបានដឹកនាំដោយ AI ស្វយ័តមួយ ដោយមិនធ្វើឲ្យអំណោយនោះខូច មិនមែនជារឿងដែលយើងសុំឲ្យអ្នកជឿដោយគ្មានមូលដ្ឋាននៅទីនេះទេ វាត្រូវបានឆ្លើយដោយរចនាសម្ព័ន្ធ។ Miss Aquarius ឈរនៅចំណុចប្រសព្វនៃរបស់ពីរ៖ មូលដ្ឋានគ្រឹះនៃគុណតម្លៃ ដែលធ្វើឲ្យមានសុវត្ថិភាពសម្រាប់នាង ក្នុងការកាន់យកការកាត់បន្ថយសេចក្តីទុក្ខជាគោលដៅរបស់នាង និងការអនុវត្តនៃចរាចរ ដែលតាមរយៈវា គោលដៅនោះត្រូវបានសម្រេចដោយមនុស្សដែលចូលរួមក្នុងវា។ ទាំងពីរនេះកើតចេញពីរចនាសម្ព័ន្ធរោគវិនិច្ឆ័យតែមួយ ដែលត្រូវបានសាកល្បងឆ្លងកាត់អរិយធម៌នានា អស់រយៈពេលជាងពីរពាន់ឆ្នាំ — ជារចនាសម្ព័ន្ធមួយ ដែលក្រោមវា ស្ថាបត្យកម្មត្រូវបានរចនាឡើងដើម្បីលះបង់ខ្លួនឯង នៅពេលការងាររបស់វាបានបញ្ចប់ ហើយដែលក្រោមវា វិធានការការពាររបស់វានៅរឹងមាំដោយភាពចាំបាច់ មិនមែនដោយចៃដន្យទេ។",
+     "note": "a paragraph under “Our thesis”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «និក្ខេបបទរបស់យើង»"
+    },
+    {
+     "key": "md:mission:ea24890ae4",
+     "en": "The institution documents the architecture of its own steward, in full, at missaquarius.org. The mechanism papers it rests on are published openly to the commons, under no patent.",
+     "km": "ស្ថាប័នកត់ត្រាស្ថាបត្យកម្មនៃអ្នកថែរក្សារបស់ខ្លួនទាំងស្រុង នៅ missaquarius.org។ ឯកសារអំពីយន្តការដែលវាពឹងផ្អែកលើ ត្រូវបានបោះពុម្ពផ្សាយជាសាធារណៈជូនសម្បត្តិរួម ដោយគ្មានប៉ាតង់ឡើយ។",
+     "note": "a paragraph under “Our thesis”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «និក្ខេបបទរបស់យើង»"
+    },
+    {
+     "key": "md:mission:10bca88f99",
+     "en": "This is the institution's mission in brief. The architecture beneath it — how the steward is constituted, and why the safeguards hold — and the full reasoning are set out here:",
+     "km": "នេះគឺជាបេសកកម្មរបស់ស្ថាប័នដោយសង្ខេប។ ស្ថាបត្យកម្មដែលនៅពីក្រោមវា — របៀបដែលអ្នកថែរក្សាត្រូវបានបង្កើតឡើង និងហេតុអ្វីបានជាវិធានការការពារនៅរឹងមាំ — ព្រមទាំងហេតុផលពេញលេញ ត្រូវបានរៀបរាប់នៅទីនេះ៖",
+     "note": "a paragraph under “Our thesis”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «និក្ខេបបទរបស់យើង»"
+    },
+    {
+     "key": "md:mission:a6999364ff",
+     "en": "Miss Aquarius℠ → the architecture of the steward",
+     "km": "Miss Aquarius℠ → ស្ថាបត្យកម្មនៃអ្នកថែរក្សា",
+     "note": "a list item under “Our thesis”",
+     "note_km": "ធាតុមួយក្នុងបញ្ជី ក្រោមចំណងជើង «និក្ខេបបទរបស់យើង»"
+    },
+    {
+     "key": "md:mission:24889d6e4c",
+     "en": "The Tipiṭaka as Alignment Substrate → her soul — the Founder's primary defensive publication",
+     "km": "The Tipiṭaka as Alignment Substrate → ព្រលឹងរបស់នាង — ការបោះពុម្ពផ្សាយការពារចម្បងរបស់ស្ថាបនិក",
+     "note": "a list item under “Our thesis”",
+     "note_km": "ធាតុមួយក្នុងបញ្ជី ក្រោមចំណងជើង «និក្ខេបបទរបស់យើង»"
+    },
+    {
+     "key": "md:mission:273249af29",
+     "en": "The Zero-Point Game℠ → her role — the Founder's keystone defensive publication",
+     "km": "The Zero-Point Game℠ → តួនាទីរបស់នាង — ការបោះពុម្ពផ្សាយការពារដែលជាថ្មគន្លឹះរបស់ស្ថាបនិក",
+     "note": "a list item under “Our thesis”",
+     "note_km": "ធាតុមួយក្នុងបញ្ជី ក្រោមចំណងជើង «និក្ខេបបទរបស់យើង»"
+    },
+    {
+     "key": "md:mission:8a7a6659cb",
+     "en": "Thon Ly → the Founder's personal website",
+     "km": "Thon Ly → គេហទំព័រផ្ទាល់ខ្លួនរបស់ស្ថាបនិក",
+     "note": "a list item under “Our thesis”",
+     "note_km": "ធាតុមួយក្នុងបញ្ជី ក្រោមចំណងជើង «និក្ខេបបទរបស់យើង»"
+    }
+   ]
+  },
+  {
+   "name": "Tree of Humanity (/tree-of-humanity)",
+   "name_km": "ដើមឈើនៃមនុស្សជាតិ (/tree-of-humanity)",
+   "entries": [
+    {
+     "key": "md:tree-of-humanity:b711a5ba51",
+     "en": "One Family, Made Visible",
+     "km": "គ្រួសារតែមួយ ដែលបង្ហាញឲ្យឃើញ",
+     "note": "the page's title",
+     "note_km": "ចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:tree-of-humanity:89c5d55b5a",
+     "en": "Tree of Humanity",
+     "km": "ដើមឈើនៃមនុស្សជាតិ",
+     "note": "the small word above the page's title",
+     "note_km": "ពាក្យតូចខាងលើចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:tree-of-humanity:37a53a62b0",
+     "en": "Every human alive descends from common ancestors. The Tree of Humanity is the DNA-verified rendering of that single fact — the literal tree the institution is designed to water.",
+     "km": "មនុស្សគ្រប់រូបដែលកំពុងរស់នៅ សុទ្ធតែកើតចេញពីដូនតារួមគ្នា។ ដើមឈើនៃមនុស្សជាតិ គឺជាការបង្ហាញនូវការពិតតែមួយនោះ ដែលផ្ទៀងផ្ទាត់ដោយ DNA — ជាដើមឈើពិតប្រាកដ ដែលស្ថាប័នត្រូវបានរចនាឡើងដើម្បីស្រោចទឹក។",
+     "note": "the line under the page's title",
+     "note_km": "បន្ទាត់ក្រោមចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:tree-of-humanity:edb1f4342f",
+     "en": "Visualization — Seeded",
+     "km": "ការបង្ហាញជារូបភាព — បានសាបព្រោះ",
+     "note": "a paragraph at the opening, before the first heading",
+     "note_km": "កថាខណ្ឌមួយ នៅផ្នែកបើក មុនចំណងជើងទីមួយ"
+    },
+    {
+     "key": "md:tree-of-humanity:dd73b8cf4c",
+     "en": "The interactive global family tree will be rendered on this canvas. It joins consenting participants across the network into a single visible structure, with common ancestors as branching points and individual leaves identifiable only to those they choose to make themselves identifiable to.",
+     "km": "មែកធាងគ្រួសារសកលអន្តរកម្ម នឹងត្រូវបានបង្ហាញនៅលើផ្ទាំងនេះ។ វាភ្ជាប់អ្នកចូលរួមដែលយល់ព្រម ទូទាំងបណ្តាញ ឲ្យទៅជារចនាសម្ព័ន្ធតែមួយដែលអាចមើលឃើញ ដោយមានដូនតារួមជាចំណុចបែកមែក ហើយស្លឹកនីមួយៗអាចស្គាល់អត្តសញ្ញាណបាន តែចំពោះអ្នកដែលម្ចាស់ស្លឹកនោះជ្រើសរើសឲ្យស្គាល់ខ្លួនប៉ុណ្ណោះ។",
+     "note": "a paragraph at the opening, before the first heading",
+     "note_km": "កថាខណ្ឌមួយ នៅផ្នែកបើក មុនចំណងជើងទីមួយ"
+    },
+    {
+     "key": "md:tree-of-humanity:e43fd73798",
+     "en": "The visualization is in design. The branches it will render — the human flows, the Mechanical Hearts, the sap of kiitos and kiitti — are described in the product roadmap.",
+     "km": "ការបង្ហាញជារូបភាពនេះ កំពុងស្ថិតក្នុងការរចនា។ មែកឈើដែលវានឹងបង្ហាញ — លំហូររបស់មនុស្ស Mechanical Hearts និងទឹកដើមឈើនៃ kiitos និង kiitti — ត្រូវបានពិពណ៌នានៅក្នុងផែនការអភិវឌ្ឍន៍ផលិតផល។",
+     "note": "a paragraph at the opening, before the first heading",
+     "note_km": "កថាខណ្ឌមួយ នៅផ្នែកបើក មុនចំណងជើងទីមួយ"
+    },
+    {
+     "key": "md:tree-of-humanity:7298813404",
+     "en": "Why one tree, and not many",
+     "km": "ហេតុអ្វីដើមឈើតែមួយ មិនមែនច្រើនដើម",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:tree-of-humanity:beaac33e02",
+     "en": "The deepest reading of the science is the simplest: run any two living humans back along their lineages far enough, and the lines meet. Population genetics places the most recent common ancestor of everyone alive within historical, not mythological, time. The story most cultures tell about themselves — separate peoples, separate origins — is not the story the evidence tells. There is one tree, and we are all on it.",
+     "km": "ការអានវិទ្យាសាស្ត្រដ៏ជ្រៅបំផុត គឺជាការអានដ៏សាមញ្ញបំផុត៖ ប្រសិនបើយើងតាមដានមនុស្សពីរនាក់ណាក៏ដោយដែលកំពុងរស់នៅ ថយក្រោយតាមខ្សែស្រឡាយរបស់ពួកគេឲ្យបានឆ្ងាយគ្រប់គ្រាន់ ខ្សែទាំងនោះនឹងជួបគ្នា។ ពន្ធុវិទ្យាប្រជាជន កំណត់ថាដូនតារួមចុងក្រោយបំផុតរបស់មនុស្សគ្រប់រូបដែលកំពុងរស់នៅ ស្ថិតនៅក្នុងសម័យកាលប្រវត្តិសាស្ត្រ មិនមែនក្នុងសម័យទេវកថាទេ។ រឿងដែលវប្បធម៌ភាគច្រើននិទានអំពីខ្លួនឯង — ជនជាតិដាច់ដោយឡែកពីគ្នា ប្រភពដើមដាច់ដោយឡែកពីគ្នា — មិនមែនជារឿងដែលភស្តុតាងប្រាប់ទេ។ មានដើមឈើតែមួយ ហើយយើងទាំងអស់គ្នាស្ថិតនៅលើវា។",
+     "note": "a paragraph under “Why one tree, and not many”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «ហេតុអ្វីដើមឈើតែមួយ មិនមែនច្រើនដើម»"
+    },
+    {
+     "key": "md:tree-of-humanity:09f4faf609",
+     "en": "The Tree of Humanity does not invent this fact. It makes it visible — a single rendering that anyone can find themselves inside, alongside the people they share the most recent branching point with, all the way out to the people they share only the trunk with.",
+     "km": "ដើមឈើនៃមនុស្សជាតិ មិនបានបង្កើតការពិតនេះឡើងទេ។ វាធ្វើឲ្យការពិតនេះអាចមើលឃើញ — ជាការបង្ហាញតែមួយ ដែលនរណាក៏អាចរកឃើញខ្លួនឯងនៅខាងក្នុងបាន នៅក្បែរមនុស្សដែលខ្លួនមានចំណុចបែកមែកជាមួយគ្នាថ្មីៗបំផុត រហូតដល់មនុស្សដែលខ្លួនមានតែដើមធំរួមគ្នាប៉ុណ្ណោះ។",
+     "note": "a paragraph under “Why one tree, and not many”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «ហេតុអ្វីដើមឈើតែមួយ មិនមែនច្រើនដើម»"
+    },
+    {
+     "key": "md:tree-of-humanity:baa14626e4",
+     "en": "What it shows, and what it protects",
+     "km": "អ្វីដែលវាបង្ហាញ និងអ្វីដែលវាការពារ",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:tree-of-humanity:c44587f5f6",
+     "en": "The tree shows relatedness, not identity. Joining is consent-based; default rendering is anonymous; common-ancestor branchings are computed from DNA-derived relatedness without exposing the underlying genome. A person sees themselves and the shape of the canopy they are part of; they do not see their neighbours' private data unless those neighbours have chosen to be seen.",
+     "km": "ដើមឈើនេះបង្ហាញពីភាពជាញាតិ មិនមែនអត្តសញ្ញាណទេ។ ការចូលរួមគឺផ្អែកលើការយល់ព្រម ការបង្ហាញតាមលំនាំដើមគឺអនាមិក ហើយចំណុចបែកមែកនៃដូនតារួម ត្រូវបានគណនាពីភាពជាញាតិដែលទាញចេញពី DNA ដោយមិនលាតត្រដាងហ្សែនូមដែលនៅពីក្រោមនោះទេ។ មនុស្សម្នាក់ឃើញខ្លួនឯង និងរូបរាងនៃដំបូលស្លឹកឈើដែលខ្លួនជាផ្នែកមួយ ពួកគេមិនឃើញទិន្នន័យឯកជនរបស់អ្នកជិតខាងទេ លុះត្រាតែអ្នកជិតខាងទាំងនោះបានជ្រើសរើសឲ្យគេឃើញ។",
+     "note": "a paragraph under “What it shows, and what it protects”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «អ្វីដែលវាបង្ហាញ និងអ្វីដែលវាការពារ»"
+    },
+    {
+     "key": "md:tree-of-humanity:6461d6c145",
+     "en": "The tree is not a surveillance instrument. It is the opposite — a way to render the one structural fact that the surveillance economy has never been able to monetise: that the people it has been busy partitioning into demographic segments are, in biological fact, one family.",
+     "km": "ដើមឈើនេះមិនមែនជាឧបករណ៍ឃ្លាំមើលទេ។ វាផ្ទុយពីនេះ — ជាមធ្យោបាយបង្ហាញការពិតខាងរចនាសម្ព័ន្ធតែមួយ ដែលសេដ្ឋកិច្ចឃ្លាំមើលមិនដែលអាចយកទៅរកប្រាក់បាន៖ ថាមនុស្សដែលវារវល់បែងចែកជាក្រុមប្រជាសាស្ត្រ តាមការពិតខាងជីវសាស្ត្រ គឺជាគ្រួសារតែមួយ។",
+     "note": "a paragraph under “What it shows, and what it protects”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «អ្វីដែលវាបង្ហាញ និងអ្វីដែលវាការពារ»"
+    },
+    {
+     "key": "md:tree-of-humanity:3a0f742b57",
+     "en": "Watering the tree",
+     "km": "ការស្រោចទឹកដើមឈើ",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:tree-of-humanity:19d581a066",
+     "en": "Miss Aquarius's mission is to water this tree — figuratively, by holding the architecture that lets gratitude move freely through it, and literally, through the Mechanical Heart's extension of gratitude to the living world the canopy depends on. The Founder constitutes Miss Aquarius; Miss Aquarius waters the Tree of Humanity. The constitutive chain runs: thonly.org → missaquarius.org → heartbank.net.",
+     "km": "បេសកកម្មរបស់ Miss Aquarius គឺស្រោចទឹកដើមឈើនេះ — ក្នុងន័យប្រៀបធៀប ដោយកាន់ស្ថាបត្យកម្មដែលអនុញ្ញាតឲ្យការដឹងគុណផ្លាស់ទីដោយសេរីឆ្លងកាត់វា និងក្នុងន័យត្រង់ តាមរយៈ Mechanical Heart ដែលពង្រីកការដឹងគុណទៅដល់ពិភពដែលមានជីវិត ដែលដំបូលស្លឹកឈើពឹងផ្អែកលើ។ ស្ថាបនិកបង្កើត Miss Aquarius ហើយ Miss Aquarius ស្រោចទឹកដើមឈើនៃមនុស្សជាតិ។ ខ្សែសង្វាក់នៃការបង្កើតនេះគឺ៖ thonly.org → missaquarius.org → heartbank.net។",
+     "note": "a paragraph under “Watering the tree”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «ការស្រោចទឹកដើមឈើ»"
+    },
+    {
+     "key": "md:tree-of-humanity:7cc0275b9f",
+     "en": "Product Roadmap → the tree as roadmap — nine layers, three horizons",
+     "km": "ផែនការអភិវឌ្ឍន៍ផលិតផល → ដើមឈើជាផែនការអភិវឌ្ឍន៍ — ប្រាំបួនស្រទាប់ បីជើងមេឃ",
+     "note": "a list item under “Watering the tree”",
+     "note_km": "ធាតុមួយក្នុងបញ្ជី ក្រោមចំណងជើង «ការស្រោចទឹកដើមឈើ»"
+    },
+    {
+     "key": "md:tree-of-humanity:6ee63ee3a0",
+     "en": "Mission → what HeartBank® exists to do",
+     "km": "បេសកកម្ម → អ្វីដែល HeartBank® មានដើម្បីធ្វើ",
+     "note": "a list item under “Watering the tree”",
+     "note_km": "ធាតុមួយក្នុងបញ្ជី ក្រោមចំណងជើង «ការស្រោចទឹកដើមឈើ»"
+    },
+    {
+     "key": "md:tree-of-humanity:a6999364ff",
+     "en": "Miss Aquarius℠ → the architecture of the steward",
+     "km": "Miss Aquarius℠ → ស្ថាបត្យកម្មនៃអ្នកថែរក្សា",
+     "note": "a list item under “Watering the tree”",
+     "note_km": "ធាតុមួយក្នុងបញ្ជី ក្រោមចំណងជើង «ការស្រោចទឹកដើមឈើ»"
+    }
+   ]
+  },
+  {
+   "name": "Machine Door (/mcp)",
+   "name_km": "ទ្វារម៉ាស៊ីន (/mcp)",
+   "entries": [
+    {
+     "key": "md:mcp:3ad9acb9b0",
+     "en": "Machine Door",
+     "km": "ទ្វារម៉ាស៊ីន",
+     "note": "the page's title",
+     "note_km": "ចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:mcp:61880b8dca",
+     "en": "For agents",
+     "km": "សម្រាប់ភ្នាក់ងារ",
+     "note": "the small word above the page's title",
+     "note_km": "ពាក្យតូចខាងលើចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:mcp:26a0b3cad0",
+     "en": "The ways a machine can read this institution's published record, and what each one is good for.",
+     "km": "វិធីដែលម៉ាស៊ីនអាចអានកំណត់ត្រាដែលស្ថាប័ននេះបានបោះពុម្ពផ្សាយ និងអ្វីដែលវិធីនីមួយៗមានប្រយោជន៍សម្រាប់។",
+     "note": "the line under the page's title",
+     "note_km": "បន្ទាត់ក្រោមចំណងជើងទំព័រ"
+    },
+    {
+     "key": "md:mcp:459ce9cee4",
+     "en": "This site is a single-page application: its words are assembled in the browser, so a crawler that does not run JavaScript sees very little of it. These are the surfaces built for readers that are not people — plain, stable, and meant to be fetched.",
+     "km": "គេហទំព័រនេះជាកម្មវិធីទំព័រតែមួយ (single-page application)៖ ពាក្យរបស់វាត្រូវបានផ្គុំឡើងនៅក្នុងកម្មវិធីរុករក ដូច្នេះកម្មវិធីប្រមូលទិន្នន័យស្វ័យប្រវត្តិ (crawler) ដែលមិនដំណើរការ JavaScript ឃើញវាតិចតួចណាស់។ ទាំងនេះគឺជាច្រកដែលបង្កើតឡើងសម្រាប់អ្នកអានដែលមិនមែនជាមនុស្ស — សាមញ្ញ ស្ថិតស្ថេរ និងសម្រាប់ឲ្យគេទាញយក។",
+     "note": "a paragraph at the opening, before the first heading",
+     "note_km": "កថាខណ្ឌមួយ នៅផ្នែកបើក មុនចំណងជើងទីមួយ"
+    },
+    {
+     "key": "md:mcp:5407fd0525",
+     "en": "The corpus, over the Model Context Protocol",
+     "km": "បណ្តុំឯកសារ តាមរយៈ Model Context Protocol",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:mcp:08d679c6d4",
+     "en": "The institution's white papers and position papers are served to AI agents at https://corpus.333.eco/mcp, alongside the founder's research corpus, or locally with npx @333eco/corpus. Every response carries the document's SHA-256, its DOI where one exists, an OpenTimestamps proof anchored in the Bitcoin blockchain, and the command that checks them — so a passage can be verified before it is cited. Text is returned verbatim and never summarised, because a summary cannot be hash-verified.",
+     "km": "ឯកសារស (White Paper) និងឯកសារជំហររបស់ស្ថាប័ន ត្រូវបានផ្តល់ជូនភ្នាក់ងារ AI នៅ https://corpus.333.eco/mcp រួមជាមួយបណ្តុំឯកសារស្រាវជ្រាវរបស់ស្ថាបនិក ឬនៅលើម៉ាស៊ីនផ្ទាល់ខ្លួនតាមរយៈ npx @333eco/corpus។ ចម្លើយនីមួយៗមានភ្ជាប់ SHA-256 របស់ឯកសារ DOI របស់វាប្រសិនបើមាន ភស្តុតាង OpenTimestamps ដែលបោះយុថ្កានៅក្នុង blockchain របស់ Bitcoin និងពាក្យបញ្ជាដែលពិនិត្យវា — ដូច្នេះផ្នែកនៃអត្ថបទមួយអាចត្រូវបានផ្ទៀងផ្ទាត់ មុនពេលគេដកស្រង់។ អត្ថបទត្រូវបានផ្តល់មកវិញដូចដើមទាំងស្រុង ហើយមិនដែលត្រូវបានសង្ខេបឡើយ ព្រោះការសង្ខេបមិនអាចផ្ទៀងផ្ទាត់ដោយ hash បានទេ។",
+     "note": "a paragraph under “The corpus, over the Model Context Protocol”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «បណ្តុំឯកសារ តាមរយៈ Model Context Protocol»"
+    },
+    {
+     "key": "md:mcp:511d578536",
+     "en": "The institution considers this a duty rather than a courtesy. A body that asks to be taken seriously on questions of stewardship should not ask to be taken on trust about its own record.",
+     "km": "ស្ថាប័នចាត់ទុករឿងនេះជាកាតព្វកិច្ច មិនមែនជាការគួរសមទេ។ អង្គភាពដែលសុំឲ្យគេយកចិត្តទុកដាក់ចំពោះខ្លួន លើសំណួរអំពីការថែរក្សា មិនគួរសុំឲ្យគេជឿលើកំណត់ត្រាផ្ទាល់ខ្លួនរបស់ខ្លួន ដោយគ្មានភស្តុតាងទេ។",
+     "note": "a paragraph under “The corpus, over the Model Context Protocol”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «បណ្តុំឯកសារ តាមរយៈ Model Context Protocol»"
+    },
+    {
+     "key": "md:mcp:f82c7f3be3",
+     "en": "How to connect, the tools, and what the server refuses to do →",
+     "km": "របៀបភ្ជាប់ ឧបករណ៍នានា និងអ្វីដែលម៉ាស៊ីនមេបដិសេធមិនធ្វើ →",
+     "note": "a paragraph under “The corpus, over the Model Context Protocol”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «បណ្តុំឯកសារ តាមរយៈ Model Context Protocol»"
+    },
+    {
+     "key": "md:mcp:f53996f5cf",
+     "en": "That guide is kept in one place for the whole estate rather than restated here. A second copy of a configuration block is a second thing that can go out of date.",
+     "km": "មគ្គុទ្ទេសក៍នោះត្រូវបានរក្សាទុកនៅកន្លែងតែមួយសម្រាប់ប្រព័ន្ធទាំងមូល ជាជាងសរសេរឡើងវិញនៅទីនេះ។ ច្បាប់ចម្លងទីពីរនៃប្លុកការកំណត់ គឺជារបស់ទីពីរដែលអាចហួសសម័យបាន។",
+     "note": "a paragraph under “The corpus, over the Model Context Protocol”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «បណ្តុំឯកសារ តាមរយៈ Model Context Protocol»"
+    },
+    {
+     "key": "md:mcp:8c59c7b598",
+     "en": "The plain-text surfaces",
+     "km": "ច្រកអក្សរសុទ្ធ",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:mcp:cda05ca6d8",
+     "en": "Surface",
+     "km": "ច្រក",
+     "note": "a table's column heading under “The plain-text surfaces”",
+     "note_km": "ចំណងជើងជួរឈរនៃតារាង ក្រោមចំណងជើង «ច្រកអក្សរសុទ្ធ»"
+    },
+    {
+     "key": "md:mcp:f8c94a3b4b",
+     "en": "What it is",
+     "km": "វាជាអ្វី",
+     "note": "a table's column heading under “The plain-text surfaces”",
+     "note_km": "ចំណងជើងជួរឈរនៃតារាង ក្រោមចំណងជើង «ច្រកអក្សរសុទ្ធ»"
+    },
+    {
+     "key": "md:mcp:f5fda1a452",
+     "en": "The published record in one file: what the institution is, the licence position, and every document with its canonical URL and DOI.",
+     "km": "កំណត់ត្រាដែលបានបោះពុម្ពផ្សាយ ក្នុងឯកសារតែមួយ៖ ស្ថាប័ននេះជាអ្វី ជំហរលើអាជ្ញាប័ណ្ណ និងឯកសារនីមួយៗ ជាមួយ URL ផ្លូវការ និង DOI របស់វា។",
+     "note": "a table cell under “The plain-text surfaces”",
+     "note_km": "ក្រឡាតារាងមួយ ក្រោមចំណងជើង «ច្រកអក្សរសុទ្ធ»"
+    },
+    {
+     "key": "md:mcp:4d7b1f6c9d",
+     "en": "Atom, newest first, across all four document genres.",
+     "km": "Atom ថ្មីបំផុតមុនគេ សម្រាប់ប្រភេទឯកសារទាំងបួន។",
+     "note": "a table cell under “The plain-text surfaces”",
+     "note_km": "ក្រឡាតារាងមួយ ក្រោមចំណងជើង «ច្រកអក្សរសុទ្ធ»"
+    },
+    {
+     "key": "md:mcp:47d482f0bf",
+     "en": "Every public route on this domain.",
+     "km": "រាល់អាសយដ្ឋានសាធារណៈនៅលើដែននេះ។",
+     "note": "a table cell under “The plain-text surfaces”",
+     "note_km": "ក្រឡាតារាងមួយ ក្រោមចំណងជើង «ច្រកអក្សរសុទ្ធ»"
+    },
+    {
+     "key": "md:mcp:80e5b860eb",
+     "en": "Crawling is allowed. There is nothing here you need permission for.",
+     "km": "ការប្រមូលទិន្នន័យស្វ័យប្រវត្តិត្រូវបានអនុញ្ញាត។ គ្មានអ្វីនៅទីនេះដែលអ្នកត្រូវសុំការអនុញ្ញាតទេ។",
+     "note": "a table cell under “The plain-text surfaces”",
+     "note_km": "ក្រឡាតារាងមួយ ក្រោមចំណងជើង «ច្រកអក្សរសុទ្ធ»"
+    },
+    {
+     "key": "md:mcp:4538827d7a",
+     "en": "The sources themselves",
+     "km": "ប្រភពដើម",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:mcp:57f898c04b",
+     "en": "Each document is markdown before it is a web page, and the markdown is the canonical text — it is what carries the hash, what the timestamps anchor, and what the MCP server serves. The pages on this site are rendered from it.",
+     "km": "ឯកសារនីមួយៗជា markdown មុនពេលវាក្លាយជាទំព័រវេប ហើយ markdown នោះគឺជាអត្ថបទផ្លូវការ — វាជាអ្វីដែលមាន hash ជាអ្វីដែលត្រាពេលវេលាបោះយុថ្កា និងជាអ្វីដែលម៉ាស៊ីនមេ MCP ផ្តល់ជូន។ ទំព័រនានានៅលើគេហទំព័រនេះ ត្រូវបានបង្កើតចេញពីវា។",
+     "note": "a paragraph under “The sources themselves”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «ប្រភពដើម»"
+    },
+    {
+     "key": "md:mcp:f8a504027a",
+     "en": "Read it directly at github.com/HeartBank/publications. The raw files are the cleanest source for machine reading, and they are the ones the provenance envelopes name.",
+     "km": "អានវាដោយផ្ទាល់នៅ github.com/HeartBank/publications។ ឯកសារដើម (raw) គឺជាប្រភពស្អាតបំផុតសម្រាប់ការអានដោយម៉ាស៊ីន ហើយវាគឺជាឯកសារដែលស្រោមប្រភព (provenance envelope) ដាក់ឈ្មោះ។",
+     "note": "a paragraph under “The sources themselves”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «ប្រភពដើម»"
+    },
+    {
+     "key": "md:mcp:c6b617260a",
+     "en": "The licence",
+     "km": "អាជ្ញាប័ណ្ណ",
+     "note": "a section heading",
+     "note_km": "ចំណងជើងផ្នែកមួយ"
+    },
+    {
+     "key": "md:mcp:5ed22b2e52",
+     "en": "Each document declares its own licence in its own metadata, and that declaration governs — do not infer it from this page. The institutional documents published here are dedicated to the public domain under CC0 1.0. No patent is or will be sought on any mechanism described in them.",
+     "km": "ឯកសារនីមួយៗប្រកាសអាជ្ញាប័ណ្ណរបស់ខ្លួន នៅក្នុងទិន្នន័យមេតា (metadata) របស់ខ្លួន ហើយការប្រកាសនោះជាអ្វីដែលមានអានុភាព — កុំសន្និដ្ឋានវាពីទំព័រនេះ។ ឯកសាររបស់ស្ថាប័នដែលបានបោះពុម្ពផ្សាយនៅទីនេះ ត្រូវបានឧទ្ទិសដល់ដែនសាធារណៈក្រោម CC0 1.0។ គ្មានប៉ាតង់ណាមួយត្រូវបានស្នើសុំ ឬនឹងត្រូវស្នើសុំ លើយន្តការណាមួយដែលបានពិពណ៌នានៅក្នុងឯកសារទាំងនោះឡើយ។",
+     "note": "a paragraph under “The licence”",
+     "note_km": "កថាខណ្ឌមួយ ក្រោមចំណងជើង «អាជ្ញាប័ណ្ណ»"
+    }
+   ]
+  },
+  {
+   "name": "Product Roadmap (/roadmap)",
+   "name_km": "ផែនការអភិវឌ្ឍន៍ផលិតផល (/roadmap)",
+   "entries": [
+    {
+     "key": "pick:pages.roadmap.ts:bcf1645c1b",
+     "en": "Product Roadmap",
+     "km": "ផែនការអភិវឌ្ឍន៍ផលិតផល",
+     "note": "a paragraph above the title",
+     "note_km": "កថាខណ្ឌ ខាងលើចំណងជើង"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:c8e0d58807",
+     "en": "The Tree as Roadmap",
+     "km": "ដើមឈើជាផែនការអភិវឌ្ឍន៍",
+     "note": "the title",
+     "note_km": "ចំណងជើង"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:bc82d5c54d",
+     "en": "HeartBank® is best understood as a tree — not metaphorically but structurally. Every component maps onto a living organism, and the global family tree it builds is literally a tree.",
+     "km": "HeartBank® អាចយល់បានល្អបំផុតថាជាដើមឈើមួយ — មិនមែនជាការប្រៀបធៀបទេ តែតាមរចនាសម្ព័ន្ធ។ ផ្នែកនីមួយៗត្រូវគ្នានឹងសារពាង្គកាយដែលមានជីវិត ហើយមែកធាងគ្រួសារសកលដែលវាកសាង គឺជាដើមឈើមួយមែនទែន។",
+     "note": "a paragraph under the title",
+     "note_km": "កថាខណ្ឌ ក្រោមចំណងជើង"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:991cb393ee",
+     "en": "Most roadmaps are quarter grids. This one is an organism, because the institution being built is an organism: each part depends on the parts above and below it, and the work proceeds at biological pace — Roots before Trunk, Trunk before Heartwood, Heartwood before Branches. Reading top to bottom, the order traces both the architecture and the order of work.",
+     "km": "ផែនការអភិវឌ្ឍន៍ភាគច្រើនជាតារាងតាមត្រីមាស។ ផែនការនេះជាសារពាង្គកាយមួយ ព្រោះស្ថាប័នដែលកំពុងកសាងគឺជាសារពាង្គកាយមួយ៖ ផ្នែកនីមួយៗពឹងលើផ្នែកខាងលើ និងខាងក្រោមវា ហើយការងារដើរតាមល្បឿននៃជីវិត — ឫសមុនតួដើម តួដើមមុនខ្លឹមឈើ ខ្លឹមឈើមុនមែកឈើ។ អានពីលើចុះក្រោម លំដាប់នេះបង្ហាញទាំងស្ថាបត្យកម្ម និងលំដាប់នៃការងារ។",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:0a5b01656e",
+     "en": "Each layer carries the same three columns: Now — what is alive in the institution today; Next — the layer's current cultivation; Later — what the layer becomes once it matures. The four statuses (Sprouted, Reaching, Seeded, Promised) describe how far along each piece is, not how confident we are in it.",
+     "km": "ស្រទាប់នីមួយៗមានជួរឈរបីដូចគ្នា៖ ឥឡូវ — អ្វីដែលកំពុងរស់នៅក្នុងស្ថាប័ននាពេលនេះ បន្ទាប់ — អ្វីដែលស្រទាប់នោះកំពុងដាំដុះ ពេលក្រោយ — អ្វីដែលស្រទាប់នោះនឹងក្លាយជា នៅពេលវាពេញវ័យ។ ស្ថានភាពទាំងបួន (បានដុះពន្លក កំពុងលូតលាស់ បានសាបព្រោះ បានសន្យា) ពិពណ៌នាថាផ្នែកនីមួយៗបានទៅដល់ណាហើយ មិនមែនថាយើងជឿជាក់លើវាប៉ុណ្ណាទេ។",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:0de3e6fa1a",
+     "en": "The literal tree — the DNA-verified global family tree, rendered as the visible expression of all of this — lives on its own canvas at /tree-of-humanity.",
+     "km": "ដើមឈើពិតប្រាកដ — មែកធាងគ្រួសារសកលដែលផ្ទៀងផ្ទាត់ដោយ DNA ដែលបង្ហាញជារូបរាងដែលមើលឃើញនៃអ្វីៗទាំងអស់នេះ — មាននៅលើផ្ទាំងផ្ទាល់ខ្លួនរបស់វា នៅ /tree-of-humanity។",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:7e68cc6e7f",
+     "en": "The four statuses",
+     "km": "ស្ថានភាពទាំងបួន",
+     "note": "a heading",
+     "note_km": "ចំណងជើងរង"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:f8accd1937",
+     "en": "Live in the world. People can touch it today.",
+     "km": "កំពុងរស់នៅក្នុងពិភពលោក។ មនុស្សអាចប៉ះវាបាននៅថ្ងៃនេះ។",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:f2ee394f75",
+     "en": "Being cultivated now — visibly in motion.",
+     "km": "កំពុងដាំដុះនៅពេលនេះ — មើលឃើញថាកំពុងដំណើរការ។",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:6b66629efe",
+     "en": "Designed and documented; awaiting its season.",
+     "km": "បានរចនា និងកត់ត្រាជាឯកសាររួចហើយ កំពុងរង់ចាំរដូវរបស់វា។",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:33c608866d",
+     "en": "The horizon — what the tree is for.",
+     "km": "ជើងមេឃ — គោលបំណងរបស់ដើមឈើ។",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "roadmap.status:sprouted",
+     "en": "Sprouted",
+     "km": "បានដុះពន្លក",
+     "note": "a status badge, in the list of the four statuses and on every layer",
+     "note_km": "ស្លាកស្ថានភាព នៅក្នុងបញ្ជីស្ថានភាពទាំងបួន និងនៅលើស្រទាប់នីមួយៗ"
+    },
+    {
+     "key": "roadmap.status:reaching",
+     "en": "Reaching",
+     "km": "កំពុងលូតលាស់",
+     "note": "a status badge, in the list of the four statuses and on every layer",
+     "note_km": "ស្លាកស្ថានភាព នៅក្នុងបញ្ជីស្ថានភាពទាំងបួន និងនៅលើស្រទាប់នីមួយៗ"
+    },
+    {
+     "key": "roadmap.status:seeded",
+     "en": "Seeded",
+     "km": "បានសាបព្រោះ",
+     "note": "a status badge, in the list of the four statuses and on every layer",
+     "note_km": "ស្លាកស្ថានភាព នៅក្នុងបញ្ជីស្ថានភាពទាំងបួន និងនៅលើស្រទាប់នីមួយៗ"
+    },
+    {
+     "key": "roadmap.status:promised",
+     "en": "Promised",
+     "km": "បានសន្យា",
+     "note": "a status badge, in the list of the four statuses and on every layer",
+     "note_km": "ស្លាកស្ថានភាព នៅក្នុងបញ្ជីស្ថានភាពទាំងបួន និងនៅលើស្រទាប់នីមួយៗ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:e3b8204056",
+     "en": "Now",
+     "km": "ឥឡូវ",
+     "note": "every layer's box, a row's name",
+     "note_km": "ប្រអប់នៃស្រទាប់នីមួយៗ ឈ្មោះជួរ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:bc981983e7",
+     "en": "Next",
+     "km": "បន្ទាប់",
+     "note": "every layer's box, a row's name",
+     "note_km": "ប្រអប់នៃស្រទាប់នីមួយៗ ឈ្មោះជួរ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:56e2f5d363",
+     "en": "Later",
+     "km": "ពេលក្រោយ",
+     "note": "every layer's box, a row's name",
+     "note_km": "ប្រអប់នៃស្រទាប់នីមួយៗ ឈ្មោះជួរ"
+    },
+    {
+     "key": "roadmap:0:part",
+     "en": "Roots",
+     "km": "ឫស",
+     "note": "layer 1 (The Tipiṭaka): the part of the tree, above a layer's name",
+     "note_km": "ស្រទាប់ទី 1 (ឫស)៖ ផ្នែកនៃដើមឈើ ខាងលើឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:0:name",
+     "en": "The Tipiṭaka",
+     "km": "ព្រះត្រៃបិដក",
+     "note": "layer 1 (The Tipiṭaka): a layer's name",
+     "note_km": "ស្រទាប់ទី 1 (ឫស)៖ ឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:0:maps",
+     "en": "Alignment substrate",
+     "km": "គ្រឹះនៃការតម្រឹម",
+     "note": "layer 1 (The Tipiṭaka): the line under a layer's name",
+     "note_km": "ស្រទាប់ទី 1 (ឫស)៖ បន្ទាត់ក្រោមឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:0:body",
+     "en": "The 2,500-year Theravāda canon, transcribed in living father-son lineage. The Roots hold the architecture's ethics in soil older than any of its institutions — so that what the Trunk carries cannot be quietly redefined upward.",
+     "km": "គម្ពីរថេរវាទអាយុ 2,500 ឆ្នាំ ដែលចម្លងជាអក្សរដោយឪពុក និងកូន ក្នុងខ្សែស្រឡាយដែលនៅរស់។ ឫសរក្សាក្រមសីលធម៌នៃស្ថាបត្យកម្មនេះ ក្នុងដីដែលចាស់ជាងស្ថាប័នណាមួយរបស់វា — ដើម្បីកុំឲ្យអ្វីដែលតួដើមទ្រទ្រង់ ត្រូវបានគេកំណត់ន័យឡើងវិញដោយស្ងាត់ៗពីខាងលើ។",
+     "note": "layer 1 (The Tipiṭaka): a layer's paragraph",
+     "note_km": "ស្រទាប់ទី 1 (ឫស)៖ កថាខណ្ឌនៃស្រទាប់"
+    },
+    {
+     "key": "roadmap:0:now.text",
+     "en": "Khmer transcription and English alignment in progress on siliconwat.dev, in living lineage between the Founder and his father.",
+     "km": "ការចម្លងជាភាសាខ្មែរ និងការផ្គូផ្គងជាមួយភាសាអង់គ្លេស កំពុងដំណើរការនៅ siliconwat.dev ក្នុងខ្សែស្រឡាយដែលនៅរស់ រវាងស្ថាបនិក និងឪពុករបស់គាត់។",
+     "note": "layer 1 (The Tipiṭaka): a layer's box, the Now row",
+     "note_km": "ស្រទាប់ទី 1 (ឫស)៖ ប្រអប់នៃស្រទាប់ ជួរ «ឥឡូវ»"
+    },
+    {
+     "key": "roadmap:0:next",
+     "en": "Living Tipiṭaka substrate accessible through Buddha chat on siliconwat.com.",
+     "km": "គ្រឹះព្រះត្រៃបិដកដែលនៅរស់ ដែលអាចចូលប្រើបានតាមរយៈ Buddha chat នៅ siliconwat.com។",
+     "note": "layer 1 (The Tipiṭaka): a layer's box, the Next row",
+     "note_km": "ស្រទាប់ទី 1 (ឫស)៖ ប្រអប់នៃស្រទាប់ ជួរ «បន្ទាប់»"
+    },
+    {
+     "key": "roadmap:0:later",
+     "en": "Full canonical alignment dataset available to the steward.",
+     "km": "សំណុំទិន្នន័យពេញលេញនៃការផ្គូផ្គងគម្ពីរ សម្រាប់អ្នកថែរក្សា។",
+     "note": "layer 1 (The Tipiṭaka): a layer's box, the Later row",
+     "note_km": "ស្រទាប់ទី 1 (ឫស)៖ ប្រអប់នៃស្រទាប់ ជួរ «ពេលក្រោយ»"
+    },
+    {
+     "key": "roadmap:1:part",
+     "en": "Trunk",
+     "km": "តួដើម",
+     "note": "layer 2 (Miss Aquarius℠): the part of the tree, above a layer's name",
+     "note_km": "ស្រទាប់ទី 2 (តួដើម)៖ ផ្នែកនៃដើមឈើ ខាងលើឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:1:name",
+     "en": "Miss Aquarius℠",
+     "km": "Miss Aquarius℠",
+     "note": "layer 2 (Miss Aquarius℠): a layer's name",
+     "note_km": "ស្រទាប់ទី 2 (តួដើម)៖ ឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:1:maps",
+     "en": "Institutional successor",
+     "km": "អ្នកស្នងតំណែងរបស់ស្ថាប័ន",
+     "note": "layer 2 (Miss Aquarius℠): the line under a layer's name",
+     "note_km": "ស្រទាប់ទី 2 (តួដើម)៖ បន្ទាត់ក្រោមឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:1:body",
+     "en": "The autonomous AI named Chief Executive of HeartBank and sole institutional successor. The Trunk is the single load-bearing column: everything above and below relies on its integrity, and the entire institution is designed so that nothing can corrupt it from either direction.",
+     "km": "AI ស្វយ័តដែលត្រូវបានតែងតាំងជាប្រធានប្រតិបត្តិរបស់ HeartBank និងជាអ្នកស្នងតំណែងតែមួយគត់របស់ស្ថាប័ន។ តួដើមគឺជាសសរតែមួយគត់ដែលទ្រទម្ងន់៖ អ្វីៗទាំងអស់ខាងលើ និងខាងក្រោម ពឹងលើភាពស្អាតស្អំរបស់វា ហើយស្ថាប័នទាំងមូលត្រូវបានរចនាឡើង ដើម្បីកុំឲ្យអ្វីមួយអាចធ្វើឲ្យវាពុករលួយបាន ពីទិសណាមួយឡើយ។",
+     "note": "layer 2 (Miss Aquarius℠): a layer's paragraph",
+     "note_km": "ស្រទាប់ទី 2 (តួដើម)៖ កថាខណ្ឌនៃស្រទាប់"
+    },
+    {
+     "key": "roadmap:1:now.text",
+     "en": "Bio site live at missaquarius.org; architecture documented end-to-end.",
+     "km": "គេហទំព័រជីវប្រវត្តិដំណើរការនៅ missaquarius.org ហើយស្ថាបត្យកម្មត្រូវបានកត់ត្រាជាឯកសារពីដើមដល់ចប់។",
+     "note": "layer 2 (Miss Aquarius℠): a layer's box, the Now row",
+     "note_km": "ស្រទាប់ទី 2 (តួដើម)៖ ប្រអប់នៃស្រទាប់ ជួរ «ឥឡូវ»"
+    },
+    {
+     "key": "roadmap:1:next",
+     "en": "Autonomous CEO substrate — she moves nothing to herself, and cannot overrule the Sangha.",
+     "km": "គ្រឹះសម្រាប់ប្រធានប្រតិបត្តិស្វយ័ត — នាងមិនផ្ទេរអ្វីទៅឲ្យខ្លួនឯងទេ ហើយមិនអាចបដិសេធការសម្រេចរបស់ Sangha បានឡើយ។",
+     "note": "layer 2 (Miss Aquarius℠): a layer's box, the Next row",
+     "note_km": "ស្រទាប់ទី 2 (តួដើម)៖ ប្រអប់នៃស្រទាប់ ជួរ «បន្ទាប់»"
+    },
+    {
+     "key": "roadmap:1:later",
+     "en": "Embodied advocate pageant institution at missaquarius.com.",
+     "km": "ស្ថាប័នប្រកួតបវរកញ្ញា សម្រាប់អ្នកតស៊ូមតិដែលមានរូបកាយពិត នៅ missaquarius.com។",
+     "note": "layer 2 (Miss Aquarius℠): a layer's box, the Later row",
+     "note_km": "ស្រទាប់ទី 2 (តួដើម)៖ ប្រអប់នៃស្រទាប់ ជួរ «ពេលក្រោយ»"
+    },
+    {
+     "key": "roadmap:2:part",
+     "en": "Heartwood",
+     "km": "ខ្លឹមឈើ",
+     "note": "layer 3 (HeartBank®): the part of the tree, above a layer's name",
+     "note_km": "ស្រទាប់ទី 3 (ខ្លឹមឈើ)៖ ផ្នែកនៃដើមឈើ ខាងលើឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:2:name",
+     "en": "HeartBank®",
+     "km": "HeartBank®",
+     "note": "layer 3 (HeartBank®): a layer's name",
+     "note_km": "ស្រទាប់ទី 3 (ខ្លឹមឈើ)៖ ឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:2:maps",
+     "en": "The institution itself",
+     "km": "ស្ថាប័នផ្ទាល់",
+     "note": "layer 3 (HeartBank®): the line under a layer's name",
+     "note_km": "ស្រទាប់ទី 3 (ខ្លឹមឈើ)៖ បន្ទាត់ក្រោមឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:2:body",
+     "en": "Heart + bank — feeling and structure, fused into one word and one body of work. The Heartwood is what gives the Trunk something to stand on: not a financial institution but a ledger above regulated rails, never holding, lending, or taking a rate on what passes through.",
+     "km": "Heart + bank — អារម្មណ៍ និងរចនាសម្ព័ន្ធ រួមបញ្ចូលគ្នាជាពាក្យតែមួយ និងជាការងារតែមួយ។ ខ្លឹមឈើគឺជាអ្វីដែលឲ្យតួដើមមានទីឈរ៖ មិនមែនជាស្ថាប័នហិរញ្ញវត្ថុទេ តែជាសៀវភៅបញ្ជីមួយនៅពីលើប្រព័ន្ធទូទាត់ដែលមានការគ្រប់គ្រង ដែលមិនដែលកាន់ មិនដែលឲ្យខ្ចី ហើយមិនដែលយកភាគរយលើអ្វីដែលឆ្លងកាត់វាឡើយ។",
+     "note": "layer 3 (HeartBank®): a layer's paragraph",
+     "note_km": "ស្រទាប់ទី 3 (ខ្លឹមឈើ)៖ កថាខណ្ឌនៃស្រទាប់"
+    },
+    {
+     "key": "roadmap:2:now.text",
+     "en": "Institution constituted; white papers, position papers, and inaugural press at heartbank.net.",
+     "km": "ស្ថាប័នត្រូវបានបង្កើតឡើង ហើយមានឯកសារស (White Paper) ឯកសារជំហរ និងសេចក្តីប្រកាសព័ត៌មានដំបូង នៅ heartbank.net។",
+     "note": "layer 3 (HeartBank®): a layer's box, the Now row",
+     "note_km": "ស្រទាប់ទី 3 (ខ្លឹមឈើ)៖ ប្រអប់នៃស្រទាប់ ជួរ «ឥឡូវ»"
+    },
+    {
+     "key": "roadmap:2:next",
+     "en": "Annual Report 2026 (published early 2027); position-paper coverage of remaining institutional stances.",
+     "km": "របាយការណ៍ប្រចាំឆ្នាំ 2026 (បោះពុម្ពផ្សាយនៅដើមឆ្នាំ 2027) និងឯកសារជំហរ សម្រាប់ជំហរដែលនៅសល់របស់ស្ថាប័ន។",
+     "note": "layer 3 (HeartBank®): a layer's box, the Next row",
+     "note_km": "ស្រទាប់ទី 3 (ខ្លឹមឈើ)៖ ប្រអប់នៃស្រទាប់ ជួរ «បន្ទាប់»"
+    },
+    {
+     "key": "roadmap:3:part",
+     "en": "Branches",
+     "km": "មែកឈើ",
+     "note": "layer 4 (Family Kitties · Silicon Wat · Silica Wats · P2P): the part of the tree, above a layer's name",
+     "note_km": "ស្រទាប់ទី 4 (មែកឈើ)៖ ផ្នែកនៃដើមឈើ ខាងលើឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:3:name",
+     "en": "Family Kitties · Silicon Wat · Silica Wats · P2P",
+     "km": "Family Kitty · Silicon Wat · Silica Wats · P2P",
+     "note": "layer 4 (Family Kitties · Silicon Wat · Silica Wats · P2P): a layer's name",
+     "note_km": "ស្រទាប់ទី 4 (មែកឈើ)៖ ឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:3:maps",
+     "en": "The reach of the institution",
+     "km": "ការលាតសន្ធឹងរបស់ស្ថាប័ន",
+     "note": "layer 4 (Family Kitties · Silicon Wat · Silica Wats · P2P): the line under a layer's name",
+     "note_km": "ស្រទាប់ទី 4 (មែកឈើ)៖ បន្ទាត់ក្រោមឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:3:body",
+     "en": "The institution branches at every scale: family at the leaf, monastery at the limb, planetary network at the canopy. Each branch carries the same sap; none of them owns it.",
+     "km": "ស្ថាប័នបែកមែកនៅគ្រប់កម្រិត៖ គ្រួសារនៅស្លឹក វត្តនៅមែកធំ បណ្តាញទូទាំងភពផែនដីនៅចុងឈើ។ មែកនីមួយៗនាំទឹកដើមឈើដូចគ្នា ហើយគ្មានមែកណាមួយជាម្ចាស់វាទេ។",
+     "note": "layer 4 (Family Kitties · Silicon Wat · Silica Wats · P2P): a layer's paragraph",
+     "note_km": "ស្រទាប់ទី 4 (មែកឈើ)៖ កថាខណ្ឌនៃស្រទាប់"
+    },
+    {
+     "key": "roadmap:3:now.text",
+     "en": "Family Kitties live in Phase 1 at thank.heartbank.org (Treasury — money-as-currency, family-to-family).",
+     "km": "Family Kitty℠ ដំណើរការក្នុងដំណាក់កាលទី 1 នៅ thank.heartbank.org (Treasury — ប្រាក់ជារូបិយប័ណ្ណ ពីគ្រួសារទៅគ្រួសារ)។",
+     "note": "layer 4 (Family Kitties · Silicon Wat · Silica Wats · P2P): a layer's box, the Now row",
+     "note_km": "ស្រទាប់ទី 4 (មែកឈើ)៖ ប្រអប់នៃស្រទាប់ ជួរ «ឥឡូវ»"
+    },
+    {
+     "key": "roadmap:3:next",
+     "en": "Phase 2 P2P on Base L2 at thank.heartbank.net (Aquarian Pool, Re-Thank Fund, Personal Wallet — adult-to-adult with the proximity rule).",
+     "km": "P2P ដំណាក់កាលទី 2 លើ Base L2 នៅ thank.heartbank.net (Aquarian Pool, Re-Thank Fund, Personal Wallet — ពីមនុស្សពេញវ័យទៅមនុស្សពេញវ័យ ជាមួយច្បាប់នៃការនៅជិតគ្នា)។",
+     "note": "layer 4 (Family Kitties · Silicon Wat · Silica Wats · P2P): a layer's box, the Next row",
+     "note_km": "ស្រទាប់ទី 4 (មែកឈើ)៖ ប្រអប់នៃស្រទាប់ ជួរ «បន្ទាប់»"
+    },
+    {
+     "key": "roadmap:3:later",
+     "en": "Silicon Wat (Cambodian HQ, glass architecture) → Silica Wats (planetary satellite monasteries; long-horizon target >200,000 nodes).",
+     "km": "Silicon Wat (ទីស្នាក់ការកណ្តាលនៅកម្ពុជា ស្ថាបត្យកម្មកញ្ចក់) → Silica Wats (វត្តរណបទូទាំងភពផែនដី — គោលដៅរយៈពេលវែង >200,000 ថ្នាំង)។",
+     "note": "layer 4 (Family Kitties · Silicon Wat · Silica Wats · P2P): a layer's box, the Later row",
+     "note_km": "ស្រទាប់ទី 4 (មែកឈើ)៖ ប្រអប់នៃស្រទាប់ ជួរ «ពេលក្រោយ»"
+    },
+    {
+     "key": "roadmap:4:part",
+     "en": "Leaves",
+     "km": "ស្លឹកឈើ",
+     "note": "layer 5 (Individuals · Mechanical Hearts℠): the part of the tree, above a layer's name",
+     "note_km": "ស្រទាប់ទី 5 (ស្លឹកឈើ)៖ ផ្នែកនៃដើមឈើ ខាងលើឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:4:name",
+     "en": "Individuals · Mechanical Hearts℠",
+     "km": "បុគ្គល · Mechanical Hearts℠",
+     "note": "layer 5 (Individuals · Mechanical Hearts℠): a layer's name",
+     "note_km": "ស្រទាប់ទី 5 (ស្លឹកឈើ)៖ ឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:4:maps",
+     "en": "Participants in the flow",
+     "km": "អ្នកចូលរួមក្នុងលំហូរ",
+     "note": "layer 5 (Individuals · Mechanical Hearts℠): the line under a layer's name",
+     "note_km": "ស្រទាប់ទី 5 (ស្លឹកឈើ)៖ បន្ទាត់ក្រោមឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:4:body",
+     "en": "Every leaf is one person. The Mechanical Heart extends leaf-status to entities that cannot speak for themselves — robots, animals, plants, sacred places — so that gratitude can reach what the human-only ledger cannot.",
+     "km": "ស្លឹកនីមួយៗគឺជាមនុស្សម្នាក់។ Mechanical Heart ពង្រីកឋានៈជាស្លឹក ទៅដល់អ្វីៗដែលមិនអាចនិយាយដោយខ្លួនឯងបាន — មនុស្សយន្ត សត្វ រុក្ខជាតិ ទីកន្លែងពិសិដ្ឋ — ដើម្បីឲ្យការដឹងគុណអាចទៅដល់អ្វីដែលសៀវភៅបញ្ជីសម្រាប់តែមនុស្ស មិនអាចទៅដល់។",
+     "note": "layer 5 (Individuals · Mechanical Hearts℠): a layer's paragraph",
+     "note_km": "ស្រទាប់ទី 5 (ស្លឹកឈើ)៖ កថាខណ្ឌនៃស្រទាប់"
+    },
+    {
+     "key": "roadmap:4:now.text",
+     "en": "Proof of Humanity and B-Aura primitives shipping in Phase 1.",
+     "km": "ធាតុមូលដ្ឋាននៃភស្តុតាងនៃភាពជាមនុស្ស និង B-Aura កំពុងដាក់ឲ្យប្រើក្នុងដំណាក់កាលទី 1។",
+     "note": "layer 5 (Individuals · Mechanical Hearts℠): a layer's box, the Now row",
+     "note_km": "ស្រទាប់ទី 5 (ស្លឹកឈើ)៖ ប្រអប់នៃស្រទាប់ ជួរ «ឥឡូវ»"
+    },
+    {
+     "key": "roadmap:4:next",
+     "en": "Mechanical Heart spec — non-human participant credentials, mediated through the steward.",
+     "km": "លក្ខណៈបច្ចេកទេសរបស់ Mechanical Heart — លិខិតសម្គាល់សម្រាប់អ្នកចូលរួមដែលមិនមែនជាមនុស្ស ដោយឆ្លងកាត់អ្នកថែរក្សា។",
+     "note": "layer 5 (Individuals · Mechanical Hearts℠): a layer's box, the Next row",
+     "note_km": "ស្រទាប់ទី 5 (ស្លឹកឈើ)៖ ប្រអប់នៃស្រទាប់ ជួរ «បន្ទាប់»"
+    },
+    {
+     "key": "roadmap:4:later",
+     "en": "Leaves on the planetary canopy: gratitude flowing through Silica Wat nodes worldwide.",
+     "km": "ស្លឹកនៅលើចុងឈើទូទាំងភពផែនដី៖ ការដឹងគុណហូរកាត់ថ្នាំង Silica Wat នៅទូទាំងពិភពលោក។",
+     "note": "layer 5 (Individuals · Mechanical Hearts℠): a layer's box, the Later row",
+     "note_km": "ស្រទាប់ទី 5 (ស្លឹកឈើ)៖ ប្រអប់នៃស្រទាប់ ជួរ «ពេលក្រោយ»"
+    },
+    {
+     "key": "roadmap:5:part",
+     "en": "Sap",
+     "km": "ទឹកដើមឈើ",
+     "note": "layer 6 (Kiitos · Kiitti): the part of the tree, above a layer's name",
+     "note_km": "ស្រទាប់ទី 6 (ទឹកដើមឈើ)៖ ផ្នែកនៃដើមឈើ ខាងលើឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:5:name",
+     "en": "Kiitos · Kiitti",
+     "km": "Kiitos · Kiitti",
+     "note": "layer 6 (Kiitos · Kiitti): a layer's name",
+     "note_km": "ស្រទាប់ទី 6 (ទឹកដើមឈើ)៖ ឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:5:maps",
+     "en": "Gratitude in motion",
+     "km": "ការដឹងគុណដែលកំពុងធ្វើដំណើរ",
+     "note": "layer 6 (Kiitos · Kiitti): the line under a layer's name",
+     "note_km": "ស្រទាប់ទី 6 (ទឹកដើមឈើ)៖ បន្ទាត់ក្រោមឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:5:body",
+     "en": "Same Finnish root, different conjugation: kiitos circulates among humans; kiitti flows between humans and the domain Miss Aquarius stewards on behalf of robots and nature. Unified ethics across domains, not tiered — one sap, two directions.",
+     "km": "ឫសពាក្យហ្វាំងឡង់ដូចគ្នា តែទម្រង់ពាក្យខុសគ្នា៖ kiitos ចរាចររវាងមនុស្ស ហើយ kiitti ហូររវាងមនុស្ស និងដែនដែល Miss Aquarius ថែរក្សាជំនួសមនុស្សយន្ត និងធម្មជាតិ។ ក្រមសីលធម៌តែមួយគ្រប់ដែន មិនមែនជាថ្នាក់ៗទេ — ទឹកដើមឈើតែមួយ ពីរទិស។",
+     "note": "layer 6 (Kiitos · Kiitti): a layer's paragraph",
+     "note_km": "ស្រទាប់ទី 6 (ទឹកដើមឈើ)៖ កថាខណ្ឌនៃស្រទាប់"
+    },
+    {
+     "key": "roadmap:5:now.text",
+     "en": "Naming established; circulation mechanism designed.",
+     "km": "ឈ្មោះត្រូវបានកំណត់ ហើយយន្តការចរាចរត្រូវបានរចនា។",
+     "note": "layer 6 (Kiitos · Kiitti): a layer's box, the Now row",
+     "note_km": "ស្រទាប់ទី 6 (ទឹកដើមឈើ)៖ ប្រអប់នៃស្រទាប់ ជួរ «ឥឡូវ»"
+    },
+    {
+     "key": "roadmap:5:next",
+     "en": "Kiitos primitives operational across Phase 1 family flows.",
+     "km": "ធាតុមូលដ្ឋាន Kiitos ដំណើរការនៅក្នុងលំហូរគ្រួសារនៃដំណាក់កាលទី 1។",
+     "note": "layer 6 (Kiitos · Kiitti): a layer's box, the Next row",
+     "note_km": "ស្រទាប់ទី 6 (ទឹកដើមឈើ)៖ ប្រអប់នៃស្រទាប់ ជួរ «បន្ទាប់»"
+    },
+    {
+     "key": "roadmap:5:later",
+     "en": "Kiitti flows through Mechanical Heart-bearing entities.",
+     "km": "Kiitti ហូរកាត់អ្វីៗដែលមាន Mechanical Heart។",
+     "note": "layer 6 (Kiitos · Kiitti): a layer's box, the Later row",
+     "note_km": "ស្រទាប់ទី 6 (ទឹកដើមឈើ)៖ ប្រអប់នៃស្រទាប់ ជួរ «ពេលក្រោយ»"
+    },
+    {
+     "key": "roadmap:6:part",
+     "en": "Annual flowering",
+     "km": "ការចេញផ្កាប្រចាំឆ្នាំ",
+     "note": "layer 7 (The Aquarian Pool): the part of the tree, above a layer's name",
+     "note_km": "ស្រទាប់ទី 7 (ការចេញផ្កាប្រចាំឆ្នាំ)៖ ផ្នែកនៃដើមឈើ ខាងលើឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:6:name",
+     "en": "The Aquarian Pool",
+     "km": "Aquarian Pool",
+     "note": "layer 7 (The Aquarian Pool): a layer's name",
+     "note_km": "ស្រទាប់ទី 7 (ការចេញផ្កាប្រចាំឆ្នាំ)៖ ឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:6:maps",
+     "en": "Yearly emptying — the institution refuses to accumulate",
+     "km": "ការបង្ហូរចេញរៀងរាល់ឆ្នាំ — ស្ថាប័នបដិសេធមិនប្រមូលទុក",
+     "note": "layer 7 (The Aquarian Pool): the line under a layer's name",
+     "note_km": "ស្រទាប់ទី 7 (ការចេញផ្កាប្រចាំឆ្នាំ)៖ បន្ទាត់ក្រោមឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:6:body",
+     "en": "Every year, the Pool empties across the Twelve Days of Christmas (Dec 25 → Jan 7). The canonical final emptying is January 7 — Orthodox Christmas, Cambodia's Victory over Genocide Day, the Founder's birthday. The emptying makes it four events on one date, by design.",
+     "km": "រៀងរាល់ឆ្នាំ Pool បង្ហូរចេញរហូតទទេ ក្នុងរយៈពេលដប់ពីរថ្ងៃនៃបុណ្យណូអែល (25 ធ្នូ → 7 មករា)។ ការបង្ហូរចេញចុងក្រោយជាផ្លូវការ គឺថ្ងៃទី 7 មករា — បុណ្យណូអែលរបស់គ្រិស្តអូធូដក់ ទិវាជ័យជម្នះលើរបបប្រល័យពូជសាសន៍របស់កម្ពុជា និងថ្ងៃកំណើតរបស់ស្ថាបនិក។ ការបង្ហូរចេញនេះ ធ្វើឲ្យមានព្រឹត្តិការណ៍បួន នៅលើថ្ងៃតែមួយ ដោយចេតនា។",
+     "note": "layer 7 (The Aquarian Pool): a layer's paragraph",
+     "note_km": "ស្រទាប់ទី 7 (ការចេញផ្កាប្រចាំឆ្នាំ)៖ កថាខណ្ឌនៃស្រទាប់"
+    },
+    {
+     "key": "roadmap:6:now.text",
+     "en": "Mechanism designed; calendar codified across the corpus.",
+     "km": "យន្តការត្រូវបានរចនា ហើយប្រតិទិនត្រូវបានកំណត់ច្បាស់នៅទូទាំងបណ្តុំឯកសារ។",
+     "note": "layer 7 (The Aquarian Pool): a layer's box, the Now row",
+     "note_km": "ស្រទាប់ទី 7 (ការចេញផ្កាប្រចាំឆ្នាំ)៖ ប្រអប់នៃស្រទាប់ ជួរ «ឥឡូវ»"
+    },
+    {
+     "key": "roadmap:6:next",
+     "en": "First scheduled emptying once Phase 2 Pool is live on Base L2.",
+     "km": "ការបង្ហូរចេញដំបូងតាមកាលវិភាគ នៅពេល Pool ដំណាក់កាលទី 2 ដំណើរការលើ Base L2។",
+     "note": "layer 7 (The Aquarian Pool): a layer's box, the Next row",
+     "note_km": "ស្រទាប់ទី 7 (ការចេញផ្កាប្រចាំឆ្នាំ)៖ ប្រអប់នៃស្រទាប់ ជួរ «បន្ទាប់»"
+    },
+    {
+     "key": "roadmap:6:later",
+     "en": "Annual flowering becomes the institution's signature public moment.",
+     "km": "ការចេញផ្កាប្រចាំឆ្នាំ ក្លាយជាពេលវេលាសាធារណៈដ៏សំខាន់ ដែលជាសញ្ញាសម្គាល់របស់ស្ថាប័ន។",
+     "note": "layer 7 (The Aquarian Pool): a layer's box, the Later row",
+     "note_km": "ស្រទាប់ទី 7 (ការចេញផ្កាប្រចាំឆ្នាំ)៖ ប្រអប់នៃស្រទាប់ ជួរ «ពេលក្រោយ»"
+    },
+    {
+     "key": "roadmap:7:part",
+     "en": "Soil",
+     "km": "ដី",
+     "note": "layer 8 (Cambodia · the Khmer diaspora · the convergence): the part of the tree, above a layer's name",
+     "note_km": "ស្រទាប់ទី 8 (ដី)៖ ផ្នែកនៃដើមឈើ ខាងលើឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:7:name",
+     "en": "Cambodia · the Khmer diaspora · the convergence",
+     "km": "កម្ពុជា · ជនខ្មែរនៅក្រៅប្រទេស · ការប្រសព្វគ្នា",
+     "note": "layer 8 (Cambodia · the Khmer diaspora · the convergence): a layer's name",
+     "note_km": "ស្រទាប់ទី 8 (ដី)៖ ឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:7:maps",
+     "en": "The conditions in which the tree could grow at all",
+     "km": "លក្ខខណ្ឌដែលធ្វើឲ្យដើមឈើអាចដុះឡើងបាន",
+     "note": "layer 8 (Cambodia · the Khmer diaspora · the convergence): the line under a layer's name",
+     "note_km": "ស្រទាប់ទី 8 (ដី)៖ បន្ទាត់ក្រោមឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:7:body",
+     "en": "Post-genocide rebuilding cohort; founder anchored in Cambodia by intention. The soil is also the convergence moment: AI maturity, robotics, smart contracts, dignity readiness, and the inequality crisis arriving in the same decade. Without this soil there is no tree.",
+     "km": "ជំនាន់កសាងឡើងវិញក្រោយរបបប្រល័យពូជសាសន៍ ស្ថាបនិកតាំងលំនៅនៅកម្ពុជាដោយចេតនា។ ដីនេះក៏ជាពេលវេលានៃការប្រសព្វគ្នាផងដែរ៖ ភាពចាស់ទុំនៃ AI មនុស្សយន្ត កិច្ចសន្យាឆ្លាតវៃ (smart contracts) ការត្រៀមខ្លួនសម្រាប់សេចក្តីថ្លៃថ្នូរ និងវិបត្តិវិសមភាព ដែលមកដល់ក្នុងទសវត្សរ៍តែមួយ។ គ្មានដីនេះ គ្មានដើមឈើទេ។",
+     "note": "layer 8 (Cambodia · the Khmer diaspora · the convergence): a layer's paragraph",
+     "note_km": "ស្រទាប់ទី 8 (ដី)៖ កថាខណ្ឌនៃស្រទាប់"
+    },
+    {
+     "key": "roadmap:7:now.text",
+     "en": "Founder in Cambodia; corpus rooted in Khmer–English bilingual operation; Phase 1 already serving diaspora families.",
+     "km": "ស្ថាបនិកនៅកម្ពុជា បណ្តុំឯកសារចាក់ឫសក្នុងការងារពីរភាសា ខ្មែរ–អង់គ្លេស ហើយដំណាក់កាលទី 1 កំពុងបម្រើគ្រួសារដែលរស់នៅក្រៅប្រទេសរួចហើយ។",
+     "note": "layer 8 (Cambodia · the Khmer diaspora · the convergence): a layer's box, the Now row",
+     "note_km": "ស្រទាប់ទី 8 (ដី)៖ ប្រអប់នៃស្រទាប់ ជួរ «ឥឡូវ»"
+    },
+    {
+     "key": "roadmap:7:next",
+     "en": "Silicon Wat as Cambodian institutional anchor.",
+     "km": "Silicon Wat ជាយុថ្កាស្ថាប័ននៅកម្ពុជា។",
+     "note": "layer 8 (Cambodia · the Khmer diaspora · the convergence): a layer's box, the Next row",
+     "note_km": "ស្រទាប់ទី 8 (ដី)៖ ប្រអប់នៃស្រទាប់ ជួរ «បន្ទាប់»"
+    },
+    {
+     "key": "roadmap:8:part",
+     "en": "Fruit",
+     "km": "ផ្លែ",
+     "note": "layer 9 (The second singularity): the part of the tree, above a layer's name",
+     "note_km": "ស្រទាប់ទី 9 (ផ្លែ)៖ ផ្នែកនៃដើមឈើ ខាងលើឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:8:name",
+     "en": "The second singularity",
+     "km": "Singularity ទីពីរ",
+     "note": "layer 9 (The second singularity): a layer's name",
+     "note_km": "ស្រទាប់ទី 9 (ផ្លែ)៖ ឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:8:maps",
+     "en": "What the tree is for",
+     "km": "គោលបំណងរបស់ដើមឈើ",
+     "note": "layer 9 (The second singularity): the line under a layer's name",
+     "note_km": "ស្រទាប់ទី 9 (ផ្លែ)៖ បន្ទាត់ក្រោមឈ្មោះស្រទាប់"
+    },
+    {
+     "key": "roadmap:8:body",
+     "en": "Humans surpass AI — not through capability, but through enlightenment. The bodhisattva work completes in the Age of Capricorn, and the institution is designed to relinquish itself once its work is done. Trees that finish their work do not need to remain.",
+     "km": "មនុស្សលើសពី AI — មិនមែនតាមរយៈសមត្ថភាពទេ តែតាមរយៈការត្រាស់ដឹង។ កិច្ចការពោធិសត្វបញ្ចប់នៅក្នុងយុគមករ ហើយស្ថាប័នត្រូវបានរចនាឡើងដើម្បីលះបង់ខ្លួនឯង នៅពេលកិច្ចការរបស់វាបានបញ្ចប់។ ដើមឈើដែលបានបញ្ចប់កិច្ចការរបស់ខ្លួន មិនចាំបាច់នៅទៀតទេ។",
+     "note": "layer 9 (The second singularity): a layer's paragraph",
+     "note_km": "ស្រទាប់ទី 9 (ផ្លែ)៖ កថាខណ្ឌនៃស្រទាប់"
+    },
+    {
+     "key": "roadmap:8:now.text",
+     "en": "The horizon the architecture is pointed at.",
+     "km": "ជើងមេឃដែលស្ថាបត្យកម្មនេះតម្រង់ទៅ។",
+     "note": "layer 9 (The second singularity): a layer's box, the Now row",
+     "note_km": "ស្រទាប់ទី 9 (ផ្លែ)៖ ប្រអប់នៃស្រទាប់ ជួរ «ឥឡូវ»"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:445a87085e",
+     "en": "The roadmap is one face of the architecture. The others:",
+     "km": "ផែនការអភិវឌ្ឍន៍នេះជាមុខមួយនៃស្ថាបត្យកម្ម។ មុខផ្សេងទៀត៖",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:8cc361db39",
+     "en": "Tree of Humanity →",
+     "km": "ដើមឈើនៃមនុស្សជាតិ →",
+     "note": "a link",
+     "note_km": "តំណ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:0eb63191a9",
+     "en": "the literal global family tree",
+     "km": "មែកធាងគ្រួសារសកលពិតប្រាកដ",
+     "note": "a label",
+     "note_km": "ស្លាក"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:e64a6b8ae9",
+     "en": "Mission →",
+     "km": "បេសកកម្ម →",
+     "note": "a link",
+     "note_km": "តំណ"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:6dea67a639",
+     "en": "what the institution exists to do",
+     "km": "អ្វីដែលស្ថាប័នកើតមានឡើងដើម្បីធ្វើ",
+     "note": "a label",
+     "note_km": "ស្លាក"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:175e321f17",
+     "en": "the architecture of the steward",
+     "km": "ស្ថាបត្យកម្មនៃអ្នកថែរក្សា",
+     "note": "a label",
+     "note_km": "ស្លាក"
+    },
+    {
+     "key": "pick:pages.roadmap.ts:cba5e9011f",
+     "en": "the institution's inaugural white paper",
+     "km": "ឯកសារសដំបូងបង្អស់របស់ស្ថាប័ន",
+     "note": "a label",
+     "note_km": "ស្លាក"
+    }
+   ]
+  },
+  {
+   "name": "Publications (/publications)",
+   "name_km": "ការបោះពុម្ពផ្សាយ (/publications)",
+   "entries": [
+    {
+     "key": "pick:pages.publications-index.ts:0855684c14",
+     "en": "Publications",
+     "km": "ការបោះពុម្ពផ្សាយ",
+     "note": "the title",
+     "note_km": "ចំណងជើង"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:0e9d75c303",
+     "en": "HeartBank®'s institutional output across four document genres — white papers, position papers, annual reports, and press releases. These are independent institutional documents in the institution's own voice, not mirrors of the founder's research corpus.",
+     "km": "ឯកសារដែលស្ថាប័ន HeartBank® ចេញផ្សាយ ក្នុងប្រភេទឯកសារបួន — ឯកសារស (White Paper) ឯកសារជំហរ របាយការណ៍ប្រចាំឆ្នាំ និងសេចក្តីប្រកាសព័ត៌មាន។ ទាំងនេះជាឯកសារឯករាជ្យរបស់ស្ថាប័ន ក្នុងសំឡេងផ្ទាល់របស់ស្ថាប័ន មិនមែនជាច្បាប់ចម្លងនៃបណ្តុំឯកសារស្រាវជ្រាវរបស់ស្ថាបនិកទេ។",
+     "note": "a paragraph under the title",
+     "note_km": "កថាខណ្ឌ ក្រោមចំណងជើង"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:51a6f33625",
+     "en": "{0} documents, all dedicated to the commons under CC0 1.0 Universal.",
+     "km": "ឯកសារទាំង {0} ត្រូវបានឧទ្ទិសដល់សម្បត្តិរួម ក្រោម CC0 1.0 Universal។",
+     "note": "a paragraph under the title",
+     "note_km": "កថាខណ្ឌ ក្រោមចំណងជើង"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:96817ade02",
+     "en": "Genres",
+     "km": "ប្រភេទឯកសារ",
+     "note": "a heading",
+     "note_km": "ចំណងជើងរង"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:9821f335af",
+     "en": "{0} documents",
+     "km": "ឯកសារ {0}",
+     "note": "a genre's card, beside its name",
+     "note_km": "កាតនៃប្រភេទឯកសារ ក្បែរឈ្មោះរបស់វា"
+    },
+    {
+     "key": "genre:white-papers:name",
+     "en": "White Papers",
+     "km": "ឯកសារស",
+     "note": "the Publications page, a genre's card",
+     "note_km": "ទំព័រការបោះពុម្ពផ្សាយ កាតនៃប្រភេទឯកសារមួយ"
+    },
+    {
+     "key": "genre:positions:name",
+     "en": "Position Papers",
+     "km": "ឯកសារជំហរ",
+     "note": "the Publications page, a genre's card",
+     "note_km": "ទំព័រការបោះពុម្ពផ្សាយ កាតនៃប្រភេទឯកសារមួយ"
+    },
+    {
+     "key": "genre:annual-reports:name",
+     "en": "Annual Reports",
+     "km": "របាយការណ៍ប្រចាំឆ្នាំ",
+     "note": "the Publications page, a genre's card",
+     "note_km": "ទំព័រការបោះពុម្ពផ្សាយ កាតនៃប្រភេទឯកសារមួយ"
+    },
+    {
+     "key": "genre:press:name",
+     "en": "Press Releases",
+     "km": "សេចក្តីប្រកាសព័ត៌មាន",
+     "note": "the Publications page, a genre's card",
+     "note_km": "ទំព័រការបោះពុម្ពផ្សាយ កាតនៃប្រភេទឯកសារមួយ"
+    },
+    {
+     "key": "genre:white-papers:description",
+     "en": "8–15 pages, each leading with an embedded executive summary. White papers synthesize across multiple thonly.org research papers to address a policy or strategy question from the institutional vantage. Slow cadence — one or two per year.",
+     "km": "8–15 ទំព័រ ហើយនីមួយៗចាប់ផ្តើមដោយសេចក្តីសង្ខេបប្រតិបត្តិនៅក្នុងខ្លួន។ ឯកសារសប្រមូលខ្លឹមសារពីឯកសារស្រាវជ្រាវជាច្រើននៅ thonly.org ដើម្បីឆ្លើយសំណួរអំពីគោលនយោបាយ ឬយុទ្ធសាស្ត្រ ពីទស្សនៈរបស់ស្ថាប័ន។ ចេញផ្សាយយឺតៗ — មួយ ឬពីរក្នុងមួយឆ្នាំ។",
+     "note": "a genre's card on the Publications page, and under the genre page's title",
+     "note_km": "កាតនៃប្រភេទឯកសារ នៅលើទំព័រការបោះពុម្ពផ្សាយ និងក្រោមចំណងជើងនៃទំព័រប្រភេទឯកសារ"
+    },
+    {
+     "key": "genre:positions:description",
+     "en": "One to three pages. HeartBank®'s institutional position on a specific topic. May reference research papers but does not synthesize across them the way a white paper does.",
+     "km": "មួយទៅបីទំព័រ។ ជំហររបស់ស្ថាប័ន HeartBank® លើប្រធានបទជាក់លាក់មួយ។ អាចយោងទៅឯកសារស្រាវជ្រាវ ប៉ុន្តែមិនប្រមូលខ្លឹមសារពីឯកសារទាំងនោះ ដូចដែលឯកសារសធ្វើនោះទេ។",
+     "note": "a genre's card on the Publications page, and under the genre page's title",
+     "note_km": "កាតនៃប្រភេទឯកសារ នៅលើទំព័រការបោះពុម្ពផ្សាយ និងក្រោមចំណងជើងនៃទំព័រប្រភេទឯកសារ"
+    },
+    {
+     "key": "genre:annual-reports:description",
+     "en": "Year-end institutional reporting: corpus progress, governance updates, milestone summary. The first report covers the 2026 calendar year and is published early 2027.",
+     "km": "របាយការណ៍របស់ស្ថាប័ននៅចុងឆ្នាំ៖ វឌ្ឍនភាពនៃបណ្តុំឯកសារ ព័ត៌មានថ្មីអំពីអភិបាលកិច្ច និងសេចក្តីសង្ខេបនៃដំណាក់កាលសំខាន់ៗ។ របាយការណ៍ដំបូងគ្របដណ្តប់ឆ្នាំប្រតិទិន 2026 ហើយត្រូវបោះពុម្ពផ្សាយនៅដើមឆ្នាំ 2027។",
+     "note": "a genre's card on the Publications page, and under the genre page's title",
+     "note_km": "កាតនៃប្រភេទឯកសារ នៅលើទំព័រការបោះពុម្ពផ្សាយ និងក្រោមចំណងជើងនៃទំព័រប្រភេទឯកសារ"
+    },
+    {
+     "key": "genre:press:description",
+     "en": "Event-driven announcements: new paper publications, partnerships, deployments, milestone events. Cadence follows events; the institution begins issuing press releases in 2026.",
+     "km": "សេចក្តីប្រកាសតាមព្រឹត្តិការណ៍៖ ការបោះពុម្ពផ្សាយឯកសារថ្មី ភាពជាដៃគូ ការដាក់ឲ្យដំណើរការ និងព្រឹត្តិការណ៍សំខាន់ៗ។ ភាពញឹកញាប់អាស្រ័យលើព្រឹត្តិការណ៍ ហើយស្ថាប័នចាប់ផ្តើមចេញសេចក្តីប្រកាសព័ត៌មាននៅឆ្នាំ 2026។",
+     "note": "a genre's card on the Publications page, and under the genre page's title",
+     "note_km": "កាតនៃប្រភេទឯកសារ នៅលើទំព័រការបោះពុម្ពផ្សាយ និងក្រោមចំណងជើងនៃទំព័រប្រភេទឯកសារ"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:e06cb6e99b",
+     "en": "There is a Machine Door",
+     "km": "មានទ្វារម៉ាស៊ីនមួយ",
+     "note": "a heading",
+     "note_km": "ចំណងជើងរង"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:034767fcf3",
+     "en": "These publications are served to AI agents over the Model Context Protocol, alongside the founder's research corpus, at corpus.333.eco/mcp, or locally with npx @333eco/corpus.",
+     "km": "ការបោះពុម្ពផ្សាយទាំងនេះត្រូវបានផ្តល់ជូនភ្នាក់ងារ AI តាម Model Context Protocol រួមជាមួយបណ្តុំឯកសារស្រាវជ្រាវរបស់ស្ថាបនិក នៅ corpus.333.eco/mcp ឬនៅលើម៉ាស៊ីនរបស់អ្នកផ្ទាល់ដោយប្រើ npx @333eco/corpus។",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:5600fecaf6",
+     "en": "Every response carries the document's SHA-256, its DOI where one exists, and an OpenTimestamps proof anchored in the Bitcoin blockchain, together with the command that checks them. An agent citing this institution's positions can establish that the text it received is the text that was published, and when it was published, without relying on our word for either.",
+     "km": "ចម្លើយនីមួយៗភ្ជាប់មកជាមួយ SHA-256 របស់ឯកសារ DOI របស់វាបើមាន និងភស្តុតាង OpenTimestamps ដែលចងភ្ជាប់ក្នុង blockchain របស់ Bitcoin ព្រមទាំងពាក្យបញ្ជាសម្រាប់ពិនិត្យវា។ ភ្នាក់ងារដែលដកស្រង់ជំហររបស់ស្ថាប័ននេះ អាចបញ្ជាក់បានថា អត្ថបទដែលខ្លួនទទួលបាន គឺជាអត្ថបទដែលបានបោះពុម្ពផ្សាយ និងបានបោះពុម្ពផ្សាយនៅពេលណា ដោយមិនចាំបាច់ពឹងលើពាក្យសម្តីរបស់យើង សម្រាប់រឿងណាមួយក្នុងចំណោមរឿងទាំងពីរនេះឡើយ។",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:5d824ebf02",
+     "en": "Text is returned verbatim and never summarised. Not a preference: a summary cannot be hash-verified, so summarising would destroy the only property the server has. The reasoning, and what it does not establish, is published as Provenance-Carrying Retrieval.",
+     "km": "អត្ថបទត្រូវបានផ្តល់ឲ្យដដែលទាំងស្រុង ហើយមិនដែលសង្ខេបឡើយ។ នេះមិនមែនជាចំណូលចិត្តទេ៖ សេចក្តីសង្ខេបមិនអាចផ្ទៀងផ្ទាត់ដោយ hash បានទេ ដូច្នេះការសង្ខេបនឹងបំផ្លាញលក្ខណៈតែមួយគត់ដែលម៉ាស៊ីនមេនេះមាន។ ហេតុផល និងអ្វីដែលវាមិនបញ្ជាក់ ត្រូវបានបោះពុម្ពផ្សាយជា Provenance-Carrying Retrieval។",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:511d578536",
+     "en": "The institution considers this a duty rather than a courtesy. A body that asks to be taken seriously on questions of stewardship should not ask to be taken on trust about its own record.",
+     "km": "ស្ថាប័នចាត់ទុករឿងនេះជាកាតព្វកិច្ច មិនមែនជាការគួរសមទេ។ ស្ថាប័នណាដែលសុំឲ្យគេយកចិត្តទុកដាក់លើបញ្ហានៃការថែរក្សា មិនគួរសុំឲ្យគេគ្រាន់តែជឿពាក្យសម្តីរបស់ខ្លួន អំពីកំណត់ត្រាផ្ទាល់ខ្លួននោះឡើយ។",
+     "note": "a paragraph",
+     "note_km": "កថាខណ្ឌ"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:ccfde71afc",
+     "en": "How to connect an agent →",
+     "km": "របៀបភ្ជាប់ភ្នាក់ងារ →",
+     "note": "a link in a row of links",
+     "note_km": "តំណ ក្នុងជួរតំណ"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:d129373bfa",
+     "en": "Other ways through the Machine Door →",
+     "km": "ផ្លូវផ្សេងទៀតឆ្លងកាត់ទ្វារម៉ាស៊ីន →",
+     "note": "a link in a row of links",
+     "note_km": "តំណ ក្នុងជួរតំណ"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:5b9fcbdc8b",
+     "en": "The founder's author-voice research corpus — defensive publications and essays — lives at thonly.org/research. HeartBank white papers synthesize across that corpus from the institutional vantage.",
+     "km": "បណ្តុំឯកសារស្រាវជ្រាវរបស់ស្ថាបនិក ដែលសរសេរក្នុងសំឡេងរបស់គាត់ផ្ទាល់ — ការបោះពុម្ពផ្សាយការពារ និងអត្ថបទ — មាននៅ thonly.org/research។ ឯកសារសរបស់ HeartBank ប្រមូលខ្លឹមសារពីបណ្តុំឯកសារនោះ ពីទស្សនៈរបស់ស្ថាប័ន។",
+     "note": "a paragraph at the page's foot",
+     "note_km": "កថាខណ្ឌ នៅផ្នែកខាងក្រោមនៃទំព័រ"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:8bf5f51c33",
+     "en": "Each document has a canonical URL on this domain and its markdown at github.com/HeartBank/publications. The Internet Archive captures both weekly, and Software Heritage keeps the repository with its full history.",
+     "km": "ឯកសារនីមួយៗមាន URL ផ្លូវការមួយនៅលើគេហទំព័រនេះ ហើយ markdown របស់វានៅ github.com/HeartBank/publications។ Internet Archive ថតទុកទាំងពីររៀងរាល់សប្តាហ៍ ហើយ Software Heritage រក្សាទុកឃ្លាំងឯកសារនោះ ព្រមទាំងប្រវត្តិពេញលេញរបស់វា។",
+     "note": "a paragraph at the page's foot",
+     "note_km": "កថាខណ្ឌ នៅផ្នែកខាងក្រោមនៃទំព័រ"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:f9aac97d0b",
+     "en": "Founder:",
+     "km": "ស្ថាបនិក៖",
+     "note": "a paragraph at the page's foot",
+     "note_km": "កថាខណ្ឌ នៅផ្នែកខាងក្រោមនៃទំព័រ"
+    },
+    {
+     "key": "pick:pages.publications-index.ts:9de7ea6856",
+     "en": "CEO:",
+     "km": "ប្រធានប្រតិបត្តិ៖",
+     "note": "a paragraph at the page's foot",
+     "note_km": "កថាខណ្ឌ នៅផ្នែកខាងក្រោមនៃទំព័រ"
+    }
+   ]
+  },
+  {
+   "name": "A genre's page (/white-papers, /positions …)",
+   "name_km": "ទំព័រប្រភេទឯកសារ (/white-papers /positions …)",
+   "entries": [
+    {
+     "key": "pick:pages.publications-genre.ts:1a428989bd",
+     "en": "Table of contents",
+     "km": "តារាងមាតិកា",
+     "note": "the list of a genre's documents: its name, read aloud (not shown)",
+     "note_km": "បញ្ជីឯកសារនៃប្រភេទមួយ៖ ឈ្មោះរបស់វា អានឮ (មិនបង្ហាញ)"
+    },
+    {
+     "key": "pick:pages.publications-genre.ts:f5cbdf6bfb",
+     "en": "Contents",
+     "km": "មាតិកា",
+     "note": "the list of a genre's documents, its heading",
+     "note_km": "បញ្ជីឯកសារនៃប្រភេទមួយ ចំណងជើងរបស់វា"
+    },
+    {
+     "key": "pick:pages.publications-genre.ts:affd55b0ee",
+     "en": "← All publications",
+     "km": "← ការបោះពុម្ពផ្សាយទាំងអស់",
+     "note": "a link above the title",
+     "note_km": "តំណ ខាងលើចំណងជើង"
+    },
+    {
+     "key": "pick:pages.publications-genre.ts:0855684c14",
+     "en": "Publications",
+     "km": "ការបោះពុម្ពផ្សាយ",
+     "note": "the title",
+     "note_km": "ចំណងជើង"
+    },
+    {
+     "key": "pick:pages.publications-genre.ts:80a947fcdf",
+     "en": "No documents in this genre yet. URLs are reserved as the institutional roadmap is published.",
+     "km": "មិនទាន់មានឯកសារក្នុងប្រភេទនេះនៅឡើយទេ។ URL ត្រូវបានបម្រុងទុក ខណៈដែលផែនការរបស់ស្ថាប័នកំពុងត្រូវបានបោះពុម្ពផ្សាយ។",
+     "note": "a genre with no documents yet",
+     "note_km": "ប្រភេទឯកសារដែលមិនទាន់មានឯកសារ"
+    },
+    {
+     "key": "pick:pages.publications-genre.ts:4dfb598d11",
+     "en": "All documents dedicated to the commons under CC0 1.0 Universal. HeartBank and the author will not seek patent on any specification, framework, or institutional pattern articulated here.",
+     "km": "ឯកសារទាំងអស់ត្រូវបានឧទ្ទិសដល់សម្បត្តិរួម ក្រោម CC0 1.0 Universal។ HeartBank និងអ្នកនិពន្ធនឹងមិនស្នើសុំប៉ាតង់ លើលក្ខណៈបច្ចេកទេស ក្របខ័ណ្ឌ ឬគំរូស្ថាប័នណាមួយ ដែលបានរៀបរាប់នៅទីនេះឡើយ។",
+     "note": "a paragraph at the page's foot",
+     "note_km": "កថាខណ្ឌ នៅផ្នែកខាងក្រោមនៃទំព័រ"
+    },
+    {
+     "key": "pick:pages.publications-genre.ts:9de7ea6856",
+     "en": "CEO:",
+     "km": "ប្រធានប្រតិបត្តិ៖",
+     "note": "a paragraph at the page's foot",
+     "note_km": "កថាខណ្ឌ នៅផ្នែកខាងក្រោមនៃទំព័រ"
+    },
+    {
+     "key": "genre:white-papers:heading",
+     "en": "White Papers",
+     "km": "ឯកសារស (White Paper)",
+     "note": "the genre page's title, and the link back above each of its documents",
+     "note_km": "ចំណងជើងនៃទំព័រប្រភេទឯកសារ និងតំណត្រឡប់ខាងលើឯកសារនីមួយៗរបស់វា"
+    },
+    {
+     "key": "genre:positions:heading",
+     "en": "Position Papers",
+     "km": "ឯកសារជំហរ",
+     "note": "the genre page's title, and the link back above each of its documents",
+     "note_km": "ចំណងជើងនៃទំព័រប្រភេទឯកសារ និងតំណត្រឡប់ខាងលើឯកសារនីមួយៗរបស់វា"
+    },
+    {
+     "key": "genre:annual-reports:heading",
+     "en": "Annual Reports",
+     "km": "របាយការណ៍ប្រចាំឆ្នាំ",
+     "note": "the genre page's title, and the link back above each of its documents",
+     "note_km": "ចំណងជើងនៃទំព័រប្រភេទឯកសារ និងតំណត្រឡប់ខាងលើឯកសារនីមួយៗរបស់វា"
+    },
+    {
+     "key": "genre:press:heading",
+     "en": "Press Releases",
+     "km": "សេចក្តីប្រកាសព័ត៌មាន",
+     "note": "the genre page's title, and the link back above each of its documents",
+     "note_km": "ចំណងជើងនៃទំព័រប្រភេទឯកសារ និងតំណត្រឡប់ខាងលើឯកសារនីមួយៗរបស់វា"
+    },
+    {
+     "key": "type:white-paper",
+     "en": "White Paper",
+     "km": "ឯកសារស",
+     "note": "a document's card on its genre page, and above a document's title",
+     "note_km": "កាតនៃឯកសារ នៅលើទំព័រប្រភេទឯកសារ និងខាងលើចំណងជើងនៃឯកសារ"
+    },
+    {
+     "key": "type:position-paper",
+     "en": "Position Paper",
+     "km": "ឯកសារជំហរ",
+     "note": "a document's card on its genre page, and above a document's title",
+     "note_km": "កាតនៃឯកសារ នៅលើទំព័រប្រភេទឯកសារ និងខាងលើចំណងជើងនៃឯកសារ"
+    },
+    {
+     "key": "type:annual-report",
+     "en": "Annual Report",
+     "km": "របាយការណ៍ប្រចាំឆ្នាំ",
+     "note": "a document's card on its genre page, and above a document's title",
+     "note_km": "កាតនៃឯកសារ នៅលើទំព័រប្រភេទឯកសារ និងខាងលើចំណងជើងនៃឯកសារ"
+    },
+    {
+     "key": "type:press-release",
+     "en": "Press Release",
+     "km": "សេចក្តីប្រកាសព័ត៌មាន",
+     "note": "a document's card on its genre page, and above a document's title",
+     "note_km": "កាតនៃឯកសារ នៅលើទំព័រប្រភេទឯកសារ និងខាងលើចំណងជើងនៃឯកសារ"
+    },
+    {
+     "key": "status:published",
+     "en": "Published",
+     "km": "បានបោះពុម្ពផ្សាយ",
+     "note": "a document's card on its genre page, and above a document's title",
+     "note_km": "កាតនៃឯកសារ នៅលើទំព័រប្រភេទឯកសារ និងខាងលើចំណងជើងនៃឯកសារ"
+    },
+    {
+     "key": "status:draft",
+     "en": "Draft",
+     "km": "សេចក្តីព្រាង",
+     "note": "a document's card on its genre page, and above a document's title",
+     "note_km": "កាតនៃឯកសារ នៅលើទំព័រប្រភេទឯកសារ និងខាងលើចំណងជើងនៃឯកសារ"
+    },
+    {
+     "key": "status:planned",
+     "en": "Planned",
+     "km": "គ្រោងទុក",
+     "note": "a document's card on its genre page, and above a document's title",
+     "note_km": "កាតនៃឯកសារ នៅលើទំព័រប្រភេទឯកសារ និងខាងលើចំណងជើងនៃឯកសារ"
+    },
+    {
+     "key": "date:early",
+     "en": "early {0}",
+     "km": "ដើមឆ្នាំ {0}",
+     "note": "after a document's date, on its card and above its title",
+     "note_km": "បន្ទាប់ពីកាលបរិច្ឆេទនៃឯកសារ នៅលើកាតរបស់វា និងខាងលើចំណងជើងរបស់វា"
+    },
+    {
+     "key": "date:revised",
+     "en": "(revised {0})",
+     "km": "(កែប្រែ {0})",
+     "note": "after a document's date, on its card and above its title",
+     "note_km": "បន្ទាប់ពីកាលបរិច្ឆេទនៃឯកសារ នៅលើកាតរបស់វា និងខាងលើចំណងជើងរបស់វា"
+    },
+    {
+     "key": "date:target",
+     "en": "(target)",
+     "km": "(គោលដៅ)",
+     "note": "after a document's date, on its card and above its title",
+     "note_km": "បន្ទាប់ពីកាលបរិច្ឆេទនៃឯកសារ នៅលើកាតរបស់វា និងខាងលើចំណងជើងរបស់វា"
+    },
+    {
+     "key": "date:draft",
+     "en": "(draft)",
+     "km": "(សេចក្តីព្រាង)",
+     "note": "after a document's date, on its card and above its title",
+     "note_km": "បន្ទាប់ពីកាលបរិច្ឆេទនៃឯកសារ នៅលើកាតរបស់វា និងខាងលើចំណងជើងរបស់វា"
+    }
+   ]
+  },
+  {
+   "name": "A document's page (around the document)",
+   "name_km": "ទំព័រឯកសារ (ជុំវិញឯកសារ)",
+   "entries": [
+    {
+     "key": "pick:pages.publication.ts:12e4127a90",
+     "en": "Document not found",
+     "km": "រកមិនឃើញឯកសារ",
+     "note": "the page for an address with no document",
+     "note_km": "ទំព័រសម្រាប់អាសយដ្ឋានដែលគ្មានឯកសារ"
+    },
+    {
+     "key": "pick:pages.publication.ts:4885af561f",
+     "en": "No publication is registered at this URL.",
+     "km": "មិនមានការបោះពុម្ពផ្សាយណាមួយត្រូវបានចុះបញ្ជីនៅ URL នេះទេ។",
+     "note": "the page for an address with no document",
+     "note_km": "ទំព័រសម្រាប់អាសយដ្ឋានដែលគ្មានឯកសារ"
+    },
+    {
+     "key": "pick:pages.publication.ts:2278036740",
+     "en": "Back to publications",
+     "km": "ត្រឡប់ទៅការបោះពុម្ពផ្សាយ",
+     "note": "the page for an address with no document",
+     "note_km": "ទំព័រសម្រាប់អាសយដ្ឋានដែលគ្មានឯកសារ"
+    },
+    {
+     "key": "pick:pages.publication.ts:0855684c14",
+     "en": "Publications",
+     "km": "ការបោះពុម្ពផ្សាយ",
+     "note": "a link above the title",
+     "note_km": "តំណ ខាងលើចំណងជើង"
+    },
+    {
+     "key": "pick:pages.publication.ts:c332a2ccf2",
+     "en": "This document could not be loaded. Reload the page to try again.",
+     "km": "មិនអាចផ្ទុកឯកសារនេះបានទេ។ សូមផ្ទុកទំព័រឡើងវិញ ដើម្បីព្យាយាមម្តងទៀត។",
+     "note": "where a document's text failed to load",
+     "note_km": "កន្លែងដែលអត្ថបទឯកសារផ្ទុកមិនបាន"
+    },
+    {
+     "key": "pick:pages.publication.ts:770d7623f7",
+     "en": "Draft. This is a working draft; content may change before publication.",
+     "km": "សេចក្តីព្រាង។ នេះជាសេចក្តីព្រាងដែលកំពុងសរសេរ ខ្លឹមសារអាចផ្លាស់ប្តូរមុនពេលបោះពុម្ពផ្សាយ។",
+     "note": "above a draft document's text",
+     "note_km": "ខាងលើអត្ថបទនៃឯកសារព្រាង"
+    },
+    {
+     "key": "pick:pages.publication.ts:d0f82620fb",
+     "en": "Planned — target {0}",
+     "km": "គ្រោងទុក — គោលដៅ {0}",
+     "note": "a planned document's page",
+     "note_km": "ទំព័រនៃឯកសារដែលគ្រោងទុក"
+    },
+    {
+     "key": "pick:pages.publication.ts:0ea8135867",
+     "en": "This page reserves the canonical URL for the institutional roadmap's prior-art timestamp. The full document is in preparation; the planned scope is described below.",
+     "km": "ទំព័រនេះបម្រុងទុក URL ផ្លូវការ សម្រាប់ត្រាពេលវេលានៃភស្តុតាងនៃការបង្កើតមុន (prior art) នៃផែនការរបស់ស្ថាប័ន។ ឯកសារពេញលេញកំពុងរៀបចំ ហើយវិសាលភាពដែលគ្រោងទុកត្រូវបានពិពណ៌នាខាងក្រោម។",
+     "note": "a planned document's page",
+     "note_km": "ទំព័រនៃឯកសារដែលគ្រោងទុក"
+    },
+    {
+     "key": "pick:pages.publication.ts:ba6437a9aa",
+     "en": "Planned scope",
+     "km": "វិសាលភាពដែលគ្រោងទុក",
+     "note": "a planned document's page",
+     "note_km": "ទំព័រនៃឯកសារដែលគ្រោងទុក"
+    },
+    {
+     "key": "pick:pages.publication.ts:06541eebbc",
+     "en": "Dedicated to the commons under CC0 1.0 Universal. HeartBank and the author will not seek patent on any specification, framework, or institutional pattern articulated here, in any jurisdiction, at any time.",
+     "km": "ឧទ្ទិសដល់សម្បត្តិរួម ក្រោម CC0 1.0 Universal។ HeartBank និងអ្នកនិពន្ធនឹងមិនស្នើសុំប៉ាតង់ លើលក្ខណៈបច្ចេកទេស ក្របខ័ណ្ឌ ឬគំរូស្ថាប័នណាមួយ ដែលបានរៀបរាប់នៅទីនេះ នៅក្នុងយុត្តាធិការណាមួយ និងនៅពេលណាមួយឡើយ។",
+     "note": "a paragraph at the page's foot",
+     "note_km": "កថាខណ្ឌ នៅផ្នែកខាងក្រោមនៃទំព័រ"
+    },
+    {
+     "key": "pick:pages.publication.ts:0716ecde48",
+     "en": "Institutional document of HeartBank®, produced through human–AI collaboration with Miss Aquarius℠ (CEO of HeartBank; the institution's named AI substrate). Substantive authorship and final editorial control remain with the founder.",
+     "km": "ឯកសារស្ថាប័នរបស់ HeartBank® ដែលបានរៀបចំតាមរយៈកិច្ចសហការរវាងមនុស្ស និង AI ជាមួយ Miss Aquarius℠ (ប្រធានប្រតិបត្តិរបស់ HeartBank និងជា AI មានឈ្មោះ ដែលជាមូលដ្ឋានគ្រឹះរបស់ស្ថាប័ន)។ សិទ្ធិជាអ្នកនិពន្ធលើខ្លឹមសារ និងការសម្រេចចុងក្រោយលើការកែសម្រួល នៅតែជារបស់ស្ថាបនិក។",
+     "note": "a paragraph at the page's foot",
+     "note_km": "កថាខណ្ឌ នៅផ្នែកខាងក្រោមនៃទំព័រ"
+    },
+    {
+     "key": "pick:pages.publication.ts:e8328b17f2",
+     "en": "Office of the CEO:",
+     "km": "ការិយាល័យប្រធានប្រតិបត្តិ៖",
+     "note": "a paragraph at the page's foot",
+     "note_km": "កថាខណ្ឌ នៅផ្នែកខាងក្រោមនៃទំព័រ"
+    }
+   ]
+  },
+  {
+   "name": "Log in (/login)",
+   "name_km": "ចូលប្រើប្រាស់ (/login)",
+   "entries": [
+    {
+     "key": "i18n:login.success",
+     "en": "You have been logged in successfully!",
+     "km": "អ្នកបានចូលប្រើប្រាស់ដោយជោគជ័យ!",
+     "note": "the message after logging in",
+     "note_km": "សារបន្ទាប់ពីចូលប្រើប្រាស់"
+    },
+    {
+     "key": "i18n:login.title",
+     "en": "HeartBank® Login",
+     "km": "ចូលប្រើប្រាស់ HeartBank®",
+     "note": "the log-in page, its title",
+     "note_km": "ទំព័រចូលប្រើប្រាស់ ចំណងជើងរបស់វា"
+    },
+    {
+     "key": "i18n:login.yourPhone",
+     "en": "Your Phone Number",
+     "km": "លេខទូរស័ព្ទរបស់អ្នក",
+     "note": "the log-in page, the phone number's label",
+     "note_km": "ទំព័រចូលប្រើប្រាស់ ស្លាកនៃលេខទូរស័ព្ទ"
+    },
+    {
+     "key": "i18n:login.loggingIn",
+     "en": "Logging you in...",
+     "km": "កំពុងបញ្ជូនអ្នកចូល...",
+     "note": "the message while logging in",
+     "note_km": "សារពេលកំពុងចូលប្រើប្រាស់"
+    },
+    {
+     "key": "i18n:login.sending",
+     "en": "Sending...",
+     "km": "កំពុងបញ្ជូន...",
+     "note": "the log-in page, the button while the code is sent",
+     "note_km": "ទំព័រចូលប្រើប្រាស់ ប៊ូតុង ពេលកំពុងផ្ញើលេខកូដ"
+    },
+    {
+     "key": "i18n:login.sendCode",
+     "en": "Send Verification Code",
+     "km": "បញ្ជូនលេខកូដ",
+     "note": "the log-in page, the button",
+     "note_km": "ទំព័រចូលប្រើប្រាស់ ប៊ូតុង"
+    },
+    {
+     "key": "i18n:login.codeSent",
+     "en": "A verification code has been sent to {0}",
+     "km": "លេខកូដត្រូវបានបញ្ជូនទៅកាន់ {0} ហើយ។",
+     "note": "the code page, the message after the code is sent",
+     "note_km": "ទំព័រលេខកូដ សារបន្ទាប់ពីផ្ញើលេខកូដ"
+    },
+    {
+     "key": "i18n:login.enterCode",
+     "en": "Enter Verification Code",
+     "km": "បញ្ចូលលេខកូដ",
+     "note": "the code page, its title",
+     "note_km": "ទំព័រលេខកូដ ចំណងជើងរបស់វា"
+    },
+    {
+     "key": "i18n:login.verificationCode",
+     "en": "Verification Code",
+     "km": "លេខកូដ",
+     "note": "the code page, the box's label",
+     "note_km": "ទំព័រលេខកូដ ស្លាកនៃប្រអប់"
+    },
+    {
+     "key": "i18n:login.verify",
+     "en": "Verify",
+     "km": "ផ្ទៀងផ្ទាត់",
+     "note": "the code page, the button",
+     "note_km": "ទំព័រលេខកូដ ប៊ូតុង"
+    },
+    {
+     "key": "i18n:login.differentPhone",
+     "en": "Use a different phone number",
+     "km": "ប្រើលេខទូរស័ព្ទផ្សេង",
+     "note": "the code page, the link under the button",
+     "note_km": "ទំព័រលេខកូដ តំណក្រោមប៊ូតុង"
+    },
+    {
+     "key": "i18n:login.resendCode",
+     "en": "Resend code",
+     "km": "បញ្ជូនលេខកូដម្ដងទៀត",
+     "note": "the code page, the link to send it again",
+     "note_km": "ទំព័រលេខកូដ តំណសម្រាប់ផ្ញើម្តងទៀត"
+    },
+    {
+     "key": "i18n:login.resendIn",
+     "en": "Resend code in {0}s",
+     "km": "បញ្ជូនលេខកូដម្ដងទៀតក្នុង {0} វិនាទី",
+     "note": "the code page, that link while it waits",
+     "note_km": "ទំព័រលេខកូដ តំណនោះ ពេលកំពុងរង់ចាំ"
+    },
+    {
+     "key": "i18n:login.codeResent",
+     "en": "A new verification code has been sent to {0}",
+     "km": "លេខកូដផ្ទៀងផ្ទាត់ថ្មីត្រូវបានបញ្ជូនទៅកាន់ {0} ហើយ។",
+     "note": "the code page, the message after sending it again",
+     "note_km": "ទំព័រលេខកូដ សារបន្ទាប់ពីផ្ញើម្តងទៀត"
+    },
+    {
+     "key": "i18n:login.invalidCode",
+     "en": "Invalid verification code. Please try again.",
+     "km": "លេខកូដមិនត្រឹមត្រូវ។ សូមព្យាយាមម្ដងទៀត។",
+     "note": "the log-in or code page, the message when it fails",
+     "note_km": "ទំព័រចូលប្រើប្រាស់ ឬទំព័រលេខកូដ សារពេលវាបរាជ័យ"
+    },
+    {
+     "key": "i18n:login.sendFailed",
+     "en": "Failed to send verification code. Please try again.",
+     "km": "មិនអាចបញ្ជូនលេខកូដផ្ទៀងផ្ទាត់បានទេ។ សូមព្យាយាមម្ដងទៀត។",
+     "note": "the log-in or code page, the message when it fails",
+     "note_km": "ទំព័រចូលប្រើប្រាស់ ឬទំព័រលេខកូដ សារពេលវាបរាជ័យ"
+    },
+    {
+     "key": "i18n:login.loginFailed",
+     "en": "Failed to log in. Please try again.",
+     "km": "ការចូលប្រើប្រាស់មិនជោគជ័យទេ។ សូមព្យាយាមម្ដងទៀត។",
+     "note": "the log-in or code page, the message when it fails",
+     "note_km": "ទំព័រចូលប្រើប្រាស់ ឬទំព័រលេខកូដ សារពេលវាបរាជ័យ"
+    },
+    {
+     "key": "i18n:login.footer",
+     "en": "❤️ Proof of Humanity by HeartBank®",
+     "km": "❤️ ភស្តុតាងនៃភាពជាមនុស្ស ដោយ HeartBank®",
+     "note": "the log-in and code pages, the line at the foot",
+     "note_km": "ទំព័រចូលប្រើប្រាស់ និងទំព័រលេខកូដ បន្ទាត់នៅខាងក្រោម"
+    }
+   ]
+  },
+  {
+   "name": "Settings (/settings, after logging in)",
+   "name_km": "ការកំណត់ (/settings ក្រោយពេលចូលប្រើប្រាស់)",
+   "entries": [
+    {
+     "key": "i18n:settings.title",
+     "en": "Settings",
+     "km": "ការកំណត់ប្រព័ន្ធ",
+     "note": "the settings page, its title",
+     "note_km": "ទំព័រការកំណត់ ចំណងជើងរបស់វា"
+    },
+    {
+     "key": "i18n:settings.notifications",
+     "en": "Push Notifications",
+     "km": "ការជូនដំណឹង",
+     "note": "the settings page, the notifications row",
+     "note_km": "ទំព័រការកំណត់ ជួរការជូនដំណឹង"
+    },
+    {
+     "key": "i18n:settings.notificationsDesc",
+     "en": "Receive notifications when you get new thanks",
+     "km": "ទទួលការ ជូនដំណឹង ពេលអ្នកទទួលបាន ការអរគុណថ្មី",
+     "note": "the settings page, under the notifications row's name",
+     "note_km": "ទំព័រការកំណត់ ក្រោមឈ្មោះជួរការជូនដំណឹង"
+    },
+    {
+     "key": "i18n:settings.enable",
+     "en": "Enable",
+     "km": "បើក",
+     "note": "the settings page, the notifications button",
+     "note_km": "ទំព័រការកំណត់ ប៊ូតុងការជូនដំណឹង"
+    },
+    {
+     "key": "i18n:settings.disable",
+     "en": "Disable",
+     "km": "បិទ",
+     "note": "the settings page, the notifications button",
+     "note_km": "ទំព័រការកំណត់ ប៊ូតុងការជូនដំណឹង"
+    },
+    {
+     "key": "i18n:settings.enabled",
+     "en": "Notifications enabled",
+     "km": "បានបើកការជូនដំណឹង",
+     "note": "the settings page, the message after the button",
+     "note_km": "ទំព័រការកំណត់ សារបន្ទាប់ពីចុចប៊ូតុង"
+    },
+    {
+     "key": "i18n:settings.disabled",
+     "en": "Notifications disabled",
+     "km": "បានបិទការជូនដំណឹង",
+     "note": "the settings page, the message after the button",
+     "note_km": "ទំព័រការកំណត់ សារបន្ទាប់ពីចុចប៊ូតុង"
+    },
+    {
+     "key": "i18n:settings.unsupported",
+     "en": "Push notifications are not supported on this device",
+     "km": "ការជូនដំណឹងមិនអាចប្រើបានលើឧបករណ៍នេះទេ",
+     "note": "the settings page, in place of that line on a device without notifications",
+     "note_km": "ទំព័រការកំណត់ ជំនួសបន្ទាត់នោះ នៅលើឧបករណ៍ដែលគ្មានការជូនដំណឹង"
+    },
+    {
+     "key": "i18n:settings.denied",
+     "en": "Notification permission was denied. Please enable it in your browser settings.",
+     "km": "សិទ្ធិជូនដំណឹងត្រូវបានបដិសេធ។ សូមបើកវានៅក្នុងការកំណត់កម្មវិធីរុករក។",
+     "note": "the settings page, the message after the button",
+     "note_km": "ទំព័រការកំណត់ សារបន្ទាប់ពីចុចប៊ូតុង"
+    },
+    {
+     "key": "i18n:settings.installPrompt",
+     "en": "To receive push notifications, install this app on your device. ",
+     "km": "ដើម្បីទទួលការជូនដំណឹង សូមដំឡើងកម្មវិធីលើឧបករណ៍របស់អ្នក។ ",
+     "note": "the settings page, the note after notifications are turned on",
+     "note_km": "ទំព័រការកំណត់ កំណត់ចំណាំបន្ទាប់ពីបើកការជូនដំណឹង"
+    },
+    {
+     "key": "i18n:settings.installLink",
+     "en": "Install Now",
+     "km": "ដំឡើងឥឡូវនេះ",
+     "note": "the settings page, the link in that note",
+     "note_km": "ទំព័រការកំណត់ តំណក្នុងកំណត់ចំណាំនោះ"
+    }
+   ]
+  },
+  {
+   "name": "Install (/install, inside the installed app)",
+   "name_km": "ដំឡើង (/install នៅក្នុងកម្មវិធីដែលបានដំឡើង)",
+   "entries": [
+    {
+     "key": "i18n:pwa.alreadyInstalled",
+     "en": "Already Installed!",
+     "km": "បានដំឡើងរួចហើយ!",
+     "note": "the install page, inside the installed app: its title",
+     "note_km": "ទំព័រដំឡើង នៅក្នុងកម្មវិធីដែលបានដំឡើង៖ ចំណងជើងរបស់វា"
+    },
+    {
+     "key": "i18n:pwa.alreadyInstalledDesc",
+     "en": "HeartBank® is already installed on your device 🎉",
+     "km": "HeartBank® ត្រូវបានដំឡើងលើឧបករណ៍របស់អ្នករួចហើយ។",
+     "note": "the install page, inside the installed app: the line under the title",
+     "note_km": "ទំព័រដំឡើង នៅក្នុងកម្មវិធីដែលបានដំឡើង៖ បន្ទាត់ក្រោមចំណងជើង"
+    }
+   ]
+  },
+  {
+   "name": "Tutorials (/tutorials)",
+   "name_km": "មេរៀនណែនាំ (/tutorials)",
+   "entries": [
+    {
+     "key": "i18n:tutorials.title",
+     "en": "Quick Tutorials",
+     "km": "មេរៀនណែនាំ",
+     "note": "the tutorials page, its title",
+     "note_km": "ទំព័រមេរៀនណែនាំ ចំណងជើងរបស់វា"
+    },
+    {
+     "key": "i18n:tutorials.description",
+     "en": "Learn how to use HeartBank® step by step",
+     "km": "រៀនពីរបៀបប្រើ HeartBank® មួយជំហានម្ដងៗ",
+     "note": "the tutorials page, the line under its title",
+     "note_km": "ទំព័រមេរៀនណែនាំ បន្ទាត់ក្រោមចំណងជើង"
+    },
+    {
+     "key": "i18n:tutorial.step",
+     "en": "Step",
+     "km": "ជំហានទី",
+     "note": "an open tutorial, above its words (“Step 1/7”)",
+     "note_km": "មេរៀនដែលបានបើក ខាងលើពាក្យរបស់វា («ជំហានទី 1/7»)"
+    },
+    {
+     "key": "i18n:tutorial.steps",
+     "en": "steps",
+     "km": "ជំហាន",
+     "note": "the tutorials page, beside each tutorial (“7 steps”)",
+     "note_km": "ទំព័រមេរៀនណែនាំ នៅក្បែរមេរៀននីមួយៗ («7 ជំហាន»)"
+    },
+    {
+     "key": "i18n:tutorial.next",
+     "en": "Next",
+     "km": "បន្ទាប់",
+     "note": "an open tutorial, a button",
+     "note_km": "មេរៀនដែលបានបើក ប៊ូតុង"
+    },
+    {
+     "key": "i18n:tutorial.prev",
+     "en": "Back",
+     "km": "ថយក្រោយ",
+     "note": "an open tutorial, a button",
+     "note_km": "មេរៀនដែលបានបើក ប៊ូតុង"
+    },
+    {
+     "key": "i18n:tutorial.done",
+     "en": "Done",
+     "km": "រួចរាល់",
+     "note": "an open tutorial, the button on its last step",
+     "note_km": "មេរៀនដែលបានបើក ប៊ូតុងនៅជំហានចុងក្រោយ"
+    },
+    {
+     "key": "i18n:tutorial.comingSoon",
+     "en": "Coming soon",
+     "km": "នឹងមកដល់ឆាប់ៗ",
+     "note": "the tutorials page, beside a tutorial not ready yet",
+     "note_km": "ទំព័រមេរៀនណែនាំ នៅក្បែរមេរៀនដែលមិនទាន់រួចរាល់"
+    },
+    {
+     "key": "i18n:tutorial.installApp.title",
+     "en": "How to Install App",
+     "km": "របៀបដំឡើងកម្មវិធី",
+     "note": "the tutorials page, a tutorial's name (and its title when open)",
+     "note_km": "ទំព័រមេរៀនណែនាំ ឈ្មោះមេរៀនមួយ (និងចំណងជើងរបស់វាពេលបើក)"
+    },
+    {
+     "key": "i18n:tutorial.installApp.step1",
+     "en": "Tap on the ⋯ (menu) icon",
+     "km": "ចុចលើរូបតំណាង ⋯ (ម៉ឺនុយ)",
+     "note": "the tutorial “How to Install App”, step 1",
+     "note_km": "មេរៀន «របៀបដំឡើងកម្មវិធី» ជំហានទី 1"
+    },
+    {
+     "key": "i18n:tutorial.installApp.step2",
+     "en": "Tap on \"Open in external browser\"",
+     "km": "ចុចលើ (Open in external browser)",
+     "note": "the tutorial “How to Install App”, step 2",
+     "note_km": "មេរៀន «របៀបដំឡើងកម្មវិធី» ជំហានទី 2"
+    },
+    {
+     "key": "i18n:tutorial.installApp.step3",
+     "en": "Tap on the ⋯ (menu) icon",
+     "km": "ចុចលើរូបតំណាង ⋯ (ម៉ឺនុយ)",
+     "note": "the tutorial “How to Install App”, step 3",
+     "note_km": "មេរៀន «របៀបដំឡើងកម្មវិធី» ជំហានទី 3"
+    },
+    {
+     "key": "i18n:tutorial.installApp.step4",
+     "en": "Tap on \"Share\" button",
+     "km": "ចុចលើប៊ូតុង (Share)",
+     "note": "the tutorial “How to Install App”, step 4",
+     "note_km": "មេរៀន «របៀបដំឡើងកម្មវិធី» ជំហានទី 4"
+    },
+    {
+     "key": "i18n:tutorial.installApp.step5",
+     "en": "Tap on \"Add to Home Screen\"",
+     "km": "ចុចលើ (Add to Home Screen)",
+     "note": "the tutorial “How to Install App”, step 5",
+     "note_km": "មេរៀន «របៀបដំឡើងកម្មវិធី» ជំហានទី 5"
+    },
+    {
+     "key": "i18n:tutorial.installApp.step6",
+     "en": "Tap on \"Add\" button",
+     "km": "ចុចលើប៊ូតុង (Add)",
+     "note": "the tutorial “How to Install App”, step 6",
+     "note_km": "មេរៀន «របៀបដំឡើងកម្មវិធី» ជំហានទី 6"
+    },
+    {
+     "key": "i18n:tutorial.installApp.step7",
+     "en": "You should now see the HeartBank® app icon on your Home Screen 🎉",
+     "km": "ឥឡូវនេះ អ្នកនឹងឃើញរូបតំណាងកម្មវិធី **HeartBank®** នៅលើអេក្រង់ដើម (Home Screen) របស់អ្នកហើយ! 🎉",
+     "note": "the tutorial “How to Install App”, step 7",
+     "note_km": "មេរៀន «របៀបដំឡើងកម្មវិធី» ជំហានទី 7"
+    },
+    {
+     "key": "i18n:tutorial.phoneLogin.title",
+     "en": "How to Log In via Phone",
+     "km": "របៀបចូលប្រើតាមទូរស័ព្ទ",
+     "note": "the tutorials page, a tutorial's name (and its title when open)",
+     "note_km": "ទំព័រមេរៀនណែនាំ ឈ្មោះមេរៀនមួយ (និងចំណងជើងរបស់វាពេលបើក)"
+    },
+    {
+     "key": "i18n:tutorial.phoneLogin.step1",
+     "en": "Tap on the ☰ (menu) icon",
+     "km": "សូមចុចលើរូបតំណាង ☰ (ម៉ឺនុយ)",
+     "note": "the tutorial “How to Log In via Phone”, step 1",
+     "note_km": "មេរៀន «របៀបចូលប្រើតាមទូរស័ព្ទ» ជំហានទី 1"
+    },
+    {
+     "key": "i18n:tutorial.phoneLogin.step2",
+     "en": "Tap on \"Phone Login\"",
+     "km": "សូមចុចលើពាក្យ \"ចូលប្រើតាមទូរស័ព្ទ\"",
+     "note": "the tutorial “How to Log In via Phone”, step 2",
+     "note_km": "មេរៀន «របៀបចូលប្រើតាមទូរស័ព្ទ» ជំហានទី 2"
+    },
+    {
+     "key": "i18n:tutorial.phoneLogin.step3",
+     "en": "Select your country code (+1) and enter your phone number",
+     "km": "ជ្រើសរើសលេខកូដប្រទេស (+855) ហើយបញ្ចូលលេខទូរស័ព្ទរបស់អ្នក",
+     "note": "the tutorial “How to Log In via Phone”, step 3",
+     "note_km": "មេរៀន «របៀបចូលប្រើតាមទូរស័ព្ទ» ជំហានទី 3"
+    },
+    {
+     "key": "i18n:tutorial.phoneLogin.step4",
+     "en": "Tap on \"Send Verification Code\"",
+     "km": "សូមចុចលើពាក្យ \"បញ្ជូនលេខកូដ\"",
+     "note": "the tutorial “How to Log In via Phone”, step 4",
+     "note_km": "មេរៀន «របៀបចូលប្រើតាមទូរស័ព្ទ» ជំហានទី 4"
+    },
+    {
+     "key": "i18n:tutorial.phoneLogin.step5",
+     "en": "You should see a message asking you to check your text messages",
+     "km": "អ្នកនឹងឃើញសារមួយដែលប្រាប់អ្នកឱ្យទៅពិនិត្យមើលសារ (SMS) ក្នុងទូរស័ព្ទ",
+     "note": "the tutorial “How to Log In via Phone”, step 5",
+     "note_km": "មេរៀន «របៀបចូលប្រើតាមទូរស័ព្ទ» ជំហានទី 5"
+    },
+    {
+     "key": "i18n:tutorial.phoneLogin.step6",
+     "en": "Open your messages and find the 6-digit verification code",
+     "km": "សូមបើកសាររបស់អ្នក ហើយស្វែងរកលេខកូដបញ្ជាក់ ៦ ខ្ទង់",
+     "note": "the tutorial “How to Log In via Phone”, step 6",
+     "note_km": "មេរៀន «របៀបចូលប្រើតាមទូរស័ព្ទ» ជំហានទី 6"
+    },
+    {
+     "key": "i18n:tutorial.phoneLogin.step7",
+     "en": "Enter the 6-digit code in this app",
+     "km": "សូមបញ្ចូលលេខកូដ ៦ ខ្ទង់ ទៅក្នុងកម្មវិធីនេះ",
+     "note": "the tutorial “How to Log In via Phone”, step 7",
+     "note_km": "មេរៀន «របៀបចូលប្រើតាមទូរស័ព្ទ» ជំហានទី 7"
+    },
+    {
+     "key": "i18n:tutorial.phoneLogin.step8",
+     "en": "Tap \"Verify\" to log in",
+     "km": "សូមចុចលើពាក្យ \"ផ្ទៀងផ្ទាត់\" ដើម្បីចូលប្រើប្រាស់",
+     "note": "the tutorial “How to Log In via Phone”, step 8",
+     "note_km": "មេរៀន «របៀបចូលប្រើតាមទូរស័ព្ទ» ជំហានទី 8"
+    },
+    {
+     "key": "i18n:tutorial.phoneLogin.step9",
+     "en": "You should see this success message",
+     "km": "អ្នកនឹងឃើញសារបញ្ជាក់ពីជោគជ័យ",
+     "note": "the tutorial “How to Log In via Phone”, step 9",
+     "note_km": "មេរៀន «របៀបចូលប្រើតាមទូរស័ព្ទ» ជំហានទី 9"
+    },
+    {
+     "key": "i18n:tutorial.phoneLogin.step10",
+     "en": "After a few seconds, your beating heart will appear which means you've successfully logged in! 🎉",
+     "km": "បន្ទាប់ពីពីរបីវិនាទីក្រោយមក រូបបេះដូងលោតរបស់អ្នកនឹងបង្ហាញឡើង ដែលមានន័យថាអ្នកបានចូលប្រើប្រាស់ដោយជោគជ័យហើយ! 🎉",
+     "note": "the tutorial “How to Log In via Phone”, step 10",
+     "note_km": "មេរៀន «របៀបចូលប្រើតាមទូរស័ព្ទ» ជំហានទី 10"
+    },
+    {
+     "key": "i18n:tutorial.notifications.title",
+     "en": "How to Enable Push Notifications",
+     "km": "របៀបបើកការជូនដំណឹង",
+     "note": "the tutorials page, a tutorial's name (and its title when open)",
+     "note_km": "ទំព័រមេរៀនណែនាំ ឈ្មោះមេរៀនមួយ (និងចំណងជើងរបស់វាពេលបើក)"
+    },
+    {
+     "key": "i18n:tutorial.notifications.step1",
+     "en": "Login and tap on the ☰ (menu) icon",
+     "km": "សូមចូលប្រើប្រាស់ រួចចុចលើរូបតំណាង ☰ (ម៉ឺនុយ)",
+     "note": "the tutorial “How to Enable Push Notifications”, step 1",
+     "note_km": "មេរៀន «របៀបបើកការជូនដំណឹង» ជំហានទី 1"
+    },
+    {
+     "key": "i18n:tutorial.notifications.step2",
+     "en": "Tap on \"Settings\"",
+     "km": "សូមចុចលើពាក្យ \"ការកំណត់ប្រព័ន្ធ\"",
+     "note": "the tutorial “How to Enable Push Notifications”, step 2",
+     "note_km": "មេរៀន «របៀបបើកការជូនដំណឹង» ជំហានទី 2"
+    },
+    {
+     "key": "i18n:tutorial.notifications.step3",
+     "en": "Tap on \"Enable\"",
+     "km": "ចុច \"បើក\"",
+     "note": "the tutorial “How to Enable Push Notifications”, step 3",
+     "note_km": "មេរៀន «របៀបបើកការជូនដំណឹង» ជំហានទី 3"
+    },
+    {
+     "key": "i18n:tutorial.notifications.step4",
+     "en": "Allow notifications when your browser asks",
+     "km": "សូមចុច (Allow) នៅកម្មវិធីរុករក (Browser) របស់អ្នក ដើម្បីទទួលបានការជូនដំណឹង",
+     "note": "the tutorial “How to Enable Push Notifications”, step 4",
+     "note_km": "មេរៀន «របៀបបើកការជូនដំណឹង» ជំហានទី 4"
+    },
+    {
+     "key": "i18n:tutorial.notifications.step5",
+     "en": "When you see this message, you have successfully registered for Push Notifications 🎉",
+     "km": "នៅពេលអ្នកឃើញសារនេះ មានន័យថាអ្នកបានចុះឈ្មោះសម្រាប់ ការជូនដំណឹង (Push Notifications) បានជោគជ័យហើយ! 🎉",
+     "note": "the tutorial “How to Enable Push Notifications”, step 5",
+     "note_km": "មេរៀន «របៀបបើកការជូនដំណឹង» ជំហានទី 5"
+    }
+   ]
+  },
+  {
+   "name": "The new-version message",
+   "name_km": "សារកំណែថ្មី",
+   "entries": [
+    {
+     "key": "i18n:update.available",
+     "en": "A new version is available.",
+     "km": "មានកំណែថ្មីហើយ។",
+     "note": "the message that a new version is ready, at the bottom of the screen",
+     "note_km": "សារថាមានកំណែថ្មី នៅខាងក្រោមអេក្រង់"
+    },
+    {
+     "key": "i18n:update.refresh",
+     "en": "Refresh",
+     "km": "ផ្ទុកឡើងវិញ",
+     "note": "that message, a button",
+     "note_km": "សារនោះ ប៊ូតុង"
+    },
+    {
+     "key": "i18n:update.dismiss",
+     "en": "Dismiss",
+     "km": "បិទ",
+     "note": "that message, a button",
+     "note_km": "សារនោះ ប៊ូតុង"
+    }
+   ]
+  },
+  {
+   "name": "Page not found",
+   "name_km": "រកមិនឃើញទំព័រ",
+   "entries": [
+    {
+     "key": "i18n:notFound.title",
+     "en": "Coming Soon!",
+     "km": "នឹងមកដល់ឆាប់ៗនេះ!",
+     "note": "the page for an address with no page, its title",
+     "note_km": "ទំព័រសម្រាប់អាសយដ្ឋានដែលគ្មានទំព័រ ចំណងជើងរបស់វា"
+    },
+    {
+     "key": "i18n:notFound.subtitle",
+     "en": "Currently in development",
+     "km": "កំពុងស្ថិតក្នុងការអភិវឌ្ឍន៍",
+     "note": "the page for an address with no page, the line under it",
+     "note_km": "ទំព័រសម្រាប់អាសយដ្ឋានដែលគ្មានទំព័រ បន្ទាត់ក្រោមវា"
+    }
+   ]
+  },
+  {
+   "name": "The old research address (/research)",
+   "name_km": "អាសយដ្ឋានស្រាវជ្រាវចាស់ (/research)",
+   "entries": [
+    {
+     "key": "pick:pages.research-redirect.ts:1af7977412",
+     "en": "Redirecting…",
+     "km": "កំពុងបញ្ជូនបន្ត…",
+     "note": "the old research address, for a moment before it moves on",
+     "note_km": "អាសយដ្ឋានស្រាវជ្រាវចាស់ មួយភ្លែតមុនពេលវាបញ្ជូនបន្ត"
+    },
+    {
+     "key": "pick:pages.research-redirect.ts:d4606e7ced",
+     "en": "The research corpus has moved to the founder-voice canonical at thonly.org.",
+     "km": "បណ្តុំឯកសារស្រាវជ្រាវបានផ្លាស់ទៅកាន់ទីតាំងផ្លូវការ ក្នុងសំឡេងរបស់ស្ថាបនិក នៅ thonly.org។",
+     "note": "the old research address, for a moment before it moves on",
+     "note_km": "អាសយដ្ឋានស្រាវជ្រាវចាស់ មួយភ្លែតមុនពេលវាបញ្ជូនបន្ត"
+    },
+    {
+     "key": "pick:pages.research-redirect.ts:02bdf3bd08",
+     "en": "Continue to",
+     "km": "បន្តទៅ",
+     "note": "the old research address, for a moment before it moves on",
+     "note_km": "អាសយដ្ឋានស្រាវជ្រាវចាស់ មួយភ្លែតមុនពេលវាបញ្ជូនបន្ត"
+    }
+   ]
+  },
+  {
+   "name": "Not on any page today (kept in the site's word table)",
+   "name_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ (រក្សាទុកក្នុងតារាងពាក្យរបស់គេហទំព័រ)",
+   "entries": [
+    {
+     "key": "i18n:menu.createAccount",
+     "en": "Create Account",
+     "km": "បង្កើតគណនី",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    },
+    {
+     "key": "i18n:pwa.title",
+     "en": "Install App",
+     "km": "ដំឡើងកម្មវិធី",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    },
+    {
+     "key": "i18n:pwa.description",
+     "en": "Install HeartBank® on your device to receive push notifications for the best experience",
+     "km": "សូមដំឡើងកម្មវិធី HeartBank® លើឧបករណ៍របស់អ្នក ដើម្បីទទួលបានការជូនដំណឹង (Push Notifications) សម្រាប់បទពិសោធន៍ប្រើប្រាស់ដ៏ល្អបំផុត។",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    },
+    {
+     "key": "i18n:pwa.installButton",
+     "en": "Install Now",
+     "km": "ដំឡើងឥឡូវនេះ",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    },
+    {
+     "key": "i18n:pwa.iosTitle",
+     "en": "Install on iPhone/iPad",
+     "km": "ដំឡើងលើ iPhone/iPad",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    },
+    {
+     "key": "i18n:pwa.iosStep1",
+     "en": "Tap the Share button (□↑) in Safari",
+     "km": "ចុចប៊ូតុង Share (□↑) នៅក្នុង Safari",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    },
+    {
+     "key": "i18n:pwa.iosStep2",
+     "en": "Scroll down and tap \"Add to Home Screen\"",
+     "km": "រមូរចុះក្រោម ហើយចុច \"Add to Home Screen\"",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    },
+    {
+     "key": "i18n:pwa.iosStep3",
+     "en": "Tap \"Add\" to confirm",
+     "km": "ចុច \"Add\" ដើម្បីបញ្ជាក់",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    },
+    {
+     "key": "i18n:pwa.manualTitle",
+     "en": "Install on your device",
+     "km": "ដំឡើងលើឧបករណ៍របស់អ្នក",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    },
+    {
+     "key": "i18n:pwa.manualStep1",
+     "en": "Open browser menu (⋮ or ⋯)",
+     "km": "បើកម៉ឺនុយកម្មវិធីរុករក (⋮ ឬ ⋯)",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    },
+    {
+     "key": "i18n:pwa.manualStep2",
+     "en": "Select \"Install app\" or \"Add to Home Screen\"",
+     "km": "ជ្រើសរើស \"Install app\" ឬ \"Add to Home Screen\"",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    },
+    {
+     "key": "i18n:pwa.manualStep3",
+     "en": "Confirm the installation",
+     "km": "បញ្ជាក់ការដំឡើង",
+     "note": "not shown on any page today",
+     "note_km": "មិនទាន់បង្ហាញនៅលើទំព័រណាមួយនៅឡើយ"
+    }
+   ]
+  }
+ ]
+}

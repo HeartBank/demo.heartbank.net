@@ -1,0 +1,2325 @@
+{
+ "made": "2026-11-24T21:18:25.943Z",
+ "viewport": {
+  "width": 390,
+  "height": 844
+ },
+ "states": {
+  "home": {
+   "url": "/",
+   "found": 5,
+   "images": 1
+  },
+  "menu": {
+   "url": "/",
+   "found": 15,
+   "images": 1
+  },
+  "menu-signed-in": {
+   "url": "/",
+   "found": 4,
+   "images": 1
+  },
+  "language-list": {
+   "url": "/",
+   "found": 1,
+   "images": 1
+  },
+  "footer-drawer": {
+   "url": "/",
+   "found": 5,
+   "images": 1
+  },
+  "about": {
+   "url": "/about",
+   "found": 25,
+   "images": 9
+  },
+  "mission": {
+   "url": "/mission",
+   "found": 12,
+   "images": 4
+  },
+  "tree-of-humanity": {
+   "url": "/tree-of-humanity",
+   "found": 15,
+   "images": 4
+  },
+  "mcp": {
+   "url": "/mcp",
+   "found": 20,
+   "images": 5
+  },
+  "roadmap": {
+   "url": "/roadmap",
+   "found": 82,
+   "images": 15
+  },
+  "publications": {
+   "url": "/publications",
+   "found": 29,
+   "images": 4
+  },
+  "genre-white-papers": {
+   "url": "/white-papers",
+   "found": 7,
+   "images": 3
+  },
+  "genre-positions": {
+   "url": "/positions",
+   "found": 0,
+   "images": 0
+  },
+  "genre-annual-reports": {
+   "url": "/annual-reports",
+   "found": 1,
+   "images": 1
+  },
+  "genre-press": {
+   "url": "/press",
+   "found": 0,
+   "images": 0
+  },
+  "document-draft": {
+   "url": "/white-papers/heartbank-an-introduction",
+   "found": 4,
+   "images": 2
+  },
+  "document-planned": {
+   "url": "/white-papers/phase-2-architecture-planetary-gratitude",
+   "found": 3,
+   "images": 1
+  },
+  "document-not-found": {
+   "url": "/white-papers/no-such-document",
+   "found": 2,
+   "images": 1
+  },
+  "login": {
+   "url": "/login",
+   "found": 4,
+   "images": 1
+  },
+  "login-sending": {
+   "url": "/login",
+   "found": 1,
+   "images": 1
+  },
+  "login-code": {
+   "url": "/login",
+   "found": 5,
+   "images": 1
+  },
+  "login-code-wait": {
+   "url": "/login",
+   "found": 1,
+   "images": 1
+  },
+  "login-verifying": {
+   "url": "/login",
+   "found": 1,
+   "images": 1
+  },
+  "settings": {
+   "url": "/settings",
+   "found": 7,
+   "images": 1
+  },
+  "settings-unsupported": {
+   "url": "/settings",
+   "found": 2,
+   "images": 1
+  },
+  "install-installed": {
+   "url": "/install",
+   "found": 2,
+   "images": 1
+  },
+  "tutorials": {
+   "url": "/tutorials",
+   "found": 6,
+   "images": 1
+  },
+  "tutorial-installApp-1": {
+   "url": "/tutorials#installApp",
+   "found": 4,
+   "images": 1
+  },
+  "tutorial-installApp-2": {
+   "url": "/tutorials#installApp",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-installApp-3": {
+   "url": "/tutorials#installApp",
+   "found": 0,
+   "images": 0
+  },
+  "tutorial-installApp-4": {
+   "url": "/tutorials#installApp",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-installApp-5": {
+   "url": "/tutorials#installApp",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-installApp-6": {
+   "url": "/tutorials#installApp",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-installApp-7": {
+   "url": "/tutorials#installApp",
+   "found": 2,
+   "images": 1
+  },
+  "tutorial-phoneLogin-1": {
+   "url": "/tutorials#phoneLogin",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-phoneLogin-2": {
+   "url": "/tutorials#phoneLogin",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-phoneLogin-3": {
+   "url": "/tutorials#phoneLogin",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-phoneLogin-4": {
+   "url": "/tutorials#phoneLogin",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-phoneLogin-5": {
+   "url": "/tutorials#phoneLogin",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-phoneLogin-6": {
+   "url": "/tutorials#phoneLogin",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-phoneLogin-7": {
+   "url": "/tutorials#phoneLogin",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-phoneLogin-8": {
+   "url": "/tutorials#phoneLogin",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-phoneLogin-9": {
+   "url": "/tutorials#phoneLogin",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-phoneLogin-10": {
+   "url": "/tutorials#phoneLogin",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-notifications-1": {
+   "url": "/tutorials#notifications",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-notifications-2": {
+   "url": "/tutorials#notifications",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-notifications-3": {
+   "url": "/tutorials#notifications",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-notifications-4": {
+   "url": "/tutorials#notifications",
+   "found": 1,
+   "images": 1
+  },
+  "tutorial-notifications-5": {
+   "url": "/tutorials#notifications",
+   "found": 1,
+   "images": 1
+  },
+  "new-version": {
+   "url": "/",
+   "found": 2,
+   "images": 1
+  },
+  "not-found": {
+   "url": "/no-such-page",
+   "found": 2,
+   "images": 1
+  }
+ },
+ "entries": {
+  "i18n:header.openMenu": {
+   "img": "home-0.webp",
+   "x": 16,
+   "y": 18,
+   "w": 40,
+   "h": 32
+  },
+  "i18n:header.treasury": {
+   "img": "home-0.webp",
+   "x": 68,
+   "y": 13,
+   "w": 106,
+   "h": 41
+  },
+  "i18n:header.beta": {
+   "img": "home-0.webp",
+   "x": 178,
+   "y": 35,
+   "w": 24,
+   "h": 17
+  },
+  "i18n:header.khmer": {
+   "img": "home-0.webp",
+   "x": 345,
+   "y": 20,
+   "w": 25,
+   "h": 28
+  },
+  "i18n:footer.slogan": {
+   "img": "home-0.webp",
+   "x": 97,
+   "y": 804,
+   "w": 87,
+   "h": 24
+  },
+  "i18n:title": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 164,
+   "w": 176,
+   "h": 24
+  },
+  "i18n:header.treasury2": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 164,
+   "w": 176,
+   "h": 24
+  },
+  "i18n:menu.closeMenu": {
+   "img": "menu-0.webp",
+   "x": 214,
+   "y": 10,
+   "w": 32,
+   "h": 32
+  },
+  "i18n:menu.mission": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 68,
+   "w": 176,
+   "h": 24
+  },
+  "i18n:menu.roadmap": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 116,
+   "w": 176,
+   "h": 24
+  },
+  "i18n:menu.treeOfHumanity": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 164,
+   "w": 176,
+   "h": 24
+  },
+  "i18n:menu.publications": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 212,
+   "w": 176,
+   "h": 24
+  },
+  "i18n:menu.mcp": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 288,
+   "w": 176,
+   "h": 24
+  },
+  "md:mission:e4698d4cea": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 68,
+   "w": 176,
+   "h": 24
+  },
+  "md:tree-of-humanity:89c5d55b5a": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 164,
+   "w": 176,
+   "h": 24
+  },
+  "md:mcp:3ad9acb9b0": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 288,
+   "w": 176,
+   "h": 24
+  },
+  "pick:pages.roadmap.ts:bcf1645c1b": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 116,
+   "w": 176,
+   "h": 24
+  },
+  "pick:pages.publications-index.ts:0855684c14": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 212,
+   "w": 176,
+   "h": 24
+  },
+  "pick:pages.publications-genre.ts:0855684c14": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 212,
+   "w": 176,
+   "h": 24
+  },
+  "pick:pages.publication.ts:0855684c14": {
+   "img": "menu-0.webp",
+   "x": 56,
+   "y": 212,
+   "w": 176,
+   "h": 24
+  },
+  "i18n:menu.proofOfHumanity": {
+   "img": "menu-signed-in-0.webp",
+   "x": 56,
+   "y": 288,
+   "w": 176,
+   "h": 24
+  },
+  "i18n:menu.logOut": {
+   "img": "menu-signed-in-0.webp",
+   "x": 56,
+   "y": 384,
+   "w": 56,
+   "h": 24
+  },
+  "i18n:menu.settings": {
+   "img": "menu-signed-in-0.webp",
+   "x": 56,
+   "y": 336,
+   "w": 176,
+   "h": 24
+  },
+  "i18n:settings.title": {
+   "img": "menu-signed-in-0.webp",
+   "x": 56,
+   "y": 336,
+   "w": 176,
+   "h": 24
+  },
+  "i18n:header.english": {
+   "img": "language-list-0.webp",
+   "x": 287,
+   "y": 74,
+   "w": 50,
+   "h": 24
+  },
+  "i18n:footer.darkMode": {
+   "img": "footer-drawer-0.webp",
+   "x": 32,
+   "y": 563,
+   "w": 77,
+   "h": 48
+  },
+  "i18n:footer.autoMode": {
+   "img": "footer-drawer-0.webp",
+   "x": 157,
+   "y": 563,
+   "w": 77,
+   "h": 48
+  },
+  "i18n:footer.lightMode": {
+   "img": "footer-drawer-0.webp",
+   "x": 281,
+   "y": 563,
+   "w": 77,
+   "h": 24
+  },
+  "i18n:footer.nobank": {
+   "img": "footer-drawer-0.webp",
+   "x": 0,
+   "y": 643,
+   "w": 390,
+   "h": 171
+  },
+  "const:draftMarkKm": {
+   "img": "footer-drawer-0.webp",
+   "x": 0,
+   "y": 802,
+   "w": 390,
+   "h": 42
+  },
+  "md:about:e8c7f46261": {
+   "img": "about-0.webp",
+   "x": 16,
+   "y": 124,
+   "w": 358,
+   "h": 38
+  },
+  "md:about:6b21fb791a": {
+   "img": "about-0.webp",
+   "x": 16,
+   "y": 100,
+   "w": 358,
+   "h": 16
+  },
+  "md:about:497d763520": {
+   "img": "about-0.webp",
+   "x": 16,
+   "y": 178,
+   "w": 358,
+   "h": 48
+  },
+  "md:about:3c68cd30ef": {
+   "img": "about-0.webp",
+   "x": 16,
+   "y": 266,
+   "w": 358,
+   "h": 272
+  },
+  "md:about:d74bda4f5e": {
+   "img": "about-0.webp",
+   "x": 16,
+   "y": 549,
+   "w": 358,
+   "h": 82
+  },
+  "md:about:fd086e02e1": {
+   "img": "about-0.webp",
+   "x": 16,
+   "y": 663,
+   "w": 358,
+   "h": 34
+  },
+  "md:about:0c3c3770e8": {
+   "img": "about-1.webp",
+   "x": 16,
+   "y": 245,
+   "w": 358,
+   "h": 353
+  },
+  "md:about:3ea792d29b": {
+   "img": "about-2.webp",
+   "x": 16,
+   "y": 286,
+   "w": 358,
+   "h": 272
+  },
+  "md:about:b8bf51a8e3": {
+   "img": "about-2.webp",
+   "x": 16,
+   "y": 590,
+   "w": 358,
+   "h": 34
+  },
+  "md:about:2c7ec5759b": {
+   "img": "about-3.webp",
+   "x": 16,
+   "y": 218,
+   "w": 358,
+   "h": 408
+  },
+  "md:about:e4670342f0": {
+   "img": "about-4.webp",
+   "x": 16,
+   "y": 300,
+   "w": 358,
+   "h": 245
+  },
+  "md:about:50d8ea35a0": {
+   "img": "about-4.webp",
+   "x": 16,
+   "y": 577,
+   "w": 358,
+   "h": 34
+  },
+  "md:about:cd7697fc77": {
+   "img": "about-4.webp",
+   "x": 16,
+   "y": 623,
+   "w": 358,
+   "h": 218
+  },
+  "md:about:6b898ed6d5": {
+   "img": "about-5.webp",
+   "x": 16,
+   "y": 231,
+   "w": 358,
+   "h": 381
+  },
+  "md:about:f08839ff43": {
+   "img": "about-5.webp",
+   "x": 16,
+   "y": 644,
+   "w": 358,
+   "h": 34
+  },
+  "roadmap:1:name": {
+   "img": "about-5.webp",
+   "x": 185,
+   "y": 233,
+   "w": 121,
+   "h": 22
+  },
+  "md:about:4572b323d0": {
+   "img": "about-6.webp",
+   "x": 16,
+   "y": 286,
+   "w": 358,
+   "h": 272
+  },
+  "md:about:4de5f8957a": {
+   "img": "about-6.webp",
+   "x": 16,
+   "y": 570,
+   "w": 358,
+   "h": 218
+  },
+  "md:about:4e837c9b6e": {
+   "img": "about-7.webp",
+   "x": 16,
+   "y": 405,
+   "w": 358,
+   "h": 34
+  },
+  "md:about:90664f2c49": {
+   "img": "about-7.webp",
+   "x": 16,
+   "y": 451,
+   "w": 358,
+   "h": 326
+  },
+  "md:about:3ff66aacc7": {
+   "img": "about-8.webp",
+   "x": 16,
+   "y": 450,
+   "w": 358,
+   "h": 109
+  },
+  "md:about:7c34b6331d": {
+   "img": "about-8.webp",
+   "x": 40,
+   "y": 570,
+   "w": 334,
+   "h": 54
+  },
+  "md:about:1772eb7bc3": {
+   "img": "about-8.webp",
+   "x": 40,
+   "y": 637,
+   "w": 334,
+   "h": 54
+  },
+  "md:about:8a7a6659cb": {
+   "img": "about-8.webp",
+   "x": 40,
+   "y": 703,
+   "w": 334,
+   "h": 27
+  },
+  "md:mission:8a7a6659cb": {
+   "img": "about-8.webp",
+   "x": 40,
+   "y": 703,
+   "w": 334,
+   "h": 27
+  },
+  "md:mission:47afea3553": {
+   "img": "mission-0.webp",
+   "x": 16,
+   "y": 124,
+   "w": 358,
+   "h": 38
+  },
+  "md:mission:38890b9d3a": {
+   "img": "mission-0.webp",
+   "x": 16,
+   "y": 178,
+   "w": 358,
+   "h": 96
+  },
+  "md:mission:0b869599f3": {
+   "img": "mission-0.webp",
+   "x": 16,
+   "y": 314,
+   "w": 358,
+   "h": 381
+  },
+  "md:mission:652607d9c1": {
+   "img": "mission-1.webp",
+   "x": 16,
+   "y": 259,
+   "w": 358,
+   "h": 326
+  },
+  "md:mission:5fd15067a4": {
+   "img": "mission-1.webp",
+   "x": 16,
+   "y": 617,
+   "w": 358,
+   "h": 34
+  },
+  "md:mission:ca42161dbb": {
+   "img": "mission-2.webp",
+   "x": 16,
+   "y": 218,
+   "w": 358,
+   "h": 408
+  },
+  "md:mission:ea24890ae4": {
+   "img": "mission-2.webp",
+   "x": 16,
+   "y": 638,
+   "w": 358,
+   "h": 109
+  },
+  "md:mission:10bca88f99": {
+   "img": "mission-3.webp",
+   "x": 16,
+   "y": 410,
+   "w": 358,
+   "h": 109
+  },
+  "md:mission:a6999364ff": {
+   "img": "mission-3.webp",
+   "x": 40,
+   "y": 531,
+   "w": 334,
+   "h": 27
+  },
+  "md:mission:24889d6e4c": {
+   "img": "mission-3.webp",
+   "x": 40,
+   "y": 570,
+   "w": 334,
+   "h": 54
+  },
+  "md:mission:273249af29": {
+   "img": "mission-3.webp",
+   "x": 40,
+   "y": 636,
+   "w": 334,
+   "h": 54
+  },
+  "md:tree-of-humanity:a6999364ff": {
+   "img": "mission-3.webp",
+   "x": 40,
+   "y": 531,
+   "w": 334,
+   "h": 27
+  },
+  "md:tree-of-humanity:b711a5ba51": {
+   "img": "tree-of-humanity-0.webp",
+   "x": 16,
+   "y": 124,
+   "w": 358,
+   "h": 75
+  },
+  "md:tree-of-humanity:37a53a62b0": {
+   "img": "tree-of-humanity-0.webp",
+   "x": 16,
+   "y": 215,
+   "w": 358,
+   "h": 96
+  },
+  "md:tree-of-humanity:edb1f4342f": {
+   "img": "tree-of-humanity-0.webp",
+   "x": 16,
+   "y": 351,
+   "w": 358,
+   "h": 27
+  },
+  "md:tree-of-humanity:dd73b8cf4c": {
+   "img": "tree-of-humanity-0.webp",
+   "x": 16,
+   "y": 390,
+   "w": 358,
+   "h": 163
+  },
+  "md:tree-of-humanity:e43fd73798": {
+   "img": "tree-of-humanity-0.webp",
+   "x": 16,
+   "y": 565,
+   "w": 358,
+   "h": 109
+  },
+  "md:tree-of-humanity:7298813404": {
+   "img": "tree-of-humanity-0.webp",
+   "x": 16,
+   "y": 706,
+   "w": 358,
+   "h": 34
+  },
+  "md:tree-of-humanity:beaac33e02": {
+   "img": "tree-of-humanity-1.webp",
+   "x": 16,
+   "y": 286,
+   "w": 358,
+   "h": 272
+  },
+  "md:tree-of-humanity:09f4faf609": {
+   "img": "tree-of-humanity-1.webp",
+   "x": 16,
+   "y": 570,
+   "w": 358,
+   "h": 136
+  },
+  "md:tree-of-humanity:baa14626e4": {
+   "img": "tree-of-humanity-1.webp",
+   "x": 16,
+   "y": 738,
+   "w": 358,
+   "h": 34
+  },
+  "md:tree-of-humanity:c44587f5f6": {
+   "img": "tree-of-humanity-2.webp",
+   "x": 16,
+   "y": 313,
+   "w": 358,
+   "h": 218
+  },
+  "md:tree-of-humanity:6461d6c145": {
+   "img": "tree-of-humanity-2.webp",
+   "x": 16,
+   "y": 542,
+   "w": 358,
+   "h": 136
+  },
+  "md:tree-of-humanity:3a0f742b57": {
+   "img": "tree-of-humanity-2.webp",
+   "x": 16,
+   "y": 710,
+   "w": 358,
+   "h": 34
+  },
+  "md:tree-of-humanity:19d581a066": {
+   "img": "tree-of-humanity-3.webp",
+   "x": 16,
+   "y": 340,
+   "w": 358,
+   "h": 245
+  },
+  "md:tree-of-humanity:7cc0275b9f": {
+   "img": "tree-of-humanity-3.webp",
+   "x": 40,
+   "y": 597,
+   "w": 334,
+   "h": 54
+  },
+  "md:tree-of-humanity:6ee63ee3a0": {
+   "img": "tree-of-humanity-3.webp",
+   "x": 40,
+   "y": 663,
+   "w": 334,
+   "h": 27
+  },
+  "md:mcp:61880b8dca": {
+   "img": "mcp-0.webp",
+   "x": 16,
+   "y": 100,
+   "w": 358,
+   "h": 16
+  },
+  "md:mcp:26a0b3cad0": {
+   "img": "mcp-0.webp",
+   "x": 16,
+   "y": 178,
+   "w": 358,
+   "h": 48
+  },
+  "md:mcp:459ce9cee4": {
+   "img": "mcp-0.webp",
+   "x": 16,
+   "y": 266,
+   "w": 358,
+   "h": 163
+  },
+  "md:mcp:5407fd0525": {
+   "img": "mcp-0.webp",
+   "x": 16,
+   "y": 461,
+   "w": 358,
+   "h": 68
+  },
+  "md:mcp:08d679c6d4": {
+   "img": "mcp-0.webp",
+   "x": 16,
+   "y": 541,
+   "w": 358,
+   "h": 299
+  },
+  "md:mcp:511d578536": {
+   "img": "mcp-1.webp",
+   "x": 16,
+   "y": 368,
+   "w": 358,
+   "h": 109
+  },
+  "md:mcp:f82c7f3be3": {
+   "img": "mcp-1.webp",
+   "x": 16,
+   "y": 490,
+   "w": 351,
+   "h": 49
+  },
+  "md:mcp:f53996f5cf": {
+   "img": "mcp-1.webp",
+   "x": 16,
+   "y": 555,
+   "w": 358,
+   "h": 82
+  },
+  "md:mcp:8c59c7b598": {
+   "img": "mcp-1.webp",
+   "x": 16,
+   "y": 668,
+   "w": 358,
+   "h": 34
+  },
+  "md:mcp:cda05ca6d8": {
+   "img": "mcp-1.webp",
+   "x": 17,
+   "y": 715,
+   "w": 203,
+   "h": 37
+  },
+  "md:mcp:f8c94a3b4b": {
+   "img": "mcp-1.webp",
+   "x": 219,
+   "y": 715,
+   "w": 154,
+   "h": 37
+  },
+  "md:mcp:f5fda1a452": {
+   "img": "mcp-2.webp",
+   "x": 219,
+   "y": 333,
+   "w": 154,
+   "h": 180
+  },
+  "md:mcp:4d7b1f6c9d": {
+   "img": "mcp-2.webp",
+   "x": 219,
+   "y": 512,
+   "w": 154,
+   "h": 84
+  },
+  "md:mcp:47d482f0bf": {
+   "img": "mcp-2.webp",
+   "x": 219,
+   "y": 597,
+   "w": 154,
+   "h": 84
+  },
+  "md:mcp:80e5b860eb": {
+   "img": "mcp-2.webp",
+   "x": 219,
+   "y": 681,
+   "w": 154,
+   "h": 132
+  },
+  "md:mcp:4538827d7a": {
+   "img": "mcp-3.webp",
+   "x": 16,
+   "y": 405,
+   "w": 358,
+   "h": 34
+  },
+  "md:mcp:57f898c04b": {
+   "img": "mcp-3.webp",
+   "x": 16,
+   "y": 451,
+   "w": 358,
+   "h": 136
+  },
+  "md:mcp:f8a504027a": {
+   "img": "mcp-3.webp",
+   "x": 16,
+   "y": 598,
+   "w": 358,
+   "h": 136
+  },
+  "md:mcp:c6b617260a": {
+   "img": "mcp-4.webp",
+   "x": 16,
+   "y": 493,
+   "w": 358,
+   "h": 34
+  },
+  "md:mcp:5ed22b2e52": {
+   "img": "mcp-4.webp",
+   "x": 16,
+   "y": 539,
+   "w": 358,
+   "h": 190
+  },
+  "pick:pages.roadmap.ts:c8e0d58807": {
+   "img": "roadmap-0.webp",
+   "x": 16,
+   "y": 124,
+   "w": 358,
+   "h": 38
+  },
+  "pick:pages.roadmap.ts:bc82d5c54d": {
+   "img": "roadmap-0.webp",
+   "x": 16,
+   "y": 178,
+   "w": 358,
+   "h": 96
+  },
+  "pick:pages.roadmap.ts:991cb393ee": {
+   "img": "roadmap-0.webp",
+   "x": 16,
+   "y": 314,
+   "w": 358,
+   "h": 156
+  },
+  "pick:pages.roadmap.ts:0a5b01656e": {
+   "img": "roadmap-0.webp",
+   "x": 16,
+   "y": 486,
+   "w": 358,
+   "h": 182
+  },
+  "pick:pages.roadmap.ts:0de3e6fa1a": {
+   "img": "roadmap-0.webp",
+   "x": 16,
+   "y": 684,
+   "w": 358,
+   "h": 104
+  },
+  "pick:pages.roadmap.ts:e3b8204056": {
+   "img": "roadmap-0.webp",
+   "x": 226,
+   "y": 488,
+   "w": 32,
+   "h": 22
+  },
+  "pick:pages.roadmap.ts:bc981983e7": {
+   "img": "roadmap-0.webp",
+   "x": 184,
+   "y": 514,
+   "w": 37,
+   "h": 22
+  },
+  "i18n:tutorial.next": {
+   "img": "roadmap-0.webp",
+   "x": 184,
+   "y": 514,
+   "w": 37,
+   "h": 22
+  },
+  "pick:pages.roadmap.ts:7e68cc6e7f": {
+   "img": "roadmap-1.webp",
+   "x": 16,
+   "y": 408,
+   "w": 358,
+   "h": 28
+  },
+  "pick:pages.roadmap.ts:f8accd1937": {
+   "img": "roadmap-1.webp",
+   "x": 29,
+   "y": 494,
+   "w": 147,
+   "h": 60
+  },
+  "pick:pages.roadmap.ts:f2ee394f75": {
+   "img": "roadmap-1.webp",
+   "x": 214,
+   "y": 494,
+   "w": 147,
+   "h": 60
+  },
+  "pick:pages.roadmap.ts:6b66629efe": {
+   "img": "roadmap-1.webp",
+   "x": 29,
+   "y": 621,
+   "w": 147,
+   "h": 60
+  },
+  "pick:pages.roadmap.ts:33c608866d": {
+   "img": "roadmap-1.webp",
+   "x": 214,
+   "y": 621,
+   "w": 147,
+   "h": 40
+  },
+  "roadmap.status:sprouted": {
+   "img": "roadmap-1.webp",
+   "x": 29,
+   "y": 466,
+   "w": 71,
+   "h": 20
+  },
+  "roadmap.status:reaching": {
+   "img": "roadmap-1.webp",
+   "x": 214,
+   "y": 466,
+   "w": 84,
+   "h": 20
+  },
+  "roadmap.status:seeded": {
+   "img": "roadmap-1.webp",
+   "x": 29,
+   "y": 593,
+   "w": 80,
+   "h": 20
+  },
+  "roadmap.status:promised": {
+   "img": "roadmap-1.webp",
+   "x": 214,
+   "y": 593,
+   "w": 61,
+   "h": 20
+  },
+  "roadmap:0:part": {
+   "img": "roadmap-1.webp",
+   "x": 40,
+   "y": 742,
+   "w": 334,
+   "h": 18
+  },
+  "pick:pages.roadmap.ts:56e2f5d363": {
+   "img": "roadmap-2.webp",
+   "x": 57,
+   "y": 412,
+   "w": 64,
+   "h": 20
+  },
+  "roadmap:0:now.text": {
+   "img": "roadmap-2.webp",
+   "x": 133,
+   "y": 222,
+   "w": 224,
+   "h": 80
+  },
+  "roadmap:0:next": {
+   "img": "roadmap-2.webp",
+   "x": 133,
+   "y": 327,
+   "w": 224,
+   "h": 60
+  },
+  "roadmap:0:later": {
+   "img": "roadmap-2.webp",
+   "x": 133,
+   "y": 412,
+   "w": 224,
+   "h": 40
+  },
+  "roadmap:1:part": {
+   "img": "roadmap-2.webp",
+   "x": 40,
+   "y": 505,
+   "w": 334,
+   "h": 18
+  },
+  "roadmap:1:maps": {
+   "img": "roadmap-2.webp",
+   "x": 40,
+   "y": 559,
+   "w": 334,
+   "h": 20
+  },
+  "roadmap:1:body": {
+   "img": "roadmap-2.webp",
+   "x": 40,
+   "y": 591,
+   "w": 334,
+   "h": 156
+  },
+  "roadmap:0:name": {
+   "img": "roadmap-3.webp",
+   "x": 40,
+   "y": 408,
+   "w": 334,
+   "h": 28
+  },
+  "roadmap:0:maps": {
+   "img": "roadmap-3.webp",
+   "x": 40,
+   "y": 440,
+   "w": 334,
+   "h": 20
+  },
+  "roadmap:0:body": {
+   "img": "roadmap-3.webp",
+   "x": 40,
+   "y": 472,
+   "w": 334,
+   "h": 130
+  },
+  "roadmap:1:now.text": {
+   "img": "roadmap-4.webp",
+   "x": 133,
+   "y": 392,
+   "w": 224,
+   "h": 60
+  },
+  "roadmap:1:next": {
+   "img": "roadmap-4.webp",
+   "x": 133,
+   "y": 477,
+   "w": 224,
+   "h": 80
+  },
+  "roadmap:1:later": {
+   "img": "roadmap-4.webp",
+   "x": 133,
+   "y": 582,
+   "w": 224,
+   "h": 60
+  },
+  "roadmap:2:part": {
+   "img": "roadmap-4.webp",
+   "x": 40,
+   "y": 695,
+   "w": 334,
+   "h": 18
+  },
+  "roadmap:2:name": {
+   "img": "roadmap-4.webp",
+   "x": 40,
+   "y": 717,
+   "w": 334,
+   "h": 28
+  },
+  "roadmap:2:maps": {
+   "img": "roadmap-4.webp",
+   "x": 40,
+   "y": 749,
+   "w": 334,
+   "h": 20
+  },
+  "roadmap:2:body": {
+   "img": "roadmap-5.webp",
+   "x": 40,
+   "y": 344,
+   "w": 334,
+   "h": 156
+  },
+  "roadmap:2:now.text": {
+   "img": "roadmap-5.webp",
+   "x": 133,
+   "y": 559,
+   "w": 224,
+   "h": 80
+  },
+  "roadmap:2:next": {
+   "img": "roadmap-5.webp",
+   "x": 133,
+   "y": 664,
+   "w": 224,
+   "h": 60
+  },
+  "roadmap:3:part": {
+   "img": "roadmap-6.webp",
+   "x": 40,
+   "y": 413,
+   "w": 334,
+   "h": 18
+  },
+  "roadmap:3:name": {
+   "img": "roadmap-6.webp",
+   "x": 40,
+   "y": 435,
+   "w": 334,
+   "h": 56
+  },
+  "roadmap:3:maps": {
+   "img": "roadmap-6.webp",
+   "x": 40,
+   "y": 495,
+   "w": 334,
+   "h": 20
+  },
+  "roadmap:3:body": {
+   "img": "roadmap-6.webp",
+   "x": 40,
+   "y": 527,
+   "w": 334,
+   "h": 78
+  },
+  "roadmap:3:now.text": {
+   "img": "roadmap-6.webp",
+   "x": 133,
+   "y": 664,
+   "w": 224,
+   "h": 80
+  },
+  "roadmap:3:next": {
+   "img": "roadmap-7.webp",
+   "x": 133,
+   "y": 372,
+   "w": 224,
+   "h": 100
+  },
+  "roadmap:3:later": {
+   "img": "roadmap-7.webp",
+   "x": 133,
+   "y": 497,
+   "w": 224,
+   "h": 80
+  },
+  "roadmap:4:part": {
+   "img": "roadmap-7.webp",
+   "x": 40,
+   "y": 630,
+   "w": 334,
+   "h": 18
+  },
+  "roadmap:4:name": {
+   "img": "roadmap-7.webp",
+   "x": 40,
+   "y": 652,
+   "w": 334,
+   "h": 28
+  },
+  "roadmap:4:maps": {
+   "img": "roadmap-7.webp",
+   "x": 40,
+   "y": 684,
+   "w": 334,
+   "h": 20
+  },
+  "roadmap:4:body": {
+   "img": "roadmap-8.webp",
+   "x": 40,
+   "y": 357,
+   "w": 334,
+   "h": 130
+  },
+  "roadmap:4:now.text": {
+   "img": "roadmap-8.webp",
+   "x": 133,
+   "y": 546,
+   "w": 224,
+   "h": 60
+  },
+  "roadmap:4:next": {
+   "img": "roadmap-8.webp",
+   "x": 133,
+   "y": 631,
+   "w": 224,
+   "h": 80
+  },
+  "roadmap:4:later": {
+   "img": "roadmap-8.webp",
+   "x": 133,
+   "y": 736,
+   "w": 224,
+   "h": 60
+  },
+  "roadmap:5:part": {
+   "img": "roadmap-9.webp",
+   "x": 40,
+   "y": 413,
+   "w": 334,
+   "h": 18
+  },
+  "roadmap:5:name": {
+   "img": "roadmap-9.webp",
+   "x": 40,
+   "y": 435,
+   "w": 334,
+   "h": 28
+  },
+  "roadmap:5:maps": {
+   "img": "roadmap-9.webp",
+   "x": 40,
+   "y": 467,
+   "w": 334,
+   "h": 20
+  },
+  "roadmap:5:body": {
+   "img": "roadmap-9.webp",
+   "x": 40,
+   "y": 499,
+   "w": 334,
+   "h": 130
+  },
+  "roadmap:5:now.text": {
+   "img": "roadmap-9.webp",
+   "x": 133,
+   "y": 688,
+   "w": 224,
+   "h": 40
+  },
+  "roadmap:5:next": {
+   "img": "roadmap-9.webp",
+   "x": 133,
+   "y": 753,
+   "w": 224,
+   "h": 40
+  },
+  "roadmap:5:later": {
+   "img": "roadmap-10.webp",
+   "x": 133,
+   "y": 402,
+   "w": 224,
+   "h": 40
+  },
+  "roadmap:6:part": {
+   "img": "roadmap-10.webp",
+   "x": 40,
+   "y": 495,
+   "w": 334,
+   "h": 18
+  },
+  "roadmap:6:name": {
+   "img": "roadmap-10.webp",
+   "x": 40,
+   "y": 517,
+   "w": 334,
+   "h": 28
+  },
+  "roadmap:6:maps": {
+   "img": "roadmap-10.webp",
+   "x": 40,
+   "y": 549,
+   "w": 334,
+   "h": 20
+  },
+  "roadmap:6:body": {
+   "img": "roadmap-10.webp",
+   "x": 40,
+   "y": 581,
+   "w": 334,
+   "h": 156
+  },
+  "roadmap:6:now.text": {
+   "img": "roadmap-11.webp",
+   "x": 133,
+   "y": 402,
+   "w": 224,
+   "h": 40
+  },
+  "roadmap:6:next": {
+   "img": "roadmap-11.webp",
+   "x": 133,
+   "y": 467,
+   "w": 224,
+   "h": 60
+  },
+  "roadmap:6:later": {
+   "img": "roadmap-11.webp",
+   "x": 133,
+   "y": 552,
+   "w": 224,
+   "h": 60
+  },
+  "roadmap:7:part": {
+   "img": "roadmap-11.webp",
+   "x": 40,
+   "y": 665,
+   "w": 334,
+   "h": 18
+  },
+  "roadmap:7:name": {
+   "img": "roadmap-11.webp",
+   "x": 40,
+   "y": 687,
+   "w": 334,
+   "h": 56
+  },
+  "roadmap:7:maps": {
+   "img": "roadmap-11.webp",
+   "x": 40,
+   "y": 747,
+   "w": 334,
+   "h": 20
+  },
+  "roadmap:7:body": {
+   "img": "roadmap-12.webp",
+   "x": 40,
+   "y": 344,
+   "w": 334,
+   "h": 156
+  },
+  "roadmap:7:now.text": {
+   "img": "roadmap-12.webp",
+   "x": 133,
+   "y": 559,
+   "w": 224,
+   "h": 80
+  },
+  "roadmap:7:next": {
+   "img": "roadmap-12.webp",
+   "x": 133,
+   "y": 664,
+   "w": 224,
+   "h": 20
+  },
+  "roadmap:8:part": {
+   "img": "roadmap-12.webp",
+   "x": 40,
+   "y": 737,
+   "w": 334,
+   "h": 18
+  },
+  "roadmap:8:name": {
+   "img": "roadmap-12.webp",
+   "x": 40,
+   "y": 758,
+   "w": 334,
+   "h": 28
+  },
+  "roadmap:8:maps": {
+   "img": "roadmap-13.webp",
+   "x": 40,
+   "y": 412,
+   "w": 334,
+   "h": 20
+  },
+  "roadmap:8:body": {
+   "img": "roadmap-13.webp",
+   "x": 40,
+   "y": 444,
+   "w": 334,
+   "h": 130
+  },
+  "roadmap:8:now.text": {
+   "img": "roadmap-13.webp",
+   "x": 133,
+   "y": 633,
+   "w": 224,
+   "h": 20
+  },
+  "pick:pages.roadmap.ts:445a87085e": {
+   "img": "roadmap-13.webp",
+   "x": 16,
+   "y": 747,
+   "w": 358,
+   "h": 26
+  },
+  "pick:pages.roadmap.ts:8cc361db39": {
+   "img": "roadmap-14.webp",
+   "x": 16,
+   "y": 578,
+   "w": 152,
+   "h": 22
+  },
+  "pick:pages.roadmap.ts:0eb63191a9": {
+   "img": "roadmap-14.webp",
+   "x": 172,
+   "y": 580,
+   "w": 165,
+   "h": 19
+  },
+  "pick:pages.roadmap.ts:e64a6b8ae9": {
+   "img": "roadmap-14.webp",
+   "x": 16,
+   "y": 616,
+   "w": 81,
+   "h": 22
+  },
+  "pick:pages.roadmap.ts:6dea67a639": {
+   "img": "roadmap-14.webp",
+   "x": 102,
+   "y": 618,
+   "w": 177,
+   "h": 19
+  },
+  "pick:pages.roadmap.ts:175e321f17": {
+   "img": "roadmap-14.webp",
+   "x": 148,
+   "y": 656,
+   "w": 122,
+   "h": 19
+  },
+  "pick:pages.publications-index.ts:96817ade02": {
+   "img": "publications-0.webp",
+   "x": 16,
+   "y": 370,
+   "w": 358,
+   "h": 28
+  },
+  "pick:pages.publications-index.ts:9821f335af": {
+   "img": "publications-0.webp",
+   "x": 304,
+   "y": 443,
+   "w": 45,
+   "h": 16
+  },
+  "genre:white-papers:name": {
+   "img": "publications-0.webp",
+   "x": 41,
+   "y": 439,
+   "w": 95,
+   "h": 32
+  },
+  "genre:positions:name": {
+   "img": "publications-0.webp",
+   "x": 41,
+   "y": 667,
+   "w": 120,
+   "h": 32
+  },
+  "genre:white-papers:description": {
+   "img": "publications-0.webp",
+   "x": 41,
+   "y": 479,
+   "w": 308,
+   "h": 114
+  },
+  "genre:positions:description": {
+   "img": "publications-0.webp",
+   "x": 41,
+   "y": 707,
+   "w": 308,
+   "h": 91
+  },
+  "genre:positions:heading": {
+   "img": "publications-0.webp",
+   "x": 41,
+   "y": 667,
+   "w": 120,
+   "h": 32
+  },
+  "type:white-paper": {
+   "img": "publications-0.webp",
+   "x": 41,
+   "y": 439,
+   "w": 95,
+   "h": 32
+  },
+  "type:position-paper": {
+   "img": "publications-0.webp",
+   "x": 41,
+   "y": 667,
+   "w": 120,
+   "h": 32
+  },
+  "genre:annual-reports:name": {
+   "img": "publications-1.webp",
+   "x": 41,
+   "y": 406,
+   "w": 189,
+   "h": 32
+  },
+  "genre:press:name": {
+   "img": "publications-1.webp",
+   "x": 41,
+   "y": 611,
+   "w": 205,
+   "h": 32
+  },
+  "genre:annual-reports:description": {
+   "img": "publications-1.webp",
+   "x": 41,
+   "y": 446,
+   "w": 308,
+   "h": 91
+  },
+  "genre:press:description": {
+   "img": "publications-1.webp",
+   "x": 41,
+   "y": 651,
+   "w": 308,
+   "h": 91
+  },
+  "genre:annual-reports:heading": {
+   "img": "publications-1.webp",
+   "x": 41,
+   "y": 406,
+   "w": 189,
+   "h": 32
+  },
+  "genre:press:heading": {
+   "img": "publications-1.webp",
+   "x": 41,
+   "y": 611,
+   "w": 205,
+   "h": 32
+  },
+  "type:annual-report": {
+   "img": "publications-1.webp",
+   "x": 41,
+   "y": 406,
+   "w": 189,
+   "h": 32
+  },
+  "type:press-release": {
+   "img": "publications-1.webp",
+   "x": 41,
+   "y": 611,
+   "w": 205,
+   "h": 32
+  },
+  "pick:pages.publications-index.ts:e06cb6e99b": {
+   "img": "publications-2.webp",
+   "x": 16,
+   "y": 408,
+   "w": 358,
+   "h": 28
+  },
+  "pick:pages.publications-index.ts:034767fcf3": {
+   "img": "publications-2.webp",
+   "x": 16,
+   "y": 448,
+   "w": 358,
+   "h": 91
+  },
+  "pick:pages.publications-index.ts:5600fecaf6": {
+   "img": "publications-2.webp",
+   "x": 16,
+   "y": 551,
+   "w": 358,
+   "h": 159
+  },
+  "pick:pages.publications-index.ts:5d824ebf02": {
+   "img": "publications-2.webp",
+   "x": 16,
+   "y": 722,
+   "w": 358,
+   "h": 114
+  },
+  "pick:pages.publications-index.ts:511d578536": {
+   "img": "publications-3.webp",
+   "x": 16,
+   "y": 388,
+   "w": 358,
+   "h": 68
+  },
+  "pick:pages.publications-index.ts:ccfde71afc": {
+   "img": "publications-3.webp",
+   "x": 16,
+   "y": 472,
+   "w": 136,
+   "h": 30
+  },
+  "pick:pages.publications-index.ts:d129373bfa": {
+   "img": "publications-3.webp",
+   "x": 164,
+   "y": 472,
+   "w": 200,
+   "h": 30
+  },
+  "pick:pages.publications-index.ts:5b9fcbdc8b": {
+   "img": "publications-3.webp",
+   "x": 16,
+   "y": 575,
+   "w": 358,
+   "h": 78
+  },
+  "pick:pages.publications-index.ts:8bf5f51c33": {
+   "img": "publications-3.webp",
+   "x": 16,
+   "y": 661,
+   "w": 358,
+   "h": 78
+  },
+  "pick:pages.publications-index.ts:f9aac97d0b": {
+   "img": "publications-3.webp",
+   "x": 93,
+   "y": 748,
+   "w": 43,
+   "h": 17
+  },
+  "pick:pages.publications-index.ts:9de7ea6856": {
+   "img": "publications-3.webp",
+   "x": 193,
+   "y": 748,
+   "w": 69,
+   "h": 17
+  },
+  "pick:pages.publications-genre.ts:9de7ea6856": {
+   "img": "publications-3.webp",
+   "x": 193,
+   "y": 748,
+   "w": 69,
+   "h": 17
+  },
+  "pick:pages.publications-genre.ts:1a428989bd": {
+   "img": "genre-white-papers-0.webp",
+   "x": 16,
+   "y": 150,
+   "w": 358,
+   "h": 544
+  },
+  "pick:pages.publications-genre.ts:f5cbdf6bfb": {
+   "img": "genre-white-papers-0.webp",
+   "x": 37,
+   "y": 171,
+   "w": 316,
+   "h": 16
+  },
+  "status:draft": {
+   "img": "genre-white-papers-0.webp",
+   "x": 45,
+   "y": 223,
+   "w": 70,
+   "h": 21
+  },
+  "status:planned": {
+   "img": "genre-white-papers-0.webp",
+   "x": 272,
+   "y": 651,
+   "w": 58,
+   "h": 21
+  },
+  "pick:pages.publications-genre.ts:affd55b0ee": {
+   "img": "genre-white-papers-1.webp",
+   "x": 16,
+   "y": 100,
+   "w": 149,
+   "h": 19
+  },
+  "genre:white-papers:heading": {
+   "img": "genre-white-papers-1.webp",
+   "x": 16,
+   "y": 144,
+   "w": 358,
+   "h": 36
+  },
+  "pick:pages.publications-genre.ts:4dfb598d11": {
+   "img": "genre-white-papers-2.webp",
+   "x": 16,
+   "y": 656,
+   "w": 358,
+   "h": 59
+  },
+  "date:early": {
+   "img": "genre-annual-reports-0.webp",
+   "x": 151,
+   "y": 414,
+   "w": 111,
+   "h": 16
+  },
+  "pick:pages.publication.ts:770d7623f7": {
+   "img": "document-draft-0.webp",
+   "x": 33,
+   "y": 272,
+   "w": 324,
+   "h": 40
+  },
+  "pick:pages.publication.ts:06541eebbc": {
+   "img": "document-draft-1.webp",
+   "x": 16,
+   "y": 578,
+   "w": 358,
+   "h": 59
+  },
+  "pick:pages.publication.ts:0716ecde48": {
+   "img": "document-draft-1.webp",
+   "x": 16,
+   "y": 644,
+   "w": 358,
+   "h": 78
+  },
+  "pick:pages.publication.ts:e8328b17f2": {
+   "img": "document-draft-1.webp",
+   "x": 16,
+   "y": 731,
+   "w": 121,
+   "h": 17
+  },
+  "pick:pages.publication.ts:d0f82620fb": {
+   "img": "document-planned-0.webp",
+   "x": 33,
+   "y": 332,
+   "w": 324,
+   "h": 56
+  },
+  "pick:pages.publication.ts:0ea8135867": {
+   "img": "document-planned-0.webp",
+   "x": 33,
+   "y": 396,
+   "w": 324,
+   "h": 80
+  },
+  "pick:pages.publication.ts:ba6437a9aa": {
+   "img": "document-planned-0.webp",
+   "x": 16,
+   "y": 525,
+   "w": 358,
+   "h": 28
+  },
+  "pick:pages.publication.ts:12e4127a90": {
+   "img": "document-not-found-0.webp",
+   "x": 27,
+   "y": 357,
+   "w": 336,
+   "h": 32
+  },
+  "pick:pages.publication.ts:4885af561f": {
+   "img": "document-not-found-0.webp",
+   "x": 27,
+   "y": 401,
+   "w": 336,
+   "h": 20
+  },
+  "i18n:login.title": {
+   "img": "login-0.webp",
+   "x": 48,
+   "y": 322,
+   "w": 294,
+   "h": 25
+  },
+  "i18n:login.yourPhone": {
+   "img": "login-0.webp",
+   "x": 48,
+   "y": 363,
+   "w": 294,
+   "h": 20
+  },
+  "i18n:login.sendCode": {
+   "img": "login-0.webp",
+   "x": 48,
+   "y": 461,
+   "w": 294,
+   "h": 40
+  },
+  "i18n:login.footer": {
+   "img": "login-0.webp",
+   "x": 0,
+   "y": 557,
+   "w": 390,
+   "h": 20
+  },
+  "i18n:login.sending": {
+   "img": "login-sending-0.webp",
+   "x": 48,
+   "y": 461,
+   "w": 294,
+   "h": 40
+  },
+  "i18n:login.enterCode": {
+   "img": "login-code-0.webp",
+   "x": 48,
+   "y": 253,
+   "w": 294,
+   "h": 25
+  },
+  "i18n:login.verificationCode": {
+   "img": "login-code-0.webp",
+   "x": 48,
+   "y": 342,
+   "w": 294,
+   "h": 20
+  },
+  "i18n:login.verify": {
+   "img": "login-code-0.webp",
+   "x": 48,
+   "y": 440,
+   "w": 294,
+   "h": 40
+  },
+  "i18n:login.differentPhone": {
+   "img": "login-code-0.webp",
+   "x": 48,
+   "y": 548,
+   "w": 294,
+   "h": 20
+  },
+  "i18n:login.resendCode": {
+   "img": "login-code-0.webp",
+   "x": 48,
+   "y": 504,
+   "w": 294,
+   "h": 20
+  },
+  "i18n:login.resendIn": {
+   "img": "login-code-wait-0.webp",
+   "x": 48,
+   "y": 504,
+   "w": 294,
+   "h": 20
+  },
+  "i18n:login.loggingIn": {
+   "img": "login-verifying-0.webp",
+   "x": 133,
+   "y": 409,
+   "w": 124,
+   "h": 24
+  },
+  "i18n:settings.notifications": {
+   "img": "settings-0.webp",
+   "x": 64,
+   "y": 145,
+   "w": 212,
+   "h": 24
+  },
+  "i18n:settings.notificationsDesc": {
+   "img": "settings-0.webp",
+   "x": 64,
+   "y": 169,
+   "w": 212,
+   "h": 40
+  },
+  "i18n:settings.disable": {
+   "img": "settings-0.webp",
+   "x": 276,
+   "y": 159,
+   "w": 50,
+   "h": 36
+  },
+  "i18n:settings.installPrompt": {
+   "img": "settings-0.webp",
+   "x": 64,
+   "y": 265,
+   "w": 233,
+   "h": 39
+  },
+  "i18n:settings.installLink": {
+   "img": "settings-0.webp",
+   "x": 168,
+   "y": 285,
+   "w": 79,
+   "h": 19
+  },
+  "i18n:update.dismiss": {
+   "img": "settings-0.webp",
+   "x": 276,
+   "y": 159,
+   "w": 50,
+   "h": 36
+  },
+  "i18n:pwa.installButton": {
+   "img": "settings-0.webp",
+   "x": 168,
+   "y": 285,
+   "w": 79,
+   "h": 19
+  },
+  "i18n:settings.enable": {
+   "img": "settings-unsupported-0.webp",
+   "x": 272,
+   "y": 159,
+   "w": 54,
+   "h": 36
+  },
+  "i18n:settings.unsupported": {
+   "img": "settings-unsupported-0.webp",
+   "x": 64,
+   "y": 169,
+   "w": 208,
+   "h": 40
+  },
+  "i18n:pwa.alreadyInstalled": {
+   "img": "install-installed-0.webp",
+   "x": 48,
+   "y": 160,
+   "w": 294,
+   "h": 28
+  },
+  "i18n:pwa.alreadyInstalledDesc": {
+   "img": "install-installed-0.webp",
+   "x": 48,
+   "y": 204,
+   "w": 294,
+   "h": 48
+  },
+  "i18n:menu.tutorials": {
+   "img": "tutorials-0.webp",
+   "x": 48,
+   "y": 281,
+   "w": 294,
+   "h": 25
+  },
+  "i18n:tutorials.title": {
+   "img": "tutorials-0.webp",
+   "x": 48,
+   "y": 281,
+   "w": 294,
+   "h": 25
+  },
+  "i18n:tutorials.description": {
+   "img": "tutorials-0.webp",
+   "x": 48,
+   "y": 322,
+   "w": 294,
+   "h": 20
+  },
+  "i18n:tutorial.installApp.title": {
+   "img": "tutorials-0.webp",
+   "x": 96,
+   "y": 370,
+   "w": 97,
+   "h": 20
+  },
+  "i18n:tutorial.phoneLogin.title": {
+   "img": "tutorials-0.webp",
+   "x": 96,
+   "y": 442,
+   "w": 127,
+   "h": 20
+  },
+  "i18n:tutorial.notifications.title": {
+   "img": "tutorials-0.webp",
+   "x": 96,
+   "y": 514,
+   "w": 124,
+   "h": 20
+  },
+  "i18n:tutorial.step": {
+   "img": "tutorial-installApp-1-0.webp",
+   "x": 64,
+   "y": 598,
+   "w": 44,
+   "h": 19
+  },
+  "i18n:tutorial.prev": {
+   "img": "tutorial-installApp-1-0.webp",
+   "x": 48,
+   "y": 682,
+   "w": 141,
+   "h": 36
+  },
+  "i18n:tutorial.installApp.step1": {
+   "img": "tutorial-installApp-1-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.installApp.step3": {
+   "img": "tutorial-installApp-1-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.installApp.step2": {
+   "img": "tutorial-installApp-2-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.installApp.step4": {
+   "img": "tutorial-installApp-4-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.installApp.step5": {
+   "img": "tutorial-installApp-5-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.installApp.step6": {
+   "img": "tutorial-installApp-6-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.done": {
+   "img": "tutorial-installApp-7-0.webp",
+   "x": 201,
+   "y": 682,
+   "w": 141,
+   "h": 36
+  },
+  "i18n:tutorial.installApp.step7": {
+   "img": "tutorial-installApp-7-0.webp",
+   "x": 64,
+   "y": 578,
+   "w": 262,
+   "h": 72
+  },
+  "i18n:tutorial.phoneLogin.step1": {
+   "img": "tutorial-phoneLogin-1-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.phoneLogin.step2": {
+   "img": "tutorial-phoneLogin-2-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.phoneLogin.step3": {
+   "img": "tutorial-phoneLogin-3-0.webp",
+   "x": 64,
+   "y": 602,
+   "w": 262,
+   "h": 48
+  },
+  "i18n:tutorial.phoneLogin.step4": {
+   "img": "tutorial-phoneLogin-4-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.phoneLogin.step5": {
+   "img": "tutorial-phoneLogin-5-0.webp",
+   "x": 64,
+   "y": 602,
+   "w": 262,
+   "h": 48
+  },
+  "i18n:tutorial.phoneLogin.step6": {
+   "img": "tutorial-phoneLogin-6-0.webp",
+   "x": 64,
+   "y": 602,
+   "w": 262,
+   "h": 48
+  },
+  "i18n:tutorial.phoneLogin.step7": {
+   "img": "tutorial-phoneLogin-7-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.phoneLogin.step8": {
+   "img": "tutorial-phoneLogin-8-0.webp",
+   "x": 64,
+   "y": 602,
+   "w": 262,
+   "h": 48
+  },
+  "i18n:tutorial.phoneLogin.step9": {
+   "img": "tutorial-phoneLogin-9-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.phoneLogin.step10": {
+   "img": "tutorial-phoneLogin-10-0.webp",
+   "x": 64,
+   "y": 578,
+   "w": 262,
+   "h": 72
+  },
+  "i18n:tutorial.notifications.step1": {
+   "img": "tutorial-notifications-1-0.webp",
+   "x": 64,
+   "y": 602,
+   "w": 262,
+   "h": 48
+  },
+  "i18n:tutorial.notifications.step2": {
+   "img": "tutorial-notifications-2-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.notifications.step3": {
+   "img": "tutorial-notifications-3-0.webp",
+   "x": 64,
+   "y": 626,
+   "w": 262,
+   "h": 24
+  },
+  "i18n:tutorial.notifications.step4": {
+   "img": "tutorial-notifications-4-0.webp",
+   "x": 64,
+   "y": 578,
+   "w": 262,
+   "h": 72
+  },
+  "i18n:tutorial.notifications.step5": {
+   "img": "tutorial-notifications-5-0.webp",
+   "x": 64,
+   "y": 578,
+   "w": 262,
+   "h": 72
+  },
+  "i18n:update.available": {
+   "img": "new-version-0.webp",
+   "x": 33,
+   "y": 783,
+   "w": 187,
+   "h": 20
+  },
+  "i18n:update.refresh": {
+   "img": "new-version-0.webp",
+   "x": 232,
+   "y": 775,
+   "w": 94,
+   "h": 36
+  },
+  "i18n:notFound.title": {
+   "img": "not-found-0.webp",
+   "x": 45,
+   "y": 381,
+   "w": 299,
+   "h": 40
+  },
+  "i18n:notFound.subtitle": {
+   "img": "not-found-0.webp",
+   "x": 45,
+   "y": 437,
+   "w": 299,
+   "h": 24
+  }
+ },
+ "missed": [
+  "i18n:menu.phoneLogin",
+  "i18n:footer.videoTutorials",
+  "i18n:footer.dearAquarius",
+  "i18n:footer.downloadApp",
+  "lang-if:components.hb-footer.ts:26c01e70a3",
+  "pick:pages.home.ts:e5d0f5b790",
+  "pick:pages.roadmap.ts:cba5e9011f",
+  "pick:pages.publications-index.ts:0e9d75c303",
+  "pick:pages.publications-index.ts:51a6f33625",
+  "pick:pages.publications-genre.ts:80a947fcdf",
+  "status:published",
+  "date:revised",
+  "date:target",
+  "date:draft",
+  "pick:pages.publication.ts:2278036740",
+  "pick:pages.publication.ts:c332a2ccf2",
+  "i18n:login.success",
+  "i18n:login.codeSent",
+  "i18n:login.codeResent",
+  "i18n:login.invalidCode",
+  "i18n:login.sendFailed",
+  "i18n:login.loginFailed",
+  "i18n:settings.enabled",
+  "i18n:settings.disabled",
+  "i18n:settings.denied",
+  "i18n:tutorial.steps",
+  "i18n:tutorial.comingSoon",
+  "pick:pages.research-redirect.ts:1af7977412",
+  "pick:pages.research-redirect.ts:d4606e7ced",
+  "pick:pages.research-redirect.ts:02bdf3bd08",
+  "i18n:menu.createAccount",
+  "i18n:pwa.title",
+  "i18n:pwa.description",
+  "i18n:pwa.iosTitle",
+  "i18n:pwa.iosStep1",
+  "i18n:pwa.iosStep2",
+  "i18n:pwa.iosStep3",
+  "i18n:pwa.manualTitle",
+  "i18n:pwa.manualStep1",
+  "i18n:pwa.manualStep2",
+  "i18n:pwa.manualStep3"
+ ]
+}
